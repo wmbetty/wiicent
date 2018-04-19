@@ -1,0 +1,83 @@
+<view class="emergencyBox">
+<block wx:if="{{isFormShow}}">
+    <view class="contentBox">
+        <input type="text" placeholder="请输入事件标题" bindinput="inputListener" value="{{materialData.title}}" data-id="title" class="title"/>
+        <textarea placeholder="请输入内容" maxlength="-1" value="{{materialData.content}}" bindinput="inputListener" class="content" data-id="content"/>
+    </view>
+    <view class="iconBox">
+        <view class="album" bindtap="getAlbum">
+            <image src="../../dist/images/ic_xiangce.png"></image>
+        </view>
+        <view class="photo" bindtap="getPhoto">
+            <image src="../../dist/images/ic_xiangji.png"></image>
+        </view>
+    </view>
+    <scroll-view scroll-x class="picListBox" wx:if="{{materialData.file!=''}}">
+        <image src="{{materialData.file}}"></image>
+    </scroll-view>
+    <view class="itemBox" bindtap="goSelectPosition">
+        <view class="title">当前地区</view>
+        <view class="item">{{materialData.location}}</view>
+        <image src="../../dist/images/btn_darenrenzheng_xuanze.png" class="arrow"></image>
+    </view>
+
+    <view class="itemBox">
+        <view class="title">备用电话</view>
+        <input type="number" placeholder="选填" bindinput="inputListener" value="{{materialData.phone}}" data-id="phone" class="item"/>
+    </view>
+
+    <view class="btnArea">
+        <view bindtap="submit">确定</view>
+    </view>
+</block>
+</view>
+    <block wx:if="{{isSelectPosition}}">
+        <view class="selectPositionBox1" wx:if="{{true}}">
+            <view class="itemBox1">
+                <input type="text" value="{{positionText}}" placeholder="自定义地址" bindinput="positionListener"/>
+                <view class="textBtnBox">
+                    <button bindtap="confirmSelect">添加</button>
+                </view>
+            </view>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index1}}" range="{{positionArr1}}" mode="selector" data-id="state">
+                <view class="itemBox"><text>请选择洲：</text>{{positionArr1[index1]}}
+                    <image src="../../dist/images/path.png" class="arrowLogo"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index2}}" range="{{positionArr2}}" mode="selector" data-id="country">
+                <view class="itemBox" ><text>请选择国家：</text>{{positionArr2[index2]}}
+                    <image src="../../dist/images/path.png" class="arrowLogo"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index3}}" range="{{positionArr3}}" mode="selector" data-id="province">
+                <view class="itemBox" ><text>请选择省：</text>{{positionArr3[index3]}}
+                    <image src="../../dist/images/path.png" class="arrowLogo"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index4}}" range="{{positionArr4}}" mode="selector" data-id="city">
+                <view class="itemBox" ><text>请选择市：</text>{{positionArr4[index4]}}
+                    <image src="../../dist/images/path.png" class="arrowLogo"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index5}}" range="{{positionArr5}}" mode="selector" data-id="district">
+                <view class="itemBox" ><text>请选择地区：</text>{{positionArr5[index5]}}
+                    <image src="../../dist/images/path.png" class="arrowLogo"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="btnArea">
+            <view bindtap="confirmSelect">确定</view>
+            <view class="cancelBtn" bindtap="cancelSelect">取消</view>
+        </view>
+    </block>
+

@@ -1,0 +1,49 @@
+<template name="areaSelect">
+  <view class="__selectposition1_box">
+    <view class="__item1_box">
+      <input type="text" value="{{positionText}}" placeholder="自定义地址" bindinput="positionListener" class="__item1_input"/>
+      <view class="__text_btn_box">
+        <button class="__item1_btn" bindtap="confirmSelect">添加</button>
+      </view>
+    </view>
+  </view>
+  <view class="__selectposition_box">
+    <picker bindchange="bindPickerChange" value="{{index1}}" range="{{positionArr1}}" mode="selector" data-id="state">
+      <view class="__item_box"><text>请选择洲：</text>{{positionArr1[index1]}}
+        <view class="__arrow_logo"></view>
+          </view>
+    </picker>
+  </view>
+  <view class="__selectposition_box">
+    <picker bindchange="bindPickerChange" value="{{index2}}" range="{{positionArr2}}" mode="selector" data-id="country">
+      <view class="__item_box" ><text>请选择国家：</text>{{positionArr2[index2]}}
+        <view class="__arrow_logo"></view>
+      </view>
+    </picker>
+  </view>
+  <view class="__selectposition_box">
+    <picker bindchange="bindPickerChange" value="{{index3}}" range="{{positionArr3}}" mode="selector" data-id="province">
+      <view class="__item_box" ><text>请选择省：</text>{{positionArr3[index3]}}
+        <view class="__arrow_logo"></view>
+      </view>
+    </picker>
+  </view>
+  <view class="__selectposition_box">
+    <picker bindchange="bindPickerChange" value="{{index4}}" range="{{positionArr4}}" mode="selector" data-id="city">
+      <view class="__item_box" ><text>请选择市：</text>{{positionArr4[index4]}}
+          <view class="__arrow_logo"></view>
+      </view>
+    </picker>
+  </view>
+  <view class="__selectposition_box">
+    <picker bindchange="bindPickerChange" value="{{index5}}" range="{{positionArr5}}" mode="selector" data-id="district">
+      <view class="__item_box" ><text>请选择地区：</text>{{positionArr5[index5]}}
+        <view class="__arrow_logo"></view>
+      </view>
+    </picker>
+  </view>
+  <view class="__btn_box">
+      <view bindtap="cancelSelect" class="__btn_left">取消</view>
+      <view class="__btn_right" bindtap="confirmSelect">确定</view>
+  </view>
+</template>

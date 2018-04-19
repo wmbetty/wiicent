@@ -1,0 +1,24 @@
+<!--pages/findSpotSearch/findSpotSearch.wxml-->
+<view>
+  <view class='search-head'>
+    <view class='s-main'>
+      <view class='search-icon'></view>
+      <input class='search-input' placeholder-style="color:#999;" bindinput='searchTextChange' placeholder='搜索目的地，景点等' value='{{searchText}}'/>
+      <view class='clear-text-icon {{searchText ? "clear-icon-show" : ""}}' bindtap='clearText'>x</view>
+    </view>
+    <view class='s-head-right' bindtap='goBack'>取消</view>
+  </view>
+  <view wx:if='{{searchText && lastList.length > 0}}'>
+    <scroll-view scroll-y style="height: {{listHeight}}px;" bindscrolltolower="searchScrollLower">
+      <view class='remd-list-item' wx:for='{{lastList}}' data-item='{{item}}' wx:key='{{index}}' bindtap='gotoDetail'>
+        <image class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
+        <view class='remd-spot-info'>
+         <view class='r-spot-name'>{{item.title || ''}}</view>
+         <view class='s-middle'>{{item.middleTwo || ''}}</view>
+        <view class='r-spot-foot'>{{item.footerOne || '景点'}}</view> 
+      </view>     
+    </view>
+    </scroll-view>
+  </view>
+   <!-- <view class='r-nodata' wx:if='{{noList}}'>暂无数据</view> -->
+</view>

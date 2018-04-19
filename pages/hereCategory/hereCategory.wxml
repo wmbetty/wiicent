@@ -1,0 +1,6 @@
+<view class="box">
+    <view class="item" wx:for="{{categoryListData}}" bindtap="changeSelect" data-index="{{index}}">
+        <view class="label">{{item.name}}</view>
+        <image src="../../dist/images/ic_select_active.png" wx:if="{{item.isSelect}}"></image>
+    </view>
+</view>

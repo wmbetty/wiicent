@@ -1,0 +1,10 @@
+<view class="dayListBox">
+    <view class="dayItem" bindtap="viewSpotList" wx:for="{{dayListData}}" wx:for-item="item" wx:for-index="index" data-day="{{item.day}}">
+        <view class="timeBox">D{{item.day}}</view>
+        <view class="contentBox">
+            <view class="title">{{item.title}}</view>
+            <view class="keyword">{{item.coJingdian}}个景点</view>
+        </view>
+        <view class="arrowLogo"></view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="scheduleDetail">
+    <view class="title">{{scheduleDayDetail.title}}</view>
+    <view class="content">{{scheduleDayDetail.content}}</view>
+    <view class="list">早餐：{{scheduleDayDetail.breakfast}}</view>
+    <view class="list">中餐：{{scheduleDayDetail.lunch}}</view>
+    <view class="list">晚餐：{{scheduleDayDetail.supper}}</view>
+    <view class="list">交通：{{scheduleDayDetail.transport}}</view>
+    <view class="list">住宿：{{scheduleDayDetail.hotel}}</view>
+    <view class="addLogo" bindtap="edit" wx:if="{{isManager==1}}"></view>
+</view>

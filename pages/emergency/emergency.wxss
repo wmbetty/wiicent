@@ -1,0 +1,221 @@
+.emergencyBox{
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	padding-top: 30rpx;
+	box-sizing: border-box;
+}
+.contentBox{
+	width: 100%;
+	border: 1px solid #dddddd;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.contentBox .content{
+	width: 100%;
+	height: 412rpx;
+	border-top: 1px solid #dddddd;
+	box-sizing: border-box;
+	color: #333333;
+	font-size: 28rpx;
+	line-height: 46rpx;
+	padding-top:30rpx;
+	padding-bottom:30rpx;
+}
+.contentBox .title{
+	width: 100%;
+	height: 88rpx;
+	color: #333333;
+	font-size: 28rpx;
+	line-height: 46rpx;
+}
+.iconBox{
+	width: 100%;
+	position: relative;
+	height: 100rpx;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.iconBox .locationBox{
+	position: absolute;
+	top: 24rpx;
+	left: 24rpx;
+	height: 46rpx;
+}
+.iconBox .locationBox image{
+	width: 46rpx;
+	height: 46rpx;
+	margin-right: 12rpx;
+	float:left;
+}
+.iconBox .locationBox .text{
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 28rpx;
+	color: #333333;
+	float:left;
+}
+.iconBox .album{
+	position: absolute;
+	top: 24rpx;
+	right: 132rpx;
+	height: 46rpx;
+}
+.iconBox .album image{
+	width: 46rpx;
+	height: 46rpx;
+}
+.iconBox .photo{
+	position: absolute;
+	top: 24rpx;
+	right: 24rpx;
+	height: 46rpx;
+}
+.iconBox .photo image{
+	width: 46rpx;
+	height: 46rpx;
+}
+.picListBox{
+	width: 100%;
+	height: 208rpx;
+	margin-top: 24rpx;
+	border: 1px solid #dddddd;
+	background-color: #fff;
+	white-space: nowrap;
+	box-sizing: border-box;
+	padding-top:20rpx;
+}
+.picListBox image{
+	width: 168rpx;
+	height: 168rpx;
+	display: inline-block;
+	margin-left: 24rpx;
+}
+.itemBox{
+	width: 100%;
+	margin-top: 12rpx;
+	position: relative;
+}
+.itemBox .title{
+	width: 100%;
+	height: 66rpx;
+	line-height: 66rpx;
+	font-size: 28rpx;
+	color: #999999;
+}
+.itemBox .item{
+	width: 100%;
+	height: 102rpx;
+	line-height: 102rpx;
+	font-size: 28rpx;
+	color: #333333;
+	border: 1px solid #dddddd;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.itemBox .arrow{
+	width: 34rpx;
+	height: 34rpx;
+	position: absolute;
+	top: 100rpx;
+	right: 30rpx;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+	padding-bottom:200rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #09ba79;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}
+.btnArea .cancelBtn{
+	background-color: #fff;
+	border: 1px solid #09ba79;
+	color: #09ba79;
+	margin-top:30rpx;
+}
+
+.selectPositionBox{
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+}
+.selectPositionBox .itemBox{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	padding-left: 30rpx;
+  	padding-right: 30rpx;
+	box-sizing: border-box;
+	font-size: 32rpx;
+	color: #333333;
+	border-top: 1px solid #dddddd;
+  	background-color: #fff;
+  	position:relative;
+}
+.selectPositionBox .itemBox text{
+	font-size: 32rpx;
+	color: #999999;
+}
+.selectPositionBox .itemBox .arrowLogo{
+	width: 34rpx;
+	height: 34rpx;
+	position: absolute;
+	top: 24rpx;
+	right: 30rpx;
+}
+.selectPositionBox1{
+	width: 100%;
+}
+.selectPositionBox1 .itemBox1{
+	width: 100%;
+	height: 90rpx;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing: border-box;
+	display:flex;
+}
+.selectPositionBox1 .itemBox1 input{
+	width:100%;
+	height:90rpx;
+	line-height:90rpx;
+	font-size: 32rpx;
+	color: #333333;
+	background-color: #fff;
+	border-radius:12rpx;
+	border:1px solid #dddddd;
+	box-sizing:border-box;
+	padding-left:20rpx;
+}
+.selectPositionBox1 .itemBox1 .textBtnBox{
+	width:30%;
+	height:90rpx;
+	padding-left:30rpx;
+	box-sizing:border-box;
+}
+.selectPositionBox1 .itemBox1 .textBtnBox button{
+	width:100%;
+	height:90rpx;
+	line-height:90rpx;
+	text-align:center;
+	background-color:#fff;
+	border:1px solid #09ba79;
+	box-sizing:border-box;
+	color: #09ba79;
+	font-size:32rpx;
+}

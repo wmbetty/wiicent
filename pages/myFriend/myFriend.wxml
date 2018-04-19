@@ -1,0 +1,10 @@
+<view class="friendBox">
+	<view class="itemList">
+		<view class="item" wx:for="{{friendListData}}" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" bindtap="viewFriendDetail">
+			<image src="{{item.face}}" class="icon"></image>
+			<image src="../../dist/images/path.png" class="arrow"></image>
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
+</view>
+<view class="addLogo" bindtap="addFriend"><image src="../../dist/images/add.png"></image></view>

@@ -1,0 +1,280 @@
+.searchSpotBox{
+	width: 100%;
+}
+.searchSpotBox image{
+	width: 100%;
+	height: 316rpx;
+	position: relative;
+}
+.searchSpotBox image .searchBox{
+	width: 560rpx;
+	height: 68rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -34rpx;
+	margin-left: -280rpx;
+	border-radius: 34rpx;
+	overflow: hidden;
+	background-color: #fff;
+}
+.searchSpotBox image .searchBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.searchSpotBox image .searchBox::before{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.searchSpotBox image .searchBox .lBox{
+	width: 80%;
+	height: 68rpx;
+	float: left;
+	position:relative;
+}
+.searchSpotBox image .searchBox .lBox input{
+	width:100%;
+	box-sizing:border-box;
+	height: 68rpx;
+	line-height: 68rpx;
+	font-size: 32rpx;
+	color: #333333;
+	padding-left: 74rpx;
+}
+.searchSpotBox image .searchBox .rBox{
+	width: 20%;
+	height: 68rpx;
+	float: left;
+	background-color: #ff8c00;
+	line-height: 68rpx;
+	color: #fff;
+	font-size: 32rpx;
+	text-align: center;
+}
+.searchSpotBox image .searchBox .lBox .icon{
+	width: 34rpx;
+	height: 34rpx;
+	position:absolute;
+	top:18rpx;
+	left:20rpx;
+}
+.spotListBox{
+	width: 100%;
+}
+.spotListBox .spotItem{
+	width: 100%;
+	position: relative;
+	height: 200rpx;
+	border-bottom: 1px solid #dddddd;
+	box-sizing: border-box;
+	overflow:hidden;
+	padding-left: 34rpx;
+	padding-right: 34rpx;
+  	background-color: #fff;
+}
+.spotListBox image{
+	width:146rpx;
+	height: 146rpx;
+	position:absolute;
+	top:26rpx;
+	left:34rpx;
+	overflow:hidden;
+}
+.spotListBox .spotItem .contentBox{
+	width:100%;
+	padding-left:166rpx;
+}
+.spotListBox .spotItem .contentBox .title{
+	height: 44rpx;
+	margin-top:32rpx;
+	line-height: 44rpx;
+	font-size: 32rpx;
+	color: #333333;
+}
+.spotListBox .spotItem .contentBox .keyword{
+	height: 28rpx;
+	font-size: 28rpx;
+	color: #999999;
+}
+.spotListBox .spotItem .contentBox .intro{
+	height: 28rpx;
+	font-size: 28rpx;
+	color: #999999;
+	margin-top:20rpx;
+}
+.spotListBox .spotItem .distance{
+	width:300rpx;
+	font-size:28rpx;
+	color:#999999;
+	position:absolute;
+	bottom:32rpx;
+	right:34rpx;
+	text-align:right;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}
+.spotDetailBox{
+	width: 100%;
+	background-color:#fff;
+}
+.spotDetailBox image{
+	width: 100%;
+	height: 420rpx;
+	overflow: hidden;
+}
+.spotDetailBox .title{
+	width: 100%;
+	font-size: 36rpx;
+	color: #333333;
+	text-align: center;
+	margin-top: 60rpx;
+}
+.spotDetailBox .enTitle{
+	width: 100%;
+	font-size: 24rpx;
+	color: #999999;
+	text-align: center;
+	margin-top: 28rpx;
+}
+.spotDetailBox .infoBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.spotDetailBox .infoBox .info{
+	font-size: 24rpx;
+	color: #999999;
+	margin-left: 48rpx;
+	margin-top: 20rpx;
+}
+.spotDetailBox .content{
+	width: 100%;
+	font-size: 28rpx;
+	color: #333333;
+	line-height: 60rpx;
+	margin-top: 60rpx;
+	padding-left:30rpx;
+	padding-bottom:160rpx;
+	box-sizing:border-box;
+}
+.spotDetailBox .editContent{
+	width: 100%;
+	height: 98rpx;
+	line-height: 98rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	color: #fff;
+	background-color: #ff8c00;
+	font-size: 28rpx;
+}
+
+.session label{
+	width: 100%;
+	padding-left: 30rpx;
+	box-sizing: border-box;
+	height: 68rpx;
+	line-height: 68rpx;
+	color: #999999;
+	font-size: 28rpx;
+	margin-top: 20rpx;
+  	display: block;
+}
+.session .itemBox{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	padding-left: 30rpx;
+  	padding-right: 30rpx;
+	box-sizing: border-box;
+	font-size: 32rpx;
+	color: #999999;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+  	background-color: #fff;
+  	position:relative;
+}
+.session textarea{
+	width: 100%;
+	height: 400rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	font-size: 32rpx;
+	color: #333333;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+  	background-color: #fff;
+}
+.session input{
+	width: 100%;
+	height: 86rpx;
+	line-height:86rpx;
+	font-size: 32rpx;
+	color: #333333;
+	box-sizing: border-box;
+  	background-color: #fff;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #fd8238;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+	margin-bottom:20rpx;
+}
+.btnArea .addBtn{
+	background-color: #ff8c00;
+}
+.session .itemBox .arrowLogo{
+	width: 34rpx;
+	height: 34rpx;
+	position: absolute;
+	top: 24rpx;
+	right: 30rpx;
+	background-size: 34rpx 34rpx;
+	background-repeat: no-repeat;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjg0MDNBNEIwMDhDOTExRTg4NEYzODA5MjY3QzM3N0VDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjg0MDNBNEIxMDhDOTExRTg4NEYzODA5MjY3QzM3N0VDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODQwM0E0QUUwOEM5MTFFODg0RjM4MDkyNjdDMzc3RUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODQwM0E0QUYwOEM5MTFFODg0RjM4MDkyNjdDMzc3RUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Z94yVAAABpklEQVR42mL8//8/w2ACTAyDDIw6iBBgIUbRiRNnqWKZhYUxTUIoBYjnAjHzgIUQEsgA4mlAzAjEHEAcB8R/ByoN5SA5BgSigHgFELMNlIPkkBwDAyFAvJqajiLFQWVAXA7E6CWpHxCvh0Yh3bN9FxCnYkk3XkC8CYi5BqIcAuWwUCD+gSbuCsTbgJhnIArG9dBQ+YQmbg/EO4CYfyBK6v1A7ATEr9DErYF4NxALDkTVASrCbYH4IZq4KRDvBWKRgajLbkFD5RqauCHUUWIDUbk+hYbUSTRxPSA+AMSSA1HbvwPiBCD+gyauCcSLB8JB8tBsj14/gtJXGr0dpAjEB6E0MrgPxA5AfI+eDlKGphN5NPG7UMc8oGeiVoOGjByWnAcqJB/RM9trQENGGk38BjRkntKzYNTCkZ2vQR3znJ5VB6xsEUcTvwR1zEt6Vq4G0NJXFE38AhA7A/FrejY/jHDUT+egjnlD7wbaPyxN2NNQx7wbiCYsKFrcgPgjlH8c2ij7MJA91zNA7AmtIjyQHDdg/TJYyHiPmL494+j40KiDKAQAAQYA2kxPrqHhacgAAAAASUVORK5CYII=);
+}
+.loading{
+	width:100%;
+	height:38rpx;
+	position:relative;
+	background-color:#fff;
+}
+.loading .loadinggif{
+	width:200rpx;
+	height:18rpx;
+	position:absolute;
+	top: 10rpx;
+	left:50%;
+	margin-left:-100rpx;
+}

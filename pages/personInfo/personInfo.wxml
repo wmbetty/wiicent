@@ -1,0 +1,37 @@
+<view class="personInfoBox">
+    <view class="userPic">
+    	<view class="text">我的头像</view>
+    	<image src="{{personInfoData.face}}" bindtap="editFace"></image>
+    </view>
+    <view class="item nickName" bindtap="goEditName">
+    	<view class="text">昵称</view>
+    	<view class="textVal">{{personInfoData.name}}</view>
+    </view>
+    <view class="item wiiAccount">
+    	<view class="text">位讯号</view>
+    	<view class="textVal">{{personInfoData.uid}}</view>
+    </view>
+    <view class="item qcode">
+    	<view class="text">二维码</view>
+    	<view bindtap="showQcode" class="qcodeIcon"></view>
+    </view>
+    <view class="item gender" bindtap="goEditGender">
+    	<view class="text">性别</view>
+    	<view class="textVal">{{personInfoData.gender}}</view>
+    </view>
+    <view class="item job" bindtap="goEditVocation">
+    	<view class="text">职业</view>
+    	<view class="textVal">{{personInfoData.vocation}}</view>
+    </view>
+    <view class="item location" bindtap="goEditRegion">
+    	<view class="text">地区</view>
+    	<view class="textVal">{{personInfoData.region}}</view>
+    </view>
+    <view class="item userSign" bindtap="goEditSign">
+    	<view class="text">个性签名</view>
+    	<view class="textVal">{{personInfoData.sign}}</view>
+    </view>
+</view>
+<view class="canvas-box">
+  <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+</view>

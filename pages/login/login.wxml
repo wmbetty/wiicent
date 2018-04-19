@@ -1,0 +1,32 @@
+<view class="loginWrap">
+    <view class="loginBox">
+        <view class="formBox">
+            <view class="section">
+                <input type="text" name="account" value="{{account}}" placeholder="手机号" bindinput="inputPhone"/>
+            </view>
+            <block wx:if="{{isShowCheckcode}}">
+                <view class="section codeSection">
+                    <input type="text" value="{{code}}" placeholder="密码" bindinput="inputCode" password="true"/>
+                    <view class="showCodeBtn" bindtap="hideCode"><image src="../../dist/images/login_showcode_icon.png"></image></view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="section codeSection">
+                    <input type="text" value="{{code}}" placeholder="密码" bindinput="inputCode"/>
+                    <view class="noShowCodeBtn" bindtap="showCode"><image src="../../dist/images/login_hidecode_icon.png"></image></view>
+                </view>
+            </block>
+            <view class="operationBox">
+                <view bindtap="forgetCode">忘记密码</view>
+                <view bindtap="goRegister">马上注册</view>
+            </view>
+            <view class="btn-area">
+                <button bindtap="submit">登录</button>
+            </view>
+            <view class="wx-btnarea">
+                <button bindtap="bindwx">微信登录</button>
+                <image src="../../dist/images/login_wx.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

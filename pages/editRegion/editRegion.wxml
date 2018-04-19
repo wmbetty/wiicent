@@ -1,0 +1,50 @@
+<view class="projectIntroBox">
+    <form bindsubmit="submit">
+        <view class="selectPositionBox1" wx:if="{{true}}">
+            <view class="itemBox1">
+                <input type="text" value="{{positionText}}" placeholder="自定义地址" bindinput="positionListener"/>
+                <view class="textBtnBox">
+                    <button bindtap="confirmSelect">添加</button>
+                </view>
+            </view>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index1}}" range="{{positionArr1}}" mode="selector" data-id="state">
+                <view class="itemBox" >请选择洲：{{positionArr1[index1]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index2}}" range="{{positionArr2}}" mode="selector" data-id="country">
+                <view class="itemBox" >请选择国家：{{positionArr2[index2]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index3}}" range="{{positionArr3}}" mode="selector" data-id="province">
+                <view class="itemBox" >请选择省：{{positionArr3[index3]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index4}}" range="{{positionArr4}}" mode="selector" data-id="city">
+                <view class="itemBox" >请选择市：{{positionArr4[index4]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index5}}" range="{{positionArr5}}" mode="selector" data-id="district">
+                <view class="itemBox" >请选择地区：{{positionArr5[index5]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="btnArea">
+            <view bindtap="confirmSelect">确定</view>
+        </view>
+    </form>
+</view>

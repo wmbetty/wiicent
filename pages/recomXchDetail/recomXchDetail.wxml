@@ -1,0 +1,47 @@
+<view class="recomXchBox">
+    <image class="infoWrap" src="{{xchDetailData.bcontentImage!=''?xchDetailData.bcontentImage:'../../dist/images/line_bg.png'}}">
+        <view class="title">{{xchDetailData.title}}</view>
+        <view class="day">{{xchDetailData.coDay}}天</view>
+        <view class="fromToEnd">{{xchDetailData.startCity}}-{{xchDetailData.destiCity}}</view>
+    </image>
+    <view class="xchContent" wx:if="{{xchDetailData.descrip!=''}}">{{xchDetailData.descrip}}</view>
+
+    <view class="scheduleTilte">
+        <view class="text">-日程安排-</view>
+        <view class="iconBox">
+            <image class="icon" src="../../dist/images/recom_close.png" bindtap="closeAll" wx:if="{{isAllOpen}}"></image>
+            <image class="icon" src="../../dist/images/recom_open.png" bindtap="openAll" wx:else></image>
+        </view>
+    </view>
+
+    <view class="btn" bindtap="copyXch">复制行程</view>
+
+    <view class="scheduleBox">
+        <view class="dayBox" wx:for="{{xchScheduleData}}" wx:for-item="item" wx:for-index="index">
+            <view class="dayTitle">
+                <view class="text1">DAY{{item.day}}</view>
+                <view class="text2">{{item.title}}</view>
+                <image src="../../dist/images/ic_tjxc_heqi.png" data-index="{{index}}" bindtap="closeOne" wx:if="{{item.isOpen}}" class="arrow_icon"></image>
+                <image src="../../dist/images/ic_tjxc_zhankai.png" data-index="{{index}}" bindtap="openOne" wx:else class="arrow_icon"></image>
+            </view>
+            <view class="dayContent" wx:if="{{item.isOpen}}">
+                <view class="spotList" wx:if="{{item.attr.length!=0}}">
+                    <view class="spotItem" wx:for="{{item.attr}}" wx:for-item="sitem" wx:for-index="sindex" data-spotid="{{sitem.sortId}}" bindtap="viewPlotDetail">
+                        <image src="{{sitem.sourceImage==''?'../../dist/images/line_bg.png':sitem.sourceImage}}" class="spotBg"></image>
+                        <image src="../../dist/images/path.png" class="arrow"></image>
+                        <view class="title">{{sitem.sourceTitle}}</view>
+                        <view class="time">{{sitem.startTime}}</view>
+                    </view>
+                </view>
+                <view class="dayDetail">
+                    <view class="content">{{item.content}}</view>
+                    <view class="item"><view class="title">早晨：</view><view class="content">{{item.breakfast}}</view></view>
+                    <view class="item"><view class="title">中餐：</view><view class="content">{{item.lunch}}</view></view>
+                    <view class="item"><view class="title">晚餐：</view><view class="content">{{item.supper}}</view></view>
+                    <view class="item"><view class="title">交通：</view><view class="content">{{item.transport}}</view></view>
+                    <view class="item"><view class="title">住宿：</view><view class="content">{{item.hotel}}</view></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

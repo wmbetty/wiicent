@@ -1,0 +1,56 @@
+<block wx:if="{{isShowCostCategory}}">
+<view class="costCategoryBox">
+    <view class="sessionBox" wx:for="{{costCategoryList}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" data-value="{{item.name}}" bindtap="changeCategory">
+        <image src="../../dist/images/costcategory_icon_{{index}}.png" class="lIcon"></image>
+        <view class="sessionVal">{{item.name}}</view>
+        <block wx:if="{{item.isSelect}}"><view class="selectLogo"></view></block>
+    </view>
+    <view class="btnArea">
+        <view bindtap="costCategorySubmit">确定</view>
+    </view>
+</view>
+</block>
+<block wx:if="{{isShowCostList}}">
+<view class="costListBox">
+    <view class="costBox">
+        <view class="valueBox">
+            <label for="value">金额</label>
+            <block wx:if="{{isEdit}}"><view class="showCostVal">￥{{costData.value}}</view></block>
+            <block wx:else><input type="digit" placeholder="请输入金额" bindinput="bindinputVal" value="{{costData.value}}"/></block>
+        </view>
+        <view class="sessionBox line">
+            <label for="category">类型</label>
+            <block wx:if="{{isEdit}}"><view class="sessionVal1">{{costCategoryList[costData.category].name}}</view></block>
+            <block wx:else><view class="sessionVal2"  bindtap="goChangeCategory">{{costCategoryList[costData.category].name}}</view></block>
+        </view>
+        <view class="sessionBox">
+            <label for="date">时间</label>
+            <block wx:if="{{isEdit}}">
+                <view class="sessionVal">
+                    {{date+' '+time}}
+                </view>
+            </block>
+            <block wx:else>
+                <view class="sessionVal">
+                    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                        <view class="picker">{{date}}</view>
+                    </picker>
+                    <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+                        <view class="picker">{{time}}</view>
+                    </picker>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="remarkBox">
+        <textarea name="remark" disabled="{{isEdit}}" placeholder="请输入内容" maxlength="-1" value="{{costData.remark}}" bindinput="bindinputRemark"/>
+    </view>
+    <view class="btnArea" wx:if="{{isEdit}}">
+        <view bindtap="edit">编辑</view>
+    </view>
+    <view class="btnArea" wx:else>
+        <view bindtap="save">保存</view>
+        <view bindtap="delete" class="del">删除</view>
+    </view>
+</view>
+</block>

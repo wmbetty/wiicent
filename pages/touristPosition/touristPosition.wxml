@@ -1,0 +1,13 @@
+<view class="mapBox">
+    <map id="map" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" markers="{{markers}}" show-location style="width: 100%; height: {{height}}px;" include-points="{{allPoints}}">
+    <cover-view class="tourInfo_wrap">
+      <cover-view class="tourInfo_box">
+        <cover-view class="title1">{{tourInfo.name+'('+tourInfo.gender+')'}}</cover-view>
+        <cover-view class="title2">电话：{{tourInfo.mobile}}</cover-view>
+        <cover-view class="title2">更新时间：{{tourInfo.uptime}}</cover-view>
+        <cover-image src="../../dist/images/tour_position_icon.png" class="icon" bindtap="callTourist"></cover-image>
+      </cover-view>
+    </cover-view>
+    </map>
+</view>
+

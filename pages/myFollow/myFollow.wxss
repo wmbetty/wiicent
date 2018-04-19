@@ -1,0 +1,69 @@
+.searchBox{
+	width: 100%;
+	height: 104rpx;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	padding-top: 22rpx;
+	box-sizing: border-box;
+	position: relative;
+}
+.searchBox image{
+	width: 28rpx;
+	height: 28rpx;
+	position: absolute;
+	top: 40rpx;
+	left:54rpx;
+}
+.searchBox input{
+	width: 100%;
+	height: 60rpx;
+	border: 1px solid #dddddd;
+	border-radius: 30rpx;
+	background-color: #fff;
+	padding-left: 90rpx;
+	box-sizing: border-box;
+}
+.icon{
+	width: 72rpx;
+	height: 72rpx;
+	position: absolute;
+	top: 22rpx;
+	left: 30rpx;
+}
+.arrow{
+	width: 32rpx;
+	height: 32rpx;
+	position: absolute;
+	top: 42rpx;
+	right: 30rpx;
+}
+.name{
+	font-size: 32rpx;
+	color: #333333;
+	position: absolute;
+	top: 36rpx;
+	left: 128rpx;
+}
+.itemList{
+	border-top: 1px solid #dddddd;
+}
+.itemList .item{
+	width: 100%;
+	height: 118rpx;
+	background-color: #fff;
+	border-bottom: 1px solid #dddddd;
+	box-sizing: border-box;
+	position: relative;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	font-size: 76rpx;
+	background-color: #ff8c00;
+	color: #fff;
+  	text-align: center;
+}

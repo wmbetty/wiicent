@@ -1,0 +1,32 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{projectListData.length==0}}">
+  <template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="lineWrapBox">
+<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+<block wx:for="{{projectListData}}" wx:for-item="item" wx:for-index="index">
+  <view class="lineWrap" data-xid="{{item.xid}}" data-xchsn="{{item.xchSn}}" data-rid="{{item.rid}}" bindtap="viewProjectDetail">
+    <view class="lineBox">
+      <view class="lineInfo">
+        <image src="{{item.authorFace}}" class="touristPic"></image>
+        <view class="nameAndXch">
+          <view class="name">{{item.authorName}}</view>
+          <view class="xch">{{item.xchSn}}</view>
+        </view>
+        <view class="lineState">{{tripStatus[item.tripStatus]}}</view>
+      </view>
+      <view class="lineFromTo">
+        <view class="from">{{item.startCity}}</view><view class="day">{{item.coDay}}天</view><view class="person">{{item.coTourist}}人</view><view class="to">{{item.destiCity}}</view>
+      </view>
+      <view class="startEndDate">
+        <view class="startDate">{{item.startDate}}</view><view class="endDate">{{item.finishDate}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+</scroll-view>
+</view>
+</block>
+
+

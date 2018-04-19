@@ -1,0 +1,7 @@
+<view class="aboutUsBox">
+    <view class="text">电话</view>
+    <view class="phoneNum">{{phoneNumber}}</view>
+    <view class="btnArea">
+        <view bindtap="submit">拨打电话</view>
+    </view>
+</view>

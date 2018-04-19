@@ -1,0 +1,11 @@
+<view class="projectIntroBox">
+    <form bindsubmit="submit">
+        <view class="session">
+            <label for="projectName">昵称</label>
+            <input type="text" placeholder="请输入昵称" bindinput="inputListener" value="{{name}}"/>
+        </view>
+        <view class="btnArea">
+            <button form-type="submit">确定</button>
+        </view>
+    </form>
+</view>

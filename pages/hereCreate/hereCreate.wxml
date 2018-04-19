@@ -1,0 +1,50 @@
+<image src="../../dist/images/a55902da252245cec97a5e65516065da.png" class="banner"></image>
+<view class="box">
+    <view class="item" bindtap="getCategory">
+        <view class="label">类型</view>
+        <view class="value">{{formData.mtype==''?'请选择':formData.mtype}}</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    <view class="item">
+        <view class="label">名称</view>
+        <input type="text" class="value1" placeholder="请填写名称" value="{{formData.title}}" data-id="title" bindinput="inputListener"/>
+    </view>
+    <view class="item" bindtap="getValue" data-name="简要介绍" data-role="content">
+        <view class="label">简要介绍</view>
+        <view class="value">请选择</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    <view class="item" bindtap="getArea">
+        <view class="label">所在地区</view>
+        <view class="value">{{formData.destiCity==''?'请选择':formData.destiCity}}</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    <view class="item">
+        <view class="label">详细地址</view>
+        <input type="text" placeholder="请填写详细地址" class="value1 padl" value="{{formData.address}}" data-id="address" bindinput="inputListener"/>
+        <image src="../../dist/images/ic_cjfx_xuanzedizhi.png" class="location" bindtap="chooseLocation"></image>
+    </view>
+    <view class="item" bindtap="getMoreInfo">
+        <view class="label">更多信息</view>
+        <view class="value">选填</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    <view class="item">
+        <view class="label">图片</view>
+        <view class="logoWrap">
+        <view class="logoBox" bindtap="getAlbum">
+            <image src="../../dist/images/ic_xiangce.png" class="album"></image>
+        </view>
+        <view class="logoBox" bindtap="getPhoto">
+            <image src="../../dist/images/ic_xiangji.png" class="photo"></image>
+        </view>
+        </view>
+    </view>
+    <scroll-view scroll-x class="picListBox" wx:if="{{formData.file!=''}}">
+        <image src="{{formData.file}}"></image>
+    </scroll-view>
+</view>
+
+<view class="btnBox">
+    <button disabled="{{false}}" bindtap="submit">保存</button>
+</view>

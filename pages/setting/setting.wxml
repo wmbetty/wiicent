@@ -1,0 +1,33 @@
+<view class="personPlanBox">
+    <view class="personItem" bindtap="goEditPhone">
+        <view class="name">修改手机号</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+    <view class="personItem" bindtap="goEditCode">
+        <view class="name">修改登录密码</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+</view>
+<view class="personPlanBox">
+    <view class="personItem" bindtap="unbindWx">
+        <view class="name">解除微信绑定</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+    <view class="personItem" bindtap="goRemark">
+        <view class="name">意见反馈</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+</view>
+<view class="personPlanBox">
+    <view class="personItem" bindtap="goAgreement">
+        <view class="name">用户协议</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+    <view class="personItem bt" bindtap="goAboutUs">
+        <view class="name">联系我们</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+</view>
+<view class="btnArea">
+    <view bindtap="logout">退出登录</view>
+</view>

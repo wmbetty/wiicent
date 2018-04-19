@@ -1,0 +1,83 @@
+.projectIntroBox{
+	width: 100%;
+}
+.projectIntroBox .personInfo{
+	border-bottom:1px solid #dddddd;
+	margin-bottom:30rpx;
+	width:100%;
+	height:132rpx;
+	position:relative;
+	background-color:#fff;
+}
+.projectIntroBox .personInfo image{
+	width:74rpx;
+	height:74rpx;
+	border-radius:37rpx;
+	position:absolute;
+	top:29rpx;
+	left:30rpx;
+}
+.projectIntroBox .personInfo .title1{
+	font-size:30rpx;
+	color:#333333;
+	position:absolute;
+	top:22rpx;
+	left:142rpx;
+}
+.projectIntroBox .personInfo .title2{
+	font-size:24rpx;
+	color:#999999;
+	position:absolute;
+	top:78rpx;
+	left:142rpx;
+}
+.projectIntroBox .personInfo .title3{
+	font-size:30rpx;
+	color:#09ba79;
+	position:absolute;
+	top:44rpx;
+	right:30rpx;
+}
+.projectIntroBox .session{
+	width:100%;
+	border-bottom:1px solid #dddddd;
+	background-color:#fff;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	padding-bottom:30rpx;
+	box-sizing:border-box;
+}
+.projectIntroBox .mb{
+	border-top:1px solid #dddddd;
+}
+.projectIntroBox .session .label{
+	width: 100%;
+	padding-top:12rpx;
+	color: #333333;
+	font-size: 28rpx;
+}
+.projectIntroBox .session textarea{
+	width: 100%;
+	line-height: 56rpx;
+	font-size: 28rpx;
+	color: #333333;
+	padding:0;
+	overflow:auto;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea button{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #09ba79;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}

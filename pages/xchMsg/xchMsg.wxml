@@ -1,0 +1,5 @@
+<view class="xchMsgBox" bindtap="goXchMsgDetail">
+模板1:您好，我是领队XX。请在XX，XX前抵达XX，
+！请随身携带XX，以备检查。未来XX气温在XX~XX
+度左右，有雨，请带雨伞及常用药物，以备不时之需...
+</view>

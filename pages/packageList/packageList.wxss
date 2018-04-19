@@ -1,0 +1,106 @@
+.packageListBox{
+  padding-bottom:100rpx;
+}
+.titleBox{
+  width: 100%;
+  height: 76rpx;
+  position: relative;
+  background-color: #fafafa;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.titleBox .title{
+  font-size: 24rpx;
+  color: #999999;
+  position: absolute;
+  left: 30rpx;
+  top:24rpx;
+}
+.titleBox image{
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 30rpx;
+  top:24rpx;
+}
+.contentBox{
+  width: 100%;
+  background-color: #fff;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.contentBox::after{
+  content:'';
+  display:block;
+  width:100%;
+  height:1px;
+  background-color:#fff;
+  margin-top:-2px;
+}
+.contentBox .cItem{
+  width: 100%;
+  height: 86rpx;
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+}
+.contentBox .cItem image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 22rpx;
+}
+.contentBox .cItem .content{
+  font-size: 28rpx;
+  color: #333333;
+  white-space: nowrap;
+  position: absolute;
+  left: 74rpx;
+  top: 28rpx;
+}
+.btBox{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  position: fixed;
+  bottom: 0;
+}
+.btBox .btn{
+  width: 50%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.btBox .btn image{
+  width: 132rpx;
+  height: 52rpx;
+  margin-right:20rpx;
+}
+.btBox .btn .text{
+  font-size: 24rpx;
+  color: #999999;
+}
+.btBox .green{
+  background-color: #09ba79;
+  color: #fff;
+  font-size: 32rpx;
+}
+.addLogo{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  position: fixed;
+  right: 58rpx;
+  bottom: 120rpx;
+  background-color: #09ba79;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.addLogo image{
+  width:56rpx;
+  height:56rpx;
+}

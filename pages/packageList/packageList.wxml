@@ -1,0 +1,27 @@
+<view class="packageListBox">
+  <view class="itemBox" wx:for="{{packageListData}}" wx:for-item="item" wx:for-index="index">
+    <view class="titleBox">
+      <view class="title">{{item.name}}</view>
+      <image src="../../dist/images/ic_tjxc_heqi.png" data-id="{{index}}" bindtap="closeItem" wx:if="{{item.isShow}}"></image>
+      <image src="../../dist/images/ic_tjxc_zhankai.png" data-id="{{index}}" bindtap="openItem" wx:else></image>
+    </view>
+    <view class="contentBox">
+      <view class="cItem" wx:for="{{item.attr}}" wx:for-item="sitem" wx:for-index="sindex" data-id="{{sindex}}" data-fid="{{index}}" bindtap="selectList" wx:if="{{sitem.isShow}}">
+        <image src="../../dist/images/package_select_act.png" wx:if="{{sitem.is_used==1}}"></image>
+        <image src="../../dist/images/package_select_normal.png" wx:else></image>
+        <view class="content">{{sitem.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="btBox">
+  <view class="btn">
+    <image src="../../dist/images/package_xlqd_dakai.png" bindtap="showAll" wx:if="{{showSelect}}"></image>
+    <image src="../../dist/images/package_xlqd_guanbi.png" bindtap="showSelect" wx:else></image>
+    <view class="text">仅看已选择</view>
+  </view>
+  <view class="btn green" bindtap="submit">
+    保存清单
+  </view>
+</view>
+<view class="addLogo" bindtap="addPackage"><image src="../../dist/images/add.png"></image></view>

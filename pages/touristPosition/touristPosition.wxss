@@ -1,0 +1,59 @@
+@import "../../component/nullTip/nullTip.wxss";
+.personListBox{
+	width: 100%;
+	padding-left: 30rpx;
+	height: 80rpx;
+	white-space: nowrap;
+	background-color:#fff;
+}
+.personListBox .person{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #999999;
+	margin-right: 30rpx;
+	display: inline-block;
+}
+.personListBox .actperson{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #ff8c00;
+	margin-right: 30rpx;
+	display: inline-block;
+}
+.tourInfo_wrap{
+	width: 100%;
+	height:232rpx;
+	padding-left:40rpx;
+	padding-right:40rpx;
+	box-sizing:border-box;
+	position:fixed;
+	bottom:20rpx;
+}
+.tourInfo_wrap .tourInfo_box{
+	width:100%;
+	height:232rpx;
+	box-shadow: 5px 5px 5px #dddddd;
+	position:relative;
+	background-color:#fff;
+	padding-left:54rpx;
+	padding-top:44rpx;
+	box-sizing:border-box;
+}
+.tourInfo_wrap .tourInfo_box .title1{
+	font-size:38rpx;
+	color:#333333;
+}
+.tourInfo_wrap .tourInfo_box .title2{
+	font-size:28rpx;
+	color:#999999;
+	margin-top:20rpx;
+}
+.tourInfo_wrap .tourInfo_box .icon{
+	width:44rpx;
+	height:44rpx;
+	position:absolute;
+	right:45rpx;
+	top:45rpx;
+}

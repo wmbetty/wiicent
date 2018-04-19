@@ -1,0 +1,22 @@
+<view class="myroomWrap">
+	<image src="../../dist/images/myroom_bg.png" class="roomNumBox">
+		<image src="../../dist/images/myroom_key.png" class="key"></image>
+		<view class="myRoom">{{myroom}}</view>
+	</image>
+	<view class="titleBox">
+		<view class="title">房内成员</view>
+	</view>
+	<view class="personListBox">
+		<view class="personList person{{roomData.roomCapacity}}">
+			<view class="person">
+				<image src="{{roomData.gender1}}"></image>{{roomData.name1==''?'未分配':roomData.name1}}
+			</view>
+			<view class="person">
+				<image src="{{roomData.gender2}}"></image>{{roomData.name2==''?'未分配':roomData.name2}}
+			</view>
+			<view class="person">
+				<image src="{{roomData.gender3}}"></image>{{roomData.name3==''?'未分配':roomData.name3}}
+			</view>
+		</view>
+	</view>
+</view>

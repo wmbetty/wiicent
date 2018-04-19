@@ -1,0 +1,46 @@
+<form bindsubmit="submit">
+    <view class="session">
+        <label>名称</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入日程名称" value="{{formData.title}}" data-id="title"/>
+            <view class="arrowLogo"></view>
+        </view>
+    </view>
+    <view class="session">
+        <label>日程介绍</label>
+        <textarea placeholder="请输入内容" maxlength="-1" value="{{formData.content}}" bindinput="bindinputListener" data-id="content"/>
+    </view>
+    <view class="session">
+        <label>早餐</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入内容" value="{{formData.breakfast}}" data-id="breakfast"/>
+        </view>
+    </view>
+    <view class="session">
+        <label>中餐</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入内容" value="{{formData.lunch}}" data-id="lunch"/>
+        </view>
+    </view>
+    <view class="session">
+        <label>晚餐</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入内容" value="{{formData.supper}}" data-id="supper"/>
+        </view>
+    </view>
+    <view class="session">
+        <label>交通</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入内容" value="{{formData.transport}}" data-id="transport"/>
+        </view>
+    </view>
+    <view class="session">
+        <label>住宿</label>
+        <view class="itemBox">
+            <input  bindinput="bindinputListener" placeholder="请输入内容" value="{{formData.hotel}}" data-id="hotel"/>
+        </view>
+    </view>
+    <view class="btnArea">
+        <view bindtap="submit">确定</view>
+    </view>
+</form>

@@ -1,0 +1,72 @@
+page{
+	display: block;
+	min-height: 100%;
+	background-color:#fff;
+}
+.bindPhoneWrap{
+	width: 100%;
+	padding-left: 28rpx;
+	padding-right: 28rpx;
+	box-sizing: border-box;
+}
+.bindPhoneWrap .formBox{
+	width: 100%;
+  	padding-top: 40rpx;
+}
+.bindPhoneWrap .formBox .codeSection{
+	position: relative;
+}
+.bindPhoneWrap .formBox .clear::after{
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.bindPhoneWrap .formBox .section input{
+	width: 100%;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 32rpx;
+	color: #333333;
+	border-bottom: 1px solid #dddddd;
+}
+.bindPhoneWrap .formBox .lSection{
+  width: 70%;
+  height: 88rpx;
+  float: left;
+}
+.bindPhoneWrap .formBox .lSection input{
+	width: 100%;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 32rpx;
+	color: #333333;
+	border-bottom: 1px solid #dddddd;
+}
+.bindPhoneWrap .formBox .checkCodeBtnBox{
+	width: 30%;
+	height: 88rpx;
+	border-bottom: 1px solid #dddddd;
+	float: left;
+}
+.bindPhoneWrap .formBox .checkCodeBtn{
+	width: 100%;
+	height: 42rpx;
+	line-height: 42rpx;
+	font-size: 32rpx;
+	border-left: 1px solid #dddddd;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 22rpx;
+  text-decoration: underline;
+  color: #21c186;
+}
+.bindPhoneWrap .formBox .btn-area button{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	background-color: #21c186;
+	text-align: center;
+	font-size: 38rpx;
+	color:#fff;
+	margin-top: 90rpx;
+}

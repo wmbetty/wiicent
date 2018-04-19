@@ -1,0 +1,16 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{spotListData.length==0}}">
+    <template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="spotListBox">
+    <view class="spotItem" bindtap="editSpotDetail" wx:for="{{spotListData}}" wx:for-item="item" wx:for-index="index" data-id="{{item.id}}">
+        <view class="contentBox">
+            <view class="distance">{{item.startTime}}</view>
+            <view class="title">{{item.title}}</view>
+        </view>
+        <view class="arrowLogo"></view>
+    </view>
+</view>
+</block>
+<view class="addLogo" bindtap="addSpotDetail"><image src="../../dist/images/add.png"></image></view>

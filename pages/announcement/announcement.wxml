@@ -1,0 +1,10 @@
+<view class="blackboardBox">
+    <form bindsubmit="submit">
+        <view>
+            <textarea class="blackboard" placeholder="请输入内容" focus="true" maxlength="-1" value="{{blackboardVal}}" bindinput="inputListener"/>
+        </view>
+        <view class="btnArea">
+            <button form-type="submit">发送</button>
+        </view>
+    </form>
+</view>

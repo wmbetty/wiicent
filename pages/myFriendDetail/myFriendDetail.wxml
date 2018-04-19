@@ -1,0 +1,19 @@
+<view class="personDetail">
+    <view class="person">
+        <image src="{{personInfoData.face}}"></image>
+        <view class="title1">{{personInfoData.name}}</view>
+        <view class="title2">位讯号:{{personInfoData.uid}}</view>
+    </view>
+    <view class="session">
+        <view class="label">性别</view><view class="value">{{personInfoData.gender}}</view>
+    </view>
+    <view class="session">
+        <view class="label">地区</view><view class="value">{{personInfoData.region}}</view>
+    </view>
+    <view class="session">
+        <view class="label">个性签名</view><view class="value">{{personInfoData.sign==''?'未设置':personInfoData.sign}}</view>
+    </view>
+    <view class="btnBox" wx:if="{{isAddFriend}}">
+        <view class="btn" bindtap="addNewFriend">添加好友</view>
+    </view>
+</view>

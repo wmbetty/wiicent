@@ -1,0 +1,29 @@
+<view class="searchSpotBox">
+    <view class="back-banner">
+        <image src="../../dist/images/500435576.png"></image>
+        <view class="fake-input" bindtap='gotoSearch'>搜索目的地、景点等</view>
+    </view>
+    <view class="spotListBox">
+        <view class="tabBox">
+            <scroll-view scroll-y style="height: {{listHeight}}px;">
+                <view data-index="0" data-name="热门" class="tab {{tabIndex * 1 === 0 ? 'active' : ''}}" bindtap="changeSpot">热门</view>
+                <view data-name="国内" data-index="1" class="tab {{tabIndex * 1 === 1 ? 'active' : ''}}" bindtap="changeSpot">国内</view>
+                <view data-name="亚洲" data-index="2" class="tab {{tabIndex * 1 === 2 ? 'active' : ''}}" bindtap="changeSpot">亚洲</view>
+                <view data-name="欧洲" data-index="3" class="tab {{tabIndex * 1 === 3 ? 'active' : ''}}" bindtap="changeSpot">欧洲</view>
+                <view data-name="非洲" data-index="4" class="tab {{tabIndex * 1 === 4 ? 'active' : ''}}" bindtap="changeSpot">非洲</view>
+                <view data-name="北美" data-index="5" class="tab {{tabIndex * 1 === 5 ? 'active' : ''}}" bindtap="changeSpot">北美</view>
+                <view data-name="南美" data-index="6" class="tab {{tabIndex * 1 === 6 ? 'active' : ''}}" bindtap="changeSpot">南美</view>
+                <view data-name="大洋洲" data-index="7" class="tab {{tabIndex * 1 === 7 ? 'active' : ''}}" bindtap="changeSpot">大洋洲</view>
+            </scroll-view>
+        </view>
+        
+        <view class="panelBox">
+            <scroll-view scroll-y="true" style="height: {{listHeight}}px;" bindscrolltolower="searchScrollLower">
+                <view class="item" wx:for="{{lastAreaList}}" wx:key="{{index}}">
+                    <image data-item="{{item}}" bindtap="goDetails" src="{{item.mcontentImage ? item.mcontentImage : '../../dist/images/line_bg.png' }}" class="itemPic"></image>
+                    <view class="itemName">{{item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+	</view>
+</view>

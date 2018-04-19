@@ -1,0 +1,47 @@
+<view class="box">
+  <view class="item" bindtap="getKeywords">
+    <view class="label">关键词</view>
+    <view class="value">{{formData.keywords==''?'请选择':formData.keywords}}</view>
+    <image src="../../dist/images/path.png" class="arrow"></image>
+  </view>
+  <view class="item">
+    <view class="label">营业时间</view>
+    <input type="text" class="value1" placeholder="请填写营业时间" value="{{formData.stayTime}}" data-id="stayTime" bindinput="inputListener"/>
+  </view>
+  <view class="item">
+    <view class="label">外语名称</view>
+    <input type="text" class="value1" placeholder="请填写外语名称" value="{{formData.enName}}" data-id="enName" bindinput="inputListener"/>
+  </view>
+  <view class="item">
+    <view class="label">联系电话</view>
+    <input type="number" class="value1" placeholder="请填写联系电话" value="{{formData.phone}}" data-id="phone" bindinput="inputListener"/>
+  </view>
+  <view class="item">
+    <view class="label">相关链接</view>
+    <input type="text" class="value1" placeholder="请填写相关链接" value="{{formData.link}}" data-id="link" bindinput="inputListener"/>
+  </view>
+  <view class="item" bindtap="getValue" data-name="推荐理由" data-role="abs">
+    <view class="label">推荐理由</view>
+    <view class="value">请选择</view>
+    <image src="../../dist/images/path.png" class="arrow"></image>
+  </view>
+  <view class="item" bindtap="getValue" data-name="实用贴士" data-role="notice">
+    <view class="label">实用贴士</view>
+    <view class="value">请选择</view>
+    <image src="../../dist/images/path.png" class="arrow"></image>
+  </view>
+  <view class="item" bindtap="getValue" data-name="如何到达" data-role="transportInfo">
+    <view class="label">如何到达</view>
+    <view class="value">请选择</view>
+    <image src="../../dist/images/path.png" class="arrow"></image>
+  </view>
+  <view class="item" bindtap="getValue" data-name="门票信息" data-role="addition">
+    <view class="label">门票信息</view>
+    <view class="value">请选择</view>
+    <image src="../../dist/images/path.png" class="arrow"></image>
+  </view>
+</view>
+
+<view class="btnBox">
+    <button disabled="{{false}}" bindtap="submit">保存</button>
+</view>

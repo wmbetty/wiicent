@@ -1,0 +1,13 @@
+<view class="projectIntroBox">
+    <form bindsubmit="submit">
+        <view class="costCategoryBox">
+    		<view class="sessionBox" wx:for="{{genderList}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" bindtap="changeCategory">
+        		<view class="sessionVal">{{item.name}}</view>
+        		<block wx:if="{{item.isSelect}}"><view class="selectLogo"></view></block>
+    		</view>
+    		<view class="btnArea">
+    		    <view bindtap="costCategorySubmit">确定</view>
+    		</view>
+		</view>
+    </form>
+</view>

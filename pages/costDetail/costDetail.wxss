@@ -1,0 +1,135 @@
+@import '../../component/nullTip/nullTip.wxss';
+.costDetailBox{
+	width: 100%;
+}
+.costDetailBox .costValBox{
+	width: 100%;
+	height: 200rpx;
+	border-bottom: 1px solid #dddddd;
+	padding:30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.costDetailBox .costValBox .title{
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 28rpx;
+	color: #999999;
+}
+.costDetailBox .costValBox .val{
+	width: 100%;
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 48rpx;
+	color: #333333;
+	margin-top: 40rpx;
+  text-align: center;
+}
+.costDetailBox .perdayCostBox{
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+}
+.costDetailBox .perdayCostBox .titleBox{
+	width: 100%;
+	height: 72rpx;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.costDetailBox .perdayCostBox .titleBox::after{
+	content:" ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.costDetailBox .perdayCostBox .titleBox .date{
+	height: 72rpx;
+	line-height: 72rpx;
+	float: left;
+	color: #999999;
+	font-size: 24rpx;
+}
+.costDetailBox .perdayCostBox .titleBox .val{
+	height: 72rpx;
+	line-height: 72rpx;
+	float: right;
+	color: #999999;
+	font-size: 24rpx;
+	text-align: right;
+}
+.costDetailBox .perdayCostBox .perCostBox{
+	width: 100%;
+	height: 162rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.costDetailBox .perdayCostBox .perCostBox .title{
+	width: 100%;
+	height: 44rpx;
+}
+.costDetailBox .perdayCostBox .perCostBox .title::after{
+	content:" ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.costDetailBox .perdayCostBox .perCostBox .title .name{
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 32rpx;
+	color: #333333;
+	float: left;
+  font-weight: bolder;
+}
+.costDetailBox .perdayCostBox .perCostBox .title .value{
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 32rpx;
+	color: #333333;
+	float: right;
+	text-align: right;
+  font-weight: bolder;
+}
+.costDetailBox .perdayCostBox .perCostBox .content{
+	width: 100%;
+	height: 44rpx;
+	margin-top: 22rpx;
+}
+.costDetailBox .perdayCostBox .perCostBox .content::after{
+	content:" ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.costDetailBox .perdayCostBox .perCostBox .content .time{
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 24rpx;
+	color: #999999;
+	float: left;
+}
+.costDetailBox .perdayCostBox .perCostBox .content .goDetail{
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 34rpx;
+	color: #999999;
+	float: right;
+	text-align: right;
+	text-decoration: underline;
+}
+.loading{
+	width:100%;
+	height:38rpx;
+	position:relative;
+	background-color:#fff;
+}
+.loading .loadinggif{
+	width:200rpx;
+	height:18rpx;
+	position:absolute;
+	top: 10rpx;
+	left:50%;
+	margin-left:-100rpx;
+}

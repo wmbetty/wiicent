@@ -1,0 +1,76 @@
+<block wx:if="{{isFormShow}}">
+<view class="tourDairyDetailBox">
+<view class="contentBox">
+    <textarea placeholder="请输入内容" maxlength="-1" value="{{formData.content}}" bindinput="inputListener" class="content" data-id="content"/>
+</view>
+<view class="iconBox">
+    <view class="locationBox" bindtap="goSelectPosition">
+        <image src="../../dist/images/ic_fabiaoweizhi.png"></image><view class="text">{{formData.address!=''?formData.address:'当前位置'}}</view>
+    </view>
+    <view class="album" bindtap="getAlbum">
+        <image src="../../dist/images/ic_xiangce.png"></image>
+    </view>
+    <view class="photo" bindtap="getPhoto">
+        <image src="../../dist/images/ic_xiangji.png"></image>
+    </view>
+</view>
+<scroll-view scroll-x class="picListBox" wx:if="{{formData.file!=''}}">
+    <image src="{{formData.file}}"></image>
+</scroll-view>
+<view class="itemBox">
+    <view class="title">添加标签</view>
+    <picker disabled>
+        <view class="item" bindtap="goAddStatus">
+            {{formData.keywords!=''?formData.keywords:'请添加'}}
+        </view>
+    </picker>
+</view>
+
+<view class="itemBox">
+    <view class="title">可见范围</view>
+    <picker bindchange="inputListener" value="{{formData.privilege}}" range="{{privilegeData}}"  data-id="privilege">
+        <view class="item">
+            {{privilegeData[formData.privilege]}}
+        </view>
+    </picker>
+</view>
+
+<view class="itemBox">
+    <view class="title">定时设置</view>
+    <picker bindchange="inputListener" value="{{formData.expiredType}}" range="{{expiredTypeData}}" data-id="expiredType">
+        <view class="item">
+            {{expiredTypeData[formData.expiredType]}}
+        </view>
+    </picker>
+</view>
+
+<view class="btnArea">
+    <view bindtap="submit">确定</view>
+</view>
+</view>
+</block>
+<block wx:if="{{isAddStatus}}">
+    <view class="addKeyBox" style="height:{{height}}px;">
+        <view class="keyBox">
+            <input type="text" name="status" value="{{newStatus}}" bindinput="bindinputStatus"/>
+            <view class="addKeyword" bindtap="addStatus">添加</view>
+        </view>
+        <view class="keywordListBox">
+            <view class="keywordItem" wx:for="{{statusList}}" wx:for-item="item" wx:for-index="index" bindtap="changeStatusSelect" data-index="{{index}}">
+                <block wx:if="{{item.isSelect}}">
+                    <view class="selectKeyword">
+                        {{item.keyword}}
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="unselectKeyword">
+                        {{item.keyword}}
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="addKeywordBtnBox">
+            <button bindtap="addStatusBtn">保存</button>
+        </view>
+    </view>
+</block>

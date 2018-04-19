@@ -1,0 +1,96 @@
+.roomNumBox{
+	width: 100%;
+	height: 390rpx;
+	position: relative;
+}
+.roomNumBox .key{
+	width: 166rpx;
+	height: 166rpx;
+	position: absolute;
+	left: 50%;
+	top: 48rpx;
+	margin-left: -83rpx;
+}
+.roomNumBox .myRoom{
+	width: 100%;
+	text-align: center;
+	font-size: 56rpx;
+	color: #fff;
+	position: absolute;
+	top: 240rpx;
+	left: 0;
+}
+.roomNumBox .touristRoom{
+	width: 100%;
+	text-align: center;
+	font-size: 32rpx;
+	color: #fff;
+	position: absolute;
+	top: 312rpx;
+	left: 0;
+}
+.titleBox{
+	width: 100%;
+	padding-left: 36rpx;
+	padding-right: 36rpx;
+	box-sizing: border-box;
+	margin-top:20rpx;
+	margin-bottom:20rpx;
+}
+.titleBox .title{
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	border-left: 3px solid #ff8c00;
+	padding-left: 20rpx;
+	font-size: 28rpx;
+	color: #999999;
+	box-sizing: border-box;
+}
+.personListBox{
+	width: 100%;
+	padding-left: 36rpx;
+	padding-right: 36rpx;
+	box-sizing: border-box;
+}
+.personListBox .personList{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 20rpx;
+	padding-left: 30rpx;
+	box-sizing: border-box;
+	border: 1px solid #dddddd;
+}
+.personListBox .person1{
+	height: 78rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.personListBox .person2{
+	height: 150rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.personListBox .person3{
+	height: 220rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.personListBox .personList .person{
+	width: 100%;
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 28rpx;
+	color: #333333;
+	margin-bottom: 18rpx;
+	margin-top: 18rpx;
+	box-sizing: border-box;
+}
+.personListBox .personList .person image{
+	width: 66rpx;
+	height: 38rpx;
+	margin-top: 4rpx;
+	margin-right: 26rpx;
+	display: block;
+	float:left;
+}

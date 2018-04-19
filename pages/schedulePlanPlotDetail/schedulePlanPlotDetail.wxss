@@ -1,0 +1,67 @@
+page{
+	display: block;
+	min-height: 100%;
+	background-color:#fff;
+}
+.spotDetailBox{
+	width: 100%;
+}
+.spotDetailBox .spotBg{
+	width: 100%;
+	height: 420rpx;
+	position:relative;
+}
+.spotDetailBox .spotBg .voiceBtn{
+	width:90rpx;
+	height:90rpx;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-top:-45rpx;
+	margin-left:-45rpx;
+}
+.spotDetailBox .title{
+	width: 100%;
+	font-size: 36rpx;
+	color: #333333;
+	text-align: center;
+	margin-top: 60rpx;
+}
+.spotDetailBox .enTitle{
+	width: 100%;
+	font-size: 24rpx;
+	color: #999999;
+	text-align: center;
+	margin-top: 28rpx;
+}
+.spotDetailBox .infoBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.spotDetailBox .infoBox .info{
+	font-size: 24rpx;
+	color: #999999;
+	margin-left: 48rpx;
+	margin-top: 20rpx;
+}
+.spotDetailBox .content{
+	width: 100%;
+	font-size: 28rpx;
+	color: #333333;
+	line-height: 60rpx;
+	margin-top: 60rpx;
+	padding-left:30rpx;
+	box-sizing:border-box;
+	padding-bottom:30rpx;
+}
+.spotDetailBox .editContent{
+	margin-top:30rpx;
+	width: 100%;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #ff8c00;
+	font-size: 28rpx;
+}

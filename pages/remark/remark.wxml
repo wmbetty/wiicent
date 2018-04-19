@@ -1,0 +1,8 @@
+<view class="remarkBox">
+    <view class="session">
+    	<textarea placeholder="请留下您的宝贵意见" maxlength="-1" auto-focus bindinput="bindinput" value="{{remark}}"/>
+    </view>
+    <view class="btnArea">
+        <view bindtap="submit">提交</view>
+    </view>
+</view>

@@ -1,0 +1,181 @@
+.searchBox{
+	width:100%;
+	margin-top:30rpx;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.search{
+	width:100%;
+	height:80rpx;
+	border-radius:20rpx;
+	background-color:#fff;
+	position:relative;
+	line-height:80rpx;
+	font-size:28rpx;
+	color:#999999;
+	padding-left:82rpx;
+	box-sizing:border-box;
+}
+.searchIcon{
+	width:40rpx;
+	height:40rpx;
+	position:absolute;
+	top:20rpx;
+	left:30rpx;
+}
+.perBox{
+	width: 100%;
+	height: 100rpx;
+	white-space: nowrap;
+	background-color:#fff;
+	padding-top:21rpx;
+	box-sizing:border-box;
+	position:fixed;
+	bottom:0;
+	border-top:1px solid #dddddd;
+}
+.perBox .actPerItem{
+	height: 58rpx;
+	width:136rpx;
+	text-align:center;
+	line-height: 58rpx;
+	font-size: 26rpx;
+	margin-left: 6rpx;
+	margin-right: 6rpx;
+	display: inline-block;
+	border-radius:29rpx;
+}
+.infoBox{
+	width:100;
+	background-color:#fff;
+	margin-top:40rpx;
+}
+.cardBox{
+	width:100%;
+	height:192rpx;
+	position:relative;
+}
+.cardBox .cardPic{
+	width:40rpx;
+	height:40rpx;
+	position:absolute;
+	top: 28rpx;
+	left:30rpx;
+}
+.cardBox .cardTitle{
+	font-size:32rpx;
+	color:#333333;
+	position:absolute;
+	top:28rpx;
+	left:90rpx;
+}
+.cardBox .cardEntitle{
+	font-size:24rpx;
+	color:#999999;
+	position:absolute;
+	top:96rpx;
+	left:30rpx;
+}
+.cardBox .cardDes{
+	font-size:28rpx;
+	color:#999999;
+	position:absolute;
+	top:146rpx;
+	left:30rpx;
+}
+.cardBox .cardDis{
+	font-size:28rpx;
+	color:#999999;
+	position:absolute;
+	top:146rpx;
+	right:30rpx;
+}
+.contentBox{
+	width:100%;
+}
+.contentBox .contentPic{
+	width:100%;
+	over-flow:hidden;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.contentBox .contentText{
+	width:100%;
+	height:240rpx;
+	font-size:28rpx;
+	color:#999999;
+	line-height:52rpx;
+	margin-top:12rpx;
+	white-space:normal;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.contentBox .authorBox{
+	width:100%;
+	height:132rpx;
+	position:relative;
+}
+.contentBox .authorBox .authorFace{
+	width:76rpx;
+	height:76rpx;
+	position:absolute;
+	top:30rpx;
+	left:30rpx;
+}
+.contentBox .authorBox .authorName{
+	font-size:24rpx;
+	color:#999999;
+	position:absolute;
+	top:36rpx;
+	left:136rpx;
+}
+.contentBox .authorBox .time{
+	font-size:24rpx;
+	color:#999999;
+	position:absolute;
+	top:80rpx;
+	left:136rpx;
+}
+.contentBox .shopBox{
+	padding-top:20rpx;
+	background-color:#f7f7f7;
+	border-bottom:1px solid #dddddd;
+}
+.contentBox .shopBox .shopItem{
+	width:100%;
+	padding-top:14rpx;
+	padding-bottom:14rpx;
+	font-size:30rpx;
+	color:#333333;
+	background-color:#fff;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.contentBox .more{
+	width:100%;
+	height:90rpx;
+	line-height:90rpx;
+	font-size:32rpx;
+	color:#999999;
+	text-align:center;
+}
+.addLogo{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  position: fixed;
+  right: 58rpx;
+  bottom: 120rpx;
+  background-color: #5baef3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.addLogo image{
+  width:56rpx;
+  height:56rpx;
+}

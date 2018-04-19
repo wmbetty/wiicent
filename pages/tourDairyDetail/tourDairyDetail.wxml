@@ -1,0 +1,49 @@
+<scroll-view scroll-y style="height:{{height-51}}px;" bindscrolltolower="loadMore">
+<view class="lineDairyBox">
+    <view class="lineDairyListBox">
+        <view class="dayBox">
+            <view class="authorInfoBox">
+                <image src="{{tourDetailData.authorFace}}" class="authorFace"></image>
+                <view class="authorName">{{tourDetailData.authorName}}</view>
+                <view class="date">{{tourDetailData.uptime}}</view>
+            </view>
+            <view class="content">{{tourDetailData.content}}</view>
+            <view class="picBox" wx:if="{{tourDetailData.bcontentImage!=''}}">
+                <image src="{{tourDetailData.bcontentImage}}" class="pic" data-src="{{tourDetailData.bcontentImage}}" bindtap="zoomPic"></image>
+                <view class="keywords">{{tourDetailData.keywords}}</view>
+            </view>
+            <view class="likereplyBox">
+                <view class="iconBox">
+                    <image src="../../dist/images/ic_feed_comment3.png" class="icon">
+                    </image>{{tourDetailData.coComment!=0?tourDetailData.coComment:'评论'}}
+                </view>
+                <view class="iconBox" wx:if="{{tourDetailData.isLoved==0}}" bindtap="love" data-id="{{tourDetailData.id}}" data-sourcetype="{{tourDetailData.blogType}}">
+                    <image src="../../dist/images/ic_xqy_shoucang3_normal.png" class="icon">
+                    </image>{{tourDetailData.coLove!=0?tourDetailData.coLove:'喜欢'}}
+                </view>
+                <view class="iconBox" wx:if="{{tourDetailData.isLoved==1}}" bindtap="cancelLove" data-id="{{tourDetailData.id}}" data-sourcetype="{{tourDetailData.blogType}}">
+                    <image src="../../dist/images/ic_feed_love_act@3x.png" class="icon">
+                    </image>{{tourDetailData.coLove!=0?tourDetailData.coLove:'喜欢'}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="commentBox">
+    <view class="comment" wx:for="{{commentListData}}" wx:for-index="index" wx:for-item="item">
+        <view class="faceBox">
+            <image src="{{item.subFace}}" class="face"></image>
+        </view>
+        <view class="infoBox">
+            <view class="name">{{item.subName}}</view>
+            <view class="date">{{item.uptime}}</view>
+            <view class="content">{{item.content}}</view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+
+<view class="_bt_text_box">
+    <input type="text" class="_btn_text" placeholder="请输入评论内容吧~~" value="{{commentVal}}" maxlength="-1" bindinput="inputListener" confirm-type="发表" bindconfirm="sendComment"/>
+</view>

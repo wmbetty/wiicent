@@ -1,0 +1,6 @@
+<view>
+  <textarea class="blackboard" placeholder="请输入内容" focus="true" maxlength="-1" value="{{value}}" bindinput="inputListener"/>
+</view>
+<view class="btnArea">
+  <button bindtap="submit">确定</button>
+</view>

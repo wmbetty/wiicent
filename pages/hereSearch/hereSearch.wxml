@@ -1,0 +1,27 @@
+<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+  <view class="searchBox">
+    <view class="lBox">
+      <image src="../../dist/images/spot_search_icon.png" class="icon"></image>
+      <input type="text" bindinput="bindSearchInput" value="{{searchSpot}}" bindconfirm="searchBtn" confirm-type="搜索" placeholder="搜索景点等关键词"/>
+    </view>
+    <view class="rBox" bindtap="cancel">取消</view>
+  </view>
+
+    <scroll-view scroll-x style="height:50px;">
+      <view class="perBox">
+        <view class="actPerItem" wx:for="{{menuListData}}" wx:for-item="item" data-id="{{index}}" bindtap="tapMenu" style="background-color:{{item.isSelect?item.color:'#fff'}};color:{{item.isSelect?'#fff':'#333333'}};">{{item.name}}</view>
+      </view>
+    </scroll-view>
+
+    <view class="spotListBox">
+      <view class="spotItem" bindtap="viewDetail" wx:for="{{spotListData}}" wx:for-item="item" wx:for-index="index" data-id="{{item.realId}}">
+          <image src="{{item.mcontentImage}}"></image>
+          <view class="contentBox">
+              <view class="title">{{item.title}}</view>
+              <view class="intro">{{item.middleTwo}}</view>
+              <view class="keyword">{{item.middleOne}}</view>
+          </view>
+          <view class="distance">{{item.distance}}千米</view>
+      </view>
+  </view>
+</scroll-view>

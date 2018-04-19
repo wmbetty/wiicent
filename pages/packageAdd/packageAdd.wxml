@@ -1,0 +1,13 @@
+<view class="packageAddBox">
+  <view class="itemBox">
+    <view class="label">名称</view>
+    <input type="text" bindinput="inputListener" value="{{name}}" placeholder="请填写名称"/>
+  </view>
+  <view class="itemBox">
+    <view class="label">类别</view>
+    <view class="text">自定义</view>
+  </view>
+</view>
+<view class="btnBox">
+  <button bindtap="submit">确定</button>
+</view>

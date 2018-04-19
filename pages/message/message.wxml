@@ -1,0 +1,26 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{noMessage}}">
+	<template is="nullTip"/>
+</block>
+<block wx:else>
+	<view class="messageWrap">
+		<view class="messageItem" bindtap="goLineMesList">
+			<image src="../../dist/images/ic_xx_xingchengxiaoxi.png" class="mesIcon"></image>
+			<view class="mesTitleContent">
+				<view class="mesTitle">行程消息</view>
+				<view class="mesContent" wx:if="{{lineMesData.content.length>0}}">[{{lineMesData.status==0?'未读':'已读'}}]{{lineMesData.content}}</view>
+				<view class="mesContent" wx:else>暂无消息</view>
+			</view>
+			<view class="mesDate">{{lineMesData.uptime}}</view>
+		</view>
+		<view class="messageItem" bindtap="goSystemMessage">
+			<image src="../../dist/images/ic_xx_xitongxiaoxi.png" class="mesIcon"></image>
+			<view class="mesTitleContent">
+				<view class="mesTitle">系统消息</view>
+				<view class="mesContent" wx:if="{{sysMesData.content.length>0}}">[{{sysMesData.status==0?'未读':'已读'}}]{{sysMesData.content}}</view>
+				<view class="mesContent" wx:else>暂无消息</view>
+			</view>
+			<view class="mesDate">{{sysMesData.uptime}}</view>
+		</view>
+	</view>
+</block>

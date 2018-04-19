@@ -1,0 +1,39 @@
+<view class="addRoomWrap">
+    <view class="sessionBox">
+        <view class="session">
+            <view class="sessionL">
+                <image src="../../dist/images/fenfang_add.png"></image>
+                <image src="../../dist/images/fenfang_add.png"></image>
+                <image src="../../dist/images/fenfang_add.png"></image>
+                三人间
+            </view>
+            <view class="sessionR">
+                <input type="number" bindinput="inputListener" data-id="three" value="{{roomData.three}}" placeholder="输入间数"/>
+            </view>
+
+        </view>
+        <view class="session">
+            <view class="sessionL">
+                <image src="../../dist/images/fenfang_add.png"></image>
+                <image src="../../dist/images/fenfang_add.png"></image>
+                二人间
+            </view>
+            <view class="sessionR">
+                <input type="number" bindinput="inputListener" data-id="double" value="{{roomData.double}}" placeholder="输入间数"/>
+            </view>
+        </view>
+        <view class="session">
+            <view class="sessionL">
+                <image src="../../dist/images/fenfang_add.png"></image>
+                单人间
+            </view>
+            <view class="sessionR">
+                <input type="number" bindinput="inputListener" data-id="single" value="{{roomData.single}}" placeholder="输入间数"/>
+            </view>
+        </view>
+    </view>
+    <view class="des">共{{roomData.total}}间房，可住{{roomData.totalPerson}}人</view>
+    <view class="btnArea">
+        <button class="btn" bindtap="submit" disabled="{{roomData.isAdd}}">确定</button>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{costListData.length==0}}">
+    <template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="costDetailBox">
+    <scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+    <view class="costValBox">
+        <view class="title">行程累计花费：</view>
+        <view class="val">￥{{totalAmount}}</view>
+    </view>
+    <view class="perdayCostBox" wx:for="{{costListData}}" wx:for-item="item" wx:for-index="index">
+        <view class="perCostBox">
+            <view class="title"><view class="name">{{item.keywords}}</view><view class="value">￥{{item.amount}}</view></view>
+            <view class="content"><view class="time">{{item.dateTime}}</view><view class="goDetail" bindtap="goCostView" data-jid="{{item.jid}}">详情</view></view>
+        </view>
+    </view>
+    </scroll-view>
+</view>
+</block>

@@ -1,0 +1,414 @@
+page{
+	display: block;
+	min-height: 100%;
+	background-color:#152c53;
+}
+.schedulePlanBox{
+  width: 100%;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom:200rpx;
+  box-sizing: border-box;
+}
+.greenBox::after{
+	content:" ";
+	display:block;
+	clear:both;
+	height:0;
+}
+.greenBox::before{
+	content:" ";
+	display:block;
+	clear:both;
+	height:0;
+}
+.orangeBox::after{
+	content:" ";
+	display:block;
+	clear:both;
+	height:0;
+}
+.orangeBox::before{
+	content:" ";
+	display:block;
+	clear:both;
+	height:0;
+}
+.schedulePlanBox .rperdayBox{
+	float:right;
+	width: 50%;
+	border-left: 1px solid #fff;
+	box-sizing:border-box;
+	padding-top:80rpx;
+	margin-right:0.5px;
+}
+.schedulePlanBox .lperdayBox{
+	float:left;
+	width: 50%;
+	border-right: 1px solid #fff;
+	box-sizing:border-box;
+	padding-top:80rpx;
+	margin-left:0.5px;
+}
+.schedulePlanBox .rperdayBox .dayTitle{
+	width: 170rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background-color: #ffd201;
+	font-size: 28rpx;
+	color: #333333;
+	text-align: center;
+	margin-left: -85rpx;
+	border-radius:30rpx;
+	float:left;
+}
+.schedulePlanBox .rperdayBox .orangeBox{
+	width: 100%;
+	margin-top: 80rpx;
+	height: 212rpx;
+	position: relative;
+}
+.schedulePlanBox .rperdayBox .greenBox{
+	width: 100%;
+	margin-top: 40rpx;
+	height: 212rpx;
+	position: relative;
+}
+.schedulePlanBox .rperdayBox .orangeBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.schedulePlanBox .rperdayBox .greenBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.schedulePlanBox .rperdayBox .line{
+	width: 25%;
+	height: 68rpx;
+	border-bottom: 1px solid #fff;
+	box-sizing: border-box;
+	float: left;
+}
+.schedulePlanBox .rperdayBox .innerBox{
+	width: 75%;
+	height: 212rpx;
+	border-radius: 20rpx;
+	float: left;
+	overflow:hidden;
+}
+.schedulePlanBox .orangeBox .innerBox .contentBox{
+	width: 100%;
+	height: 142rpx;
+	padding: 24rpx;
+	box-sizing: border-box;
+	overflow:hidden;
+	background-color: #fd8238;
+	font-size: 24rpx;
+	color: #fff;
+	line-height: 32rpx;
+}
+.schedulePlanBox .greenBox .innerBox .contentBox{
+	width: 100%;
+	height: 142rpx;
+	overflow: hidden;
+	position: relative;
+	background-color: #7cbb00;
+}
+.schedulePlanBox .greenBox .innerBox .contentBox image{
+	width: 100%;
+	height:142rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.schedulePlanBox .greenBox .innerBox .contentBox .title{
+	width: 100%;
+	position: absolute;
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #fff;
+	bottom: 0;
+	left: 0;
+	padding-left:30rpx;
+	box-sizing:border-box;
+}
+.schedulePlanBox .innerBox .linkBox{
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background-color: #fff;
+	font-size: 28rpx;
+	text-decoration: underline;
+	color: #333333;
+}
+.schedulePlanBox .rperdayBox .orangeLogo{
+	width: 96rpx;
+	height: 96rpx;
+	position: absolute;
+	top: 20rpx;
+	left: -48rpx;
+	z-index: 3;
+	background-size: 96rpx 96rpx;
+	background-repeat: no-repeat;
+}
+.schedulePlanBox .rperdayBox .time{
+	width: 162rpx;
+	height: 96rpx;
+	line-height:96rpx;
+	position: absolute;
+	top: 20rpx;
+	left: -212rpx;
+	font-size:28rpx;
+	color:#fff;
+	text-align:center;
+}
+.schedulePlanBox .rperdayBox .greenLogo{
+	width: 96rpx;
+	height: 96rpx;
+	position: absolute;
+	top: 20rpx;
+	left: -48rpx;
+	z-index: 3;
+	background-size: 96rpx 96rpx;
+	background-repeat: no-repeat;
+}
+.schedulePlanBox .lperdayBox .dayTitle{
+	width: 170rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background-color: #ffd201;
+	font-size: 28rpx;
+	color: #333333;
+	text-align: center;
+	float:right;
+	margin-right: -85rpx;
+	border-radius:30rpx;
+}
+.schedulePlanBox .lperdayBox .orangeBox{
+	width: 100%;
+	margin-top: 80rpx;
+	height: 212rpx;
+	position: relative;
+}
+.schedulePlanBox .lperdayBox .greenBox{
+	width: 100%;
+	margin-top: 40rpx;
+	height: 212rpx;
+	position: relative;
+}
+.schedulePlanBox .lperdayBox .orangeBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.schedulePlanBox .lperdayBox .greenBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.schedulePlanBox .lperdayBox .line{
+	width: 25%;
+	height: 68rpx;
+	border-bottom: 1px solid #fff;
+	box-sizing: border-box;
+	float: right;
+}
+.schedulePlanBox .lperdayBox .innerBox{
+	width: 75%;
+	height: 212rpx;
+	border-radius: 20rpx;
+	float: right;
+	overflow:hidden;
+}
+.schedulePlanBox .lperdayBox .orangeLogo{
+	width: 96rpx;
+	height: 96rpx;
+	position: absolute;
+	top: 20rpx;
+	right: -48rpx;
+	z-index: 3;
+}
+.schedulePlanBox .lperdayBox .time{
+	width: 162rpx;
+	height: 96rpx;
+	line-height:96rpx;
+	position: absolute;
+	top: 20rpx;
+	right: -212rpx;
+	font-size:28rpx;
+	color:#fff;
+	text-align:center;
+}
+.schedulePlanBox .lperdayBox .greenLogo{
+	width: 96rpx;
+	height: 96rpx;
+	position: absolute;
+	top: 20rpx;
+	right: -48rpx;
+	z-index: 3;
+}
+.clear{
+	width:100%;
+	height:0;
+	clear:both;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}
+.scheduleDetail{
+	width:100%;
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	box-sizing: border-box;
+	background-color:#fff;
+}
+.scheduleDetail .title{
+	width: 100%;
+	padding-top: 34rpx;
+	font-size: 28rpx;
+	color: #fd8238;
+	line-height: 34rpx;
+}
+.scheduleDetail .content{
+	width: 100%;
+	padding-top: 30rpx;
+	font-size: 24rpx;
+	color: #999999;
+	line-height: 54rpx;
+	padding-bottom:20rpx;
+}
+.scheduleDetail .list{
+	width: 100%;
+	height: 72rpx;
+	line-height: 72rpx;
+	font-size: 28rpx;
+	color: #333333;
+}
+.spotDetailBox{
+	width: 100%;
+	background-color:#fff;
+}
+.spotDetailBox image{
+	width: 100%;
+	height: 420rpx;
+	overflow: hidden;
+}
+.spotDetailBox .title{
+	width: 100%;
+	font-size: 36rpx;
+	color: #333333;
+	text-align: center;
+	margin-top: 60rpx;
+}
+.spotDetailBox .enTitle{
+	width: 100%;
+	font-size: 24rpx;
+	color: #999999;
+	text-align: center;
+	margin-top: 28rpx;
+}
+.spotDetailBox .infoBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.spotDetailBox .infoBox .info{
+	font-size: 24rpx;
+	color: #999999;
+	margin-left: 48rpx;
+	margin-top: 20rpx;
+}
+.spotDetailBox .content{
+	width: 100%;
+	font-size: 28rpx;
+	color: #333333;
+	line-height: 60rpx;
+	margin-top: 60rpx;
+	padding-left:30rpx;
+	box-sizing:border-box;
+	padding-bottom:30rpx;
+}
+.spotDetailBox .editContent{
+	margin-top:30rpx;
+	width: 100%;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #ff8c00;
+	font-size: 28rpx;
+}
+
+.session label{
+	width: 100%;
+	padding-left: 30rpx;
+	box-sizing: border-box;
+	height: 68rpx;
+	line-height: 68rpx;
+	color: #999999;
+	font-size: 28rpx;
+	margin-top: 20rpx;
+  	display: block;
+}
+.session .itemBox{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	padding-left: 30rpx;
+  	padding-right: 30rpx;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	color: #999999;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+  	background-color: #fff;
+  	position:relative;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #fd8238;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}
+.session .itemBox .arrowLogo{
+	width: 34rpx;
+	height: 34rpx;
+	position: absolute;
+	top: 24rpx;
+	right: 30rpx;
+	background-size: 34rpx 34rpx;
+	background-repeat: no-repeat;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjg0MDNBNEIwMDhDOTExRTg4NEYzODA5MjY3QzM3N0VDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjg0MDNBNEIxMDhDOTExRTg4NEYzODA5MjY3QzM3N0VDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODQwM0E0QUUwOEM5MTFFODg0RjM4MDkyNjdDMzc3RUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODQwM0E0QUYwOEM5MTFFODg0RjM4MDkyNjdDMzc3RUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Z94yVAAABpklEQVR42mL8//8/w2ACTAyDDIw6iBBgIUbRiRNnqWKZhYUxTUIoBYjnAjHzgIUQEsgA4mlAzAjEHEAcB8R/ByoN5SA5BgSigHgFELMNlIPkkBwDAyFAvJqajiLFQWVAXA7E6CWpHxCvh0Yh3bN9FxCnYkk3XkC8CYi5BqIcAuWwUCD+gSbuCsTbgJhnIArG9dBQ+YQmbg/EO4CYfyBK6v1A7ATEr9DErYF4NxALDkTVASrCbYH4IZq4KRDvBWKRgajLbkFD5RqauCHUUWIDUbk+hYbUSTRxPSA+AMSSA1HbvwPiBCD+gyauCcSLB8JB8tBsj14/gtJXGr0dpAjEB6E0MrgPxA5AfI+eDlKGphN5NPG7UMc8oGeiVoOGjByWnAcqJB/RM9trQENGGk38BjRkntKzYNTCkZ2vQR3znJ5VB6xsEUcTvwR1zEt6Vq4G0NJXFE38AhA7A/FrejY/jHDUT+egjnlD7wbaPyxN2NNQx7wbiCYsKFrcgPgjlH8c2ij7MJA91zNA7AmtIjyQHDdg/TJYyHiPmL494+j40KiDKAQAAQYA2kxPrqHhacgAAAAASUVORK5CYII=);
+}

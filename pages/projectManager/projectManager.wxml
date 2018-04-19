@@ -1,0 +1,63 @@
+
+
+  <view class="searchBox">
+    <image src="../../dist/images/spot_search_icon.png" wx:if="{{isIconShow}}"></image>
+    <input type="text" placeholder="搜索" value="{{queryData.title}}" bindinput="searchInput" bindconfirm="searchTitle"/>
+  </view>
+  <view class="queryTabBox">
+    <view class="queryTab" wx:for="{{tabList}}" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" data-rid="{{item.rid}}" bindtap="tapTab">
+      <view class="text" style="color:{{item.isActive?'#09ba79':'#999999'}};">{{item.text}}</view>
+      <image src="../../dist/images/up_arrow.png" wx:if="{{item.isActive}}"></image>
+      <image src="../../dist/images/down_arrow.png" wx:else></image>
+    </view>
+    <view class="queryTab">
+      <picker mode="date" bindchange="tapDate" value="{{queryData.startDate}}" bindcancel="cancelDate">
+        <view class="text">{{queryData.startDate}}</view>
+      </picker>
+      <image src="../../dist/images/down_arrow.png"></image>
+    </view>
+  </view>
+  <view class="queryTabPanel" style="height:{{height-103}}px;" wx:if="{{isOrderShow}}">
+    <view class="shadow"></view>
+    <view class="queryStateList">
+      <view class="queryStateItem" wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index" style="color:{{item.isSelect?'#09ba79':'#333333'}};" data-index="{{index}}" bindtap="tapOrder">
+        {{item.text}}<image wx:if="{{item.isSelect}}" src="../../dist/images/query_icon.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="queryTabPanel" style="height:{{height-103}}px;" wx:if="{{isStateShow}}">
+    <view class="shadow"></view>
+    <view class="queryStateList">
+      <view class="queryStateItem" wx:for="{{stateList}}" wx:for-item="item" wx:for-index="index" style="color:{{item.isSelect?'#09ba79':'#333333'}};" data-index="{{index}}" bindtap="tapState">
+        {{item.text}}<image wx:if="{{item.isSelect}}" src="../../dist/images/query_icon.png"></image>
+      </view>
+    </view>
+  </view>
+<view class="lineWrapBox">
+<scroll-view scroll-y style="height:{{height-103}}px;" bindscrolltolower="loadMore">
+<block wx:for="{{projectListData}}" wx:for-item="item" wx:for-index="index">
+  <view class="lineWrap" data-xid="{{item.xid}}" data-xchsn="{{item.xchSn}}" bindtap="viewProjectDetail">
+    <view class="lineBox">
+      <view class="lineInfo">
+        <image src="{{item.authorFace}}" class="touristPic"></image>
+        <view class="nameAndXch">
+          <view class="name">{{item.authorName}}</view>
+          <view class="xch">{{item.xchSn}}</view>
+        </view>
+        <view class="lineState">{{tripStatus[item.tripStatus]}}</view>
+      </view>
+      <view class="lineFromTo">
+        <view class="from">{{item.startCity}}</view><view class="day">{{item.coDay}}天</view><view class="person">{{item.coTourist}}人</view><view class="to">{{item.destiCity}}</view>
+      </view>
+      <view class="startEndDate">
+        <view class="startDate">{{item.startDate}}</view><view class="endDate">{{item.finishDate}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+</scroll-view>
+</view>
+
+<view class="addLogo" bindtap="addMaterialDetail"><image src="../../dist/images/add.png"></image></view>
+
+

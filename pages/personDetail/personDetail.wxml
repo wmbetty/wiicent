@@ -1,0 +1,87 @@
+<view class="renyuanDetailBox">
+    <block wx:if="{{isAddIdentity}}">
+        <view class="addIdentityBox">
+            <view class="identityBox">
+                <input type="text" name="identity" value="{{newIdentity}}" bindinput="bindinputIdentity"/>
+                <view class="addIdentity" bindtap="addIdentity">添加</view>
+            </view>
+            <view class="identityListBox">
+                <view class="identityItem" wx:for="{{identityList}}" wx:for-item="item" wx:for-index="index" bindtap="changeIdentitySelect" data-index="{{index}}">
+                    <block wx:if="{{item.isSelect}}">
+                        <view class="selectIdentity">
+                            {{item.identity}}
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="unselectIdentity">
+                            {{item.identity}}
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view class="addIdentityBtnBox">
+                <button bindtap="addIdentityBtn">保存</button>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{isFormShow}}">
+    <form>
+        <view class="session">
+            <label for="name">真实姓名</label>
+            <input type="text" data-id="name" value="{{renyuanData.name}}" placeholder="请输入真实姓名" bindinput="inputListener"/>
+        </view>
+        <picker bindchange="inputListener" data-id="gender" value="{{renyuanData.gender}}" range="{{genderList}}">
+        <view class="session">
+            <label for="gender">性别</label>
+            <view class="itemBox1">
+                <view class="text">{{renyuanData.gender}}</view>
+                <image src="../../dist/images/path.png" class="arrowLogo"></image>
+            </view>
+        </view>
+        </picker>
+        <picker mode="date" value="{{renyuanData.birthday}}" data-id="birthday" bindchange="inputListener">
+        <view class="session">
+            <label for="birthday">出生日期</label>
+            <view class="itemBox1">
+                <view class="text">{{renyuanData.birthday}}</view>
+                <image src="../../dist/images/path.png" class="arrowLogo"></image>
+            </view>
+        </view>
+        </picker>
+        <view class="session">
+            <label for="mobile">手机号</label>
+            <input type="number" data-id="mobile" value="{{renyuanData.mobile}}" placeholder="请输入手机号" bindinput="inputListener" />
+        </view>
+        <view class="session">
+            <label for="identity">身份类别</label>
+            <view class="itemBox1" bindtap="goAddIdentity">{{renyuanData.identity}}
+                <image src="../../dist/images/path.png" class="arrowLogo"></image>
+            </view>
+        </view>
+        <view class="session mr" wx:if="{{isAdd}}">
+            <label>查看位置</label>
+            <view class="itemBox" bindtap="openLocation">
+                <image src="../../dist/images/path.png" class="arrowLogo"></image>
+            </view>
+        </view>
+        <view class="session mr" wx:if="{{isAdd}}">
+            <label>房号</label>
+            <view class="itemBox" bindtap="viewRoom">
+                <image src="../../dist/images/path.png" class="arrowLogo"></image>
+            </view>
+        </view>
+
+        <textarea data-id="remark" placeholder="备注说明" maxlength="-1" value="{{renyuanData.remark}}" bindinput="inputListener"/>
+
+
+        <view class="btnArea">
+            <button bindtap="submit">保存</button>
+        </view>
+        <block wx:if="{{isAdd}}">
+        <view class="btnArea1">
+            <button bindtap="makeCall">拨打电话</button>
+        </view>
+        </block>
+    </form>
+    </block>
+</view>

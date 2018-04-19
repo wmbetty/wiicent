@@ -1,0 +1,23 @@
+<view class="addKeyBox" style="height:{{height}}px;">
+  <view class="keyBox">
+      <input type="text" name="status" value="{{newStatus}}" bindinput="bindinputStatus"/>
+      <view class="addKeyword" bindtap="addStatus">添加</view>
+  </view>
+  <view class="keywordListBox">
+    <view class="keywordItem" wx:for="{{statusList}}" wx:for-item="item" wx:for-index="index" bindtap="changeStatusSelect" data-index="{{index}}">
+      <block wx:if="{{item.isSelect}}">
+          <view class="selectKeyword">
+              {{item.keyword}}
+          </view>
+      </block>
+      <block wx:else>
+          <view class="unselectKeyword">
+              {{item.keyword}}
+          </view>
+      </block>
+    </view>
+  </view>
+  <view class="addKeywordBtnBox">
+      <button bindtap="addStatusBtn">保存</button>
+  </view>
+</view>

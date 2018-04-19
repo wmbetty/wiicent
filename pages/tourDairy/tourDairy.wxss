@@ -1,0 +1,153 @@
+@import '../../component/nullTip/nullTip.wxss';
+page{
+	background-color: #fff;
+}
+.lineDairyBox{
+    width: 100%;
+}
+.lineDairyListBox .dayBox{
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+}
+.lineDairyListBox .dayBox .authorInfoBox{
+	width:100%;
+	height:160rpx;
+	position:relative;
+}
+.lineDairyListBox .dayBox .authorInfoBox .authorFace{
+	width:100rpx;
+	height:100rpx;
+	border-radius:50rpx;
+	border:2px solid #ff8c00;
+	position:absolute;
+	top:30rpx;
+	left:0;
+}
+.lineDairyListBox .dayBox .authorInfoBox .authorName{
+	font-size: 28rpx;
+	color: #ff8c00;
+	position:absolute;
+	top:43rpx;
+	left:146rpx;
+}
+.lineDairyListBox .dayBox .authorInfoBox .date{
+	font-size: 24rpx;
+	color: #999999;
+	position:absolute;
+	top:92rpx;
+	left:146rpx;
+}
+.lineDairyListBox .dayBox .content{
+	width: 100%;
+	line-height: 34rpx;
+	font-size: 28rpx;
+	color: #333333;
+	margin-top: 20rpx;
+}
+.lineDairyListBox .dayBox .picBox{
+	width: 100%;
+	height: 225rpx;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20rpx;
+	position:relative;
+}
+.lineDairyListBox .dayBox .picBox .keywords{
+	position:absolute;
+	bottom:-62rpx;
+	left:0;
+	font-size: 28rpx;
+	color: #999999;
+}
+.lineDairyListBox .dayBox .picBox .pic{
+	width: 225rpx;
+	height: 225rpx;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+}
+.lineDairyListBox .dayBox .likereplyBox{
+	width: 100%;
+	display:flex;
+	flex-direction:row-reverse;
+}
+.lineDairyListBox .dayBox .likereplyBox .iconBox{
+	height:80rpx;
+	width:100rpx;
+	line-height:80rpx;
+	color:#999999;
+	font-size:28rpx;
+	margin-left:20rpx;
+}
+.lineDairyListBox .dayBox .likereplyBox .iconBox .icon{
+	width:24rpx;
+	height:24rpx;
+	float:left;
+	margin-top:28rpx;
+	margin-right:20rpx;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}
+.addCommentBox{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 200rpx;
+	padding-left: 34rpx;
+	padding-right: 34rpx;
+	box-sizing: border-box;
+	z-index:11;
+}
+.shadow{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index:10;
+	background-color: rgba(0,0,0,0.3);
+}
+.blackboard{
+	width: 100%;
+	height: 400rpx;
+	background-color: #fff;
+	font-size: 32rpx;
+	color: #333333;
+	line-height: 36rpx;
+  	padding: 30rpx;
+  	box-sizing: border-box;
+  	border-radius:20rpx;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 46rpx;
+	padding-right: 46rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+	z-index:11;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #fd8238;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}

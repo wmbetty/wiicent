@@ -1,0 +1,36 @@
+<view class="tabBox">
+	<image src="../../dist/images/noXch_bg.png" class="itemList"></image>
+</view>
+<view class="panelList">
+	<view class="panel">	
+		<view class="itemBox">
+    		<view class="title">真实姓名</view>
+    		<input type="text" placeholder="填写本人真实姓名" bindinput="inputListener" value="{{formData.trueName}}" data-id="trueName" class="item"/>
+		</view>
+		<view class="itemBox">
+    		<view class="title">身份证或护照</view>
+    		<input type="text" placeholder="填写证件号码" bindinput="inputListener" value="{{formData.cardId}}" data-id="cardId" class="item"/>
+		</view>
+		<view class="itemBox">
+    		<view class="title">导游证</view>
+    		<input type="text" placeholder="填写导游证编号" bindinput="inputListener" value="{{formData.qualId}}" data-id="qualId" class="item"/>
+		</view>
+		<view class="itemBox">
+			<view class="title">导游证件照</view>
+		</view>
+		<view class="iconBox">
+    		<view class="album" bindtap="getAlbum">
+        		<image src="../../dist/images/ic_xiangce.png"></image>
+    		</view>
+    		<view class="photo" bindtap="getPhoto">
+        		<image src="../../dist/images/ic_xiangji.png"></image>
+    		</view>
+		</view>
+		<scroll-view scroll-x class="picListBox" wx:if="{{formData.file!=''}}">
+		    <image src="{{formData.file}}"></image>
+		</scroll-view>
+	</view>
+</view>
+<view class="btnArea">
+	<button bindtap="submit" disabled="{{!flag}}">提交</button>
+</view>

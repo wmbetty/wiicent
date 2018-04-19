@@ -1,0 +1,49 @@
+page{
+	display: block;  
+	min-height: 100%;  
+	background-color:#fff;  
+}
+.aboutUsBox{
+	width:100%;
+	padding-top:80rpx;
+}
+.aboutUsBox .text{
+	width:100%;
+	height:68rpx;
+	line-height:68rpx;
+	font-size:32rpx;
+	color:#333333;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+	text-align: center;
+}
+.aboutUsBox .phoneNum{
+	width:100%;
+	height:68rpx;
+	line-height:68rpx;
+	font-size:40rpx;
+	color:#ff8c00;
+	margin-top:40rpx;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+	text-align: center;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #ff8c00;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}

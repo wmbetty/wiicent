@@ -1,0 +1,15 @@
+<view class="xchQrcodeWrap">
+  <view class="personInfoBox">
+    <image src="{{projectData.authorFace}}"></image>
+    <view class="title">{{projectData.authorName}}</view>
+    <view class="title1">{{projectData.authorSign}}</view>
+  </view>
+  <view class="codeBox">
+    <image src="{{codePath}}" class="code" wx:if="{{codePath!=''}}">
+      <image src="{{projectData.authorFace}}" class="face"></image>
+    </image>
+  </view>
+</view>
+<view class="canvas-box">
+  <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+</view>

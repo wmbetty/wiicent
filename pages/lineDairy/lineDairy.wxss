@@ -1,0 +1,112 @@
+@import '../../component/nullTip/nullTip.wxss';
+.lineDairyBox{
+    width: 100%;
+    padding-left: 36rpx;
+    padding-right: 36rpx;
+    box-sizing: border-box;
+}
+.lineDairyListBox{
+    width: 100%;
+    border-left: 1px solid #dddddd;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+}
+.lineDairyListBox .dayBox .title{
+	width: 100%;
+	font-size: 32rpx;
+	color: #333333;
+	padding-top: 42rpx;
+	padding-bottom: 14rpx;
+}
+.lineDairyListBox .dayBox .perdayBox{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 20rpx;
+	padding:20rpx;
+	box-sizing: border-box;
+	position: relative;
+	box-shadow: 6rpx 6rpx 6rpx #dddddd;
+	margin-top:24rpx;
+}
+.lineDairyListBox .dayBox .perdayBox .dotLogo{
+	width: 20rpx;
+	height: 20rpx;
+	background-color: #09ba79;
+	border-radius: 10rpx;
+	position: absolute;
+	top: 30rpx;
+	left: -40rpx;
+}
+.lineDairyListBox .dayBox .perdayBox .editLogo{
+	width: 56rpx;
+	height: 56rpx;
+	position: absolute;
+	top: 30rpx;
+	right: 30rpx;
+}
+.lineDairyListBox .dayBox .perdayBox .date{
+	width: 100%;
+	height: 34rpx;
+	line-height: 34rpx;
+	font-size: 24rpx;
+	color: #09ba79;
+}
+.lineDairyListBox .dayBox .perdayBox .content{
+	width: 100%;
+	line-height: 34rpx;
+	font-size: 28rpx;
+	color: #333333;
+	margin-top: 24rpx;
+}
+.lineDairyListBox .dayBox .perdayBox .picBox{
+	width: 100%;
+	height: 188rpx;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 24rpx;
+}
+.lineDairyListBox .dayBox .perdayBox .picBox image{
+	width: 188rpx;
+	height: 188rpx;
+	box-sizing: border-box;
+}
+.lineDairyListBox .dayBox .perdayBox .keyword{
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 26rpx;
+	color: #999999;
+	margin-top: 24rpx;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}
+.loading{
+	width:100%;
+	height:38rpx;
+	position:relative;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
+.loading .loadinggif{
+	width:200rpx;
+	height:18rpx;
+	position:absolute;
+	top: 10rpx;
+	left:50%;
+	margin-left:-100rpx;
+}

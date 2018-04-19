@@ -1,0 +1,83 @@
+<view class="materialDetailBox">
+    <block wx:if="{{isSelectPosition}}" data-role="{{positionRole}}">
+        <view class="selectPositionBox1" wx:if="{{true}}">
+            <view class="itemBox1">
+                <input type="text" value="{{positionText}}" placeholder="自定义地址" bindinput="positionListener"/>
+                <view class="textBtnBox">
+                    <button bindtap="confirmSelect">添加</button>
+                </view>
+            </view>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index1}}" range="{{positionArr1}}" mode="selector" data-id="state">
+                <view class="itemBox"><text>请选择洲：</text>{{positionArr1[index1]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index2}}" range="{{positionArr2}}" mode="selector" data-id="country">
+                <view class="itemBox" ><text>请选择国家：</text>{{positionArr2[index2]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index3}}" range="{{positionArr3}}" mode="selector" data-id="province">
+                <view class="itemBox" ><text>请选择省：</text>{{positionArr3[index3]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index4}}" range="{{positionArr4}}" mode="selector" data-id="city">
+                <view class="itemBox" ><text>请选择市：</text>{{positionArr4[index4]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index5}}" range="{{positionArr5}}" mode="selector" data-id="district">
+                <view class="itemBox" ><text>请选择地区：</text>{{positionArr5[index5]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="btnArea">
+            <view bindtap="cancelSelect" class="cancelBtn">取消</view>
+            <view bindtap="confirmSelect">确定</view>
+        </view>
+    </block>
+    <block wx:if="{{isFormShow}}">
+        <image src="../../dist/images/createXch_bg.png" class="newXchBg"></image>
+
+        <view class="formWrap">
+            <view class="formBox">
+                <view class="startToEnd session">
+                    <view class="start" bindtap="goSelectPosition" data-id="start" style="color:{{materialData.startL==''?'#999999':'#333333'}};">{{materialData.startL==''?'出发地':materialData.startL}}</view>
+                    <view class="end" bindtap="goSelectPosition" data-id="end" style="color:{{materialData.endL==''?'#999999':'#333333'}};">{{materialData.endL==''?'目的地':materialData.endL}}</view>
+                    <image src="../../dist/images/flight_icon.png" class="flight"></image>
+                </view>
+                <view class="session">
+                    <input type="text" name="name" value="{{materialData.name}}" placeholder="请填写行程名称" bindinput="bindinputListener" data-id="name"/>
+                </view>
+                <picker mode="date" value="{{date}}" bindchange="bindDateChange" start="{{today}}">
+                <view class="session">
+                    <view class="title">出发日期</view><view class="value">{{date}}</view>
+                    <image src="../../dist/images/path.png" class="arrow"></image>
+                </view>
+                </picker>
+                <picker value="{{materialData.days}}" range="{{dayArr}}" bindchange="bindDayChange">
+                <view class="session">
+                    <view class="title">游玩天数</view><view class="value">{{materialData.days}}</view>
+                    <image src="../../dist/images/path.png" class="arrow"></image>
+                </view>
+                </picker>
+            </view>
+        </view>
+
+        <view class="btnArea1">
+            <view bindtap="submit">确定</view>
+        </view>
+    </block>
+</view>

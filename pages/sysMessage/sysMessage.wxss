@@ -1,0 +1,43 @@
+@import '../../component/nullTip/nullTip.wxss';
+.sysMessageBox{
+	width: 100%;
+}
+.sysMessageBox .mesBox{
+	width:100%;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.sysMessageBox .mesBox .date{
+	width:100%;
+	height:78rpx;
+	line-height:78rpx;
+	font-size:20rpx;
+	color:#999999;
+	text-align:center;
+}
+.sysMessageBox .mesBox .content{
+	width:100%;
+	line-height:40rpx;
+	font-size:28rpx;
+	color:#333333;
+	padding:30rpx;
+	background-color:#fff;
+	box-sizing:border-box;
+	border:1px solid #dddddd;
+	border-radius:20rpx;
+}
+.loading{
+	width:100%;
+	height:38rpx;
+	position:relative;
+	background-color:#fff;
+}
+.loading .loadinggif{
+	width:200rpx;
+	height:18rpx;
+	position:absolute;
+	top: 10rpx;
+	left:50%;
+	margin-left:-100rpx;
+}

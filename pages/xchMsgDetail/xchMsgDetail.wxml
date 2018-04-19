@@ -1,0 +1,59 @@
+<view class="lineBox">
+  <view class="title">收件人：</view>
+  <view class="content green">全部</view>
+</view>
+<view class="lineWrap">
+  <view class="lineBox">
+    <view class="title">姓名：</view>
+    <input type="text" class="text" value="{{formdata.manageName}}" data-id="manageName" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">日期：</view>
+    <input type="text" class="text" value="{{formdata.jiheDate}}" data-id="jiheDate" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">时间：</view>
+    <input type="text" class="text" value="{{formdata.jiheTime}}" data-id="jiheTime" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">地点：</view>
+    <input type="text" class="text" value="{{formdata.jiheSite}}" data-id="jiheSite" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">地址：</view>
+    <input type="text" class="text" value="{{formdata.jiheAddress}}" data-id="jiheAddress" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">证件和行李：</view>
+    <input type="text" class="text" value="{{formdata.zhengjian}}" data-id="zhengjian" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">目的地区：</view>
+    <input type="text" class="text" value="{{formdata.destiCity}}" data-id="destiCity" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">最低温：</view>
+    <input type="text" class="text" value="{{formdata.diwen}}" data-id="diwen" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">最高温：</view>
+    <input type="text" class="text" value="{{formdata.gaowen}}" data-id="gaowen" bindinput="inputListener"/>
+  </view>
+  <view class="lineBox">
+    <view class="title">领队电话：</view>
+    <input type="text" class="text" value="{{formdata.managePhone}}" data-id="managePhone" bindinput="inputListener"/>
+  </view>
+</view>
+
+<view class="areaBox">
+您好，我是领队XX。请在XX，XX前抵达XX，XX集合
+！请随身携带XX，以备检查。未来XX气温在XX~XX
+度左右，有雨，请带雨伞及常用药物，以备不时之需。
+更多注意事项可到应用商店下载「位讯行程助手」。该行
+程的激活码是：XXXX。该信息由位讯旅游提供技术支持
+。收到请回复本人手机XX，谢谢。
+</view>
+
+<view class="btnBox">
+  <button type="default" disabled="{{false}}" bindtap="submit">发送</button>
+</view>

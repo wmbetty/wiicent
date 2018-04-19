@@ -1,0 +1,53 @@
+<block wx:if="{{isSearchShow}}">
+<view class="searchSpotBox">
+    <scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+    <image src="../../dist/images/500435576.png">
+        <view class="searchBox"><view class="lBox"><image src="../../dist/images/spot_search_icon.png" class="icon"></image><input type="text" bindinput="bindSearchInput" value="{{searchSpot}}"/></view><view class="rBox" bindtap="searchBtn">搜索</view></view>
+    </image>
+    <view class="spotListBox">
+    	<view class="spotItem" bindtap="addSpot" wx:for="{{spotListData}}" wx:for-item="item" wx:for-index="index" data-id="{{index}}">
+    	    <image src="{{item.mcontentImage}}"></image>
+    	    <view class="contentBox">
+    	        <view class="title">{{item.title}}</view>
+    	        <view class="keyword">{{item.middleOne}}</view>
+    	        <view class="intro">{{item.middleTwo}}</view>
+    	    </view>
+    	    <view class="distance">9573.7千米</view>
+    	</view>
+        <view class="loading" wx:if="{{showLoading}}"><image src="../../dist/images/5-121204193932-50.gif" class="loadinggif"></image></view>
+	</view>
+    </scroll-view>
+</view>
+<view class="addLogo" bindtap="addSpotDetail"><image src="../../dist/images/add.png"></image></view>
+</block>
+<block wx:if="{{isEdit}}">
+<view class="addSpotBox">
+    <view class="session">
+        <textarea placeholder="请输入介绍内容" maxlength="-1" value="{{formData.content}}" bindinput="bindinput" data-id="content"/>
+    </view>
+    <view class="session">
+        <label>景点名称</label>
+        <view class="itemBox">
+            <input  bindinput="bindinput" placeholder="请输入景点名称" value="{{formData.title}}" data-id="title"/>
+            <view class="arrowLogo"></view>
+        </view>
+    </view>
+    <picker mode="time" value="{{formData.date}}" bindchange="bindPickerChange">
+    <view class="session">
+        <label>时间</label>
+        <view class="itemBox">{{formData.date}}
+            <view class="arrowLogo"></view>
+        </view>
+    </view>
+    </picker>
+    <view class="session" bindtap="goSelectPosition">
+        <label>经纬度</label>
+        <view class="itemBox">{{formData.longitude?(formData.longitude+','):''}}{{formData.latitude}}<view class="arrowLogo"></view>
+        </view>
+    </view>
+    <view class="btnArea">
+        <view bindtap="submit" class="addBtn">添加</view>
+        <view bindtap="cancel">取消</view>
+    </view>
+</view>
+</block>

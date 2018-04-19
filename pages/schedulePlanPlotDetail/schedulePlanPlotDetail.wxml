@@ -1,0 +1,15 @@
+<view class="spotDetailBox">
+    <image src="{{scheduleSpotData.bcontentImage==''?'../../dist/images/71817.png':scheduleSpotData.bcontentImage}}" class="spotBg">
+        <image src="../../dist/images/btn_yuyingbofang.png" bindtap="startVoice" class="voiceBtn" wx:if="{{canPlay}}"></image>
+        <image src="../../dist/images/btn_yuyingbofang_act.png" bindtap="stopVoice" class="voiceBtn" wx:if="{{stop}}"></image>
+    </image>
+    <view class="title">{{scheduleSpotData.title}}</view>
+    <view class="enTitle">{{scheduleSpotData.enName}}</view>
+    <view class="infoBox">
+        <view class="info"></view>
+        <view class="info"></view>
+        <view class="info"></view>
+    </view>
+    <view class="content">{{scheduleSpotData.content}}</view>
+    <map longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="15" markers="{{markers}}" style="width: 100%;height:200px;" wx:if="{{markers[0].longitude!=0&&markers[0].latitude!=0}}"></map>
+</view>

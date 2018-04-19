@@ -1,0 +1,173 @@
+page{
+	background-color: #fff;
+}
+.roomlistBox{
+	width: 100%;
+	display: flex;
+	flex-wrap:wrap;
+	align-items: flex-start;
+	padding-bottom:300rpx;
+}
+.roomlistBox .roomBox{
+	width: 30%;
+	margin-left:2.5%;
+	margin-bottom:50rpx;
+	margin-top:20rpx;
+	position: relative;
+}
+.roomlistBox .roomBox .room{
+	width: 100%;
+	border: 1px solid #ededed;
+	background-color: #f5f5f5;
+	border-radius: 20rpx;
+}
+.roomlistBox .roomBox input{
+	width: 120rpx;
+	height: 44rpx;
+	position: absolute;
+	bottom: -50rpx;
+	left: 26rpx;
+}
+.roomlistBox .roomBox .editIcon{
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	bottom: -38rpx;
+	left: 160rpx;
+}
+.roomlistBox .roomBox .active{
+	border: 2px solid #09ba79;
+}
+.roomlistBox .roomBox .room3{
+	height: 234rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.roomlistBox .roomBox .room2{
+	height: 156rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.roomlistBox .roomBox .room1{
+	height: 78rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.roomlistBox .room .roomer{
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 24rpx;
+	color: #333333;
+	padding-top:6rpx;
+	overflow:hidden;
+	word-wrap:break-word;
+}
+.roomlistBox .room .roomer image{
+	width: 70rpx;
+	height: 40rpx;
+	margin-top: 16rpx;
+	margin-right: 20rpx;
+	margin-left: 20rpx;
+	float: left;
+}
+.personlistBox .desBox{
+	width:100%;
+	height: 70rpx;
+	position: fixed;
+	bottom: 154rpx;
+	left: 0;
+	display:flex;
+	background-color: #f1f1f1;
+	justify-content: center;
+	z-index:10;
+}
+.personlistBox .desBox .des_icon_box{
+	width: 126rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	color: #c2c2c2;
+	font-size: 24rpx;
+	margin-top: 20rpx;
+}
+.personlistBox .desBox .des_icon{
+	width: 46rpx;
+	height: 24rpx;
+	margin-right: 20rpx;
+}
+.personlistBox .undolistBox{
+	width: 100%;
+	height: 154rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	background-color: #fff;
+	z-index:10;
+}
+.personlistBox .undolistBox .undodesBox{
+	width: 25%;
+	height: 154rpx;
+	background-color: #09ba79;
+}
+.personlistBox .undolistBox .undodesBox .line1{
+	width: 100%;
+	height: 52rpx;
+	line-height: 52rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #fff;
+	margin-top: 32rpx;
+}
+.personlistBox .undolistBox .undodesBox .line2{
+	width: 100%;
+	height: 42rpx;
+	line-height: 42rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #ffe400;
+}
+.personlistBox .undolistBox .undolist{
+	width: 75%;
+	height: 154rpx;
+	white-space: nowrap;
+}
+.personlistBox .undolistBox .undolist .person{
+	width: 160rpx;
+	height: 154rpx;
+	display: inline-block;
+}
+.personlistBox .undolistBox .undolist .person_gender{
+	width: 64rpx;
+	height: 64rpx;
+	margin-left: 48rpx;
+	margin-top: 28rpx;
+}
+.personlistBox .undolistBox .undolist .person_name{
+	width: 100%;
+	height: 54rpx;
+	line-height: 54rpx;
+	font-size: 28rpx;
+	text-align: center;
+	color: #333333;
+	padding-left:4rpx;
+	padding-right:4rpx;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 240rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}

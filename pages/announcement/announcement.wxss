@@ -1,0 +1,34 @@
+.blackboardBox{
+	width: 100%;
+}
+.blackboard{
+	margin-top: 30rpx;
+	width: 100%;
+	height: 400rpx;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	background-color: #fff;
+	font-size: 32rpx;
+	color: #333333;
+	line-height: 36rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 46rpx;
+	padding-right: 46rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea button{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #21c186;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+}

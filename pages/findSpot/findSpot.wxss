@@ -1,0 +1,136 @@
+page{
+	background-color: #fff;
+}
+.searchSpotBox{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.back-banner{
+    width: 100%;
+    height: 316rpx;
+    position: relative;
+}
+.searchSpotBox image{
+	width: 100%;
+    height: 100%;
+    display: block;
+}
+.fake-input{
+    color: #ccc;
+    width: 80%;
+    background: #fff;
+    position: absolute;
+    left: 10%;
+    top:40%;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 40rpx;
+    text-align: center;
+}
+.searchSpotBox image .searchBox{
+	width: 560rpx;
+	height: 68rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -34rpx;
+	margin-left: -280rpx;
+	border-radius: 34rpx;
+	overflow: hidden;
+	background-color: #fff;
+}
+.searchSpotBox image .searchBox::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.searchSpotBox image .searchBox::before{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.searchSpotBox image .searchBox .lBox{
+	width: 80%;
+	height: 68rpx;
+	float: left;
+	position:relative;
+}
+.searchSpotBox image .searchBox .lBox input{
+	width:100%;
+	box-sizing:border-box;
+	height: 68rpx;
+	line-height: 68rpx;
+	font-size: 32rpx;
+	color: #333333;
+	padding-left: 74rpx;
+}
+.searchSpotBox image .searchBox .rBox{
+	width: 20%;
+	height: 68rpx;
+	float: left;
+	background-color: #ff8c00;
+	line-height: 68rpx;
+	color: #fff;
+	font-size: 32rpx;
+	text-align: center;
+}
+.searchSpotBox image .searchBox .lBox .icon{
+	width: 34rpx;
+	height: 34rpx;
+	position:absolute;
+	top:18rpx;
+	left:20rpx;
+}
+.spotListBox{
+    width: 100%;
+    display: flex;
+}
+.spotListBox .tabBox{
+	width: 26%;
+}
+.spotListBox .tabBox .tab{
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	box-sizing: border-box;
+	margin-top: 20rpx;
+	margin-bottom: 30rpx;
+	font-size: 28rpx;
+	color: #333333;
+	border-left: 4px solid #fff;
+}
+.spotListBox .tabBox .active{
+	border-left: 4px solid #fd8238;
+}
+.spotListBox .panelBox{
+	/* flex: auto; */
+	width: 73%;
+	border-left: 1px solid #eee;
+	padding-top: 20rpx;
+	box-sizing: border-box;
+}
+.spotListBox .panelBox .item{
+	width: 45%;
+	display: inline-block;
+	margin-left: 4%;
+}
+.spotListBox .panelBox .item .itemPic{
+	width: 100%;
+	height: 128rpx;
+}
+.spotListBox .panelBox .item .itemName{
+	width: 100%;
+	height: 68rpx;
+	line-height: 68rpx;
+	font-size: 28rpx;
+	color: #333333;
+	text-align: center;
+	margin-bottom: 12rpx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

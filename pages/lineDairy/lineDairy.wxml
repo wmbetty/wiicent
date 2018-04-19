@@ -1,0 +1,26 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{dairyListData.length==0}}">
+    <template is="nullTip"/>
+</block>
+<block wx:else>
+<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+<view class="lineDairyBox">
+    <view class="lineDairyListBox">
+        <view class="dayBox" wx:for="{{dairyListData}}" wx:for-index="index" wx:for-item="item">
+            <view class="title" wx:if="{{item.isDayShow}}">第{{item.day}}天</view>
+            <view class="perdayBox">
+                <view class="dotLogo"></view>
+                <image src="../../dist/images/ic_dyrz_bianji.png" class="editLogo" data-id="{{item.id}}" bindtap="editDairyDetail" wx:if="{{false}}"></image>
+                <view class="date">{{item.createTime}}</view>
+                <view class="content">{{item.content}}</view>
+                <view class="picBox">
+                    <image wx:if="{{item.item.mcontentImage!=''}}" src="{{item.mcontentImage}}"></image>
+                </view>
+                <view class="keyword">{{item.keywords}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+</block>
+<view class="addLogo" bindtap="addDairyDetail"><image src="../../dist/images/add.png"></image></view>

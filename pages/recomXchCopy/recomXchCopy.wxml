@@ -1,0 +1,73 @@
+<block wx:if="{{isFormShow}}">
+<view class="recomXchCopy">
+    <view class="session bt">
+        <view class="label">行程名称</view>
+        <input type="text" placeholder="请填写行程名称" placeholder-style="text-align:right;" style="text-align:right;" class="value1" value="{{formData.name}}" bindinput="changeData" data-id="name"/>
+    </view>
+    <view class="session bt">
+        <view class="label">出发地区</view>
+        <view class="value" bindtap="goSelectPosition">{{formData.startL==''?'请选择':formData.startL}}</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    <picker mode="date" bindchange="changeData" value="{{formData.startDate}}" data-id="startDate">
+    <view class="session">
+        <view class="label">出发日期</view>
+        <view class="value">{{formData.startDate==''?'请选择':formData.startDate}}</view>
+        <image src="../../dist/images/path.png" class="arrow"></image>
+    </view>
+    </picker>
+</view>
+<view class="btnBox">
+    <view class="btn" bindtap="submit">确定</view>
+</view>
+</block>
+
+<block wx:else>
+    <view class="selectPositionBox1" wx:if="{{true}}">
+            <view class="itemBox1">
+                <input type="text" value="{{positionText}}" placeholder="自定义地址" bindinput="positionListener"/>
+                <view class="textBtnBox">
+                    <button bindtap="confirmSelect">添加</button>
+                </view>
+            </view>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index1}}" range="{{positionArr1}}" mode="selector" data-id="state">
+                <view class="itemBox"><text>请选择洲：</text>{{positionArr1[index1]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index2}}" range="{{positionArr2}}" mode="selector" data-id="country">
+                <view class="itemBox" ><text>请选择国家：</text>{{positionArr2[index2]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index3}}" range="{{positionArr3}}" mode="selector" data-id="province">
+                <view class="itemBox" ><text>请选择省：</text>{{positionArr3[index3]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index4}}" range="{{positionArr4}}" mode="selector" data-id="city">
+                <view class="itemBox" ><text>请选择市：</text>{{positionArr4[index4]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="selectPositionBox">
+            <picker bindchange="bindPickerChange" value="{{index5}}" range="{{positionArr5}}" mode="selector" data-id="district">
+                <view class="itemBox" ><text>请选择地区：</text>{{positionArr5[index5]}}
+                    <view class="arrowLogo"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="btnArea">
+            <view class="cancelBtn" bindtap="cancelSelect">取消</view>
+            <view bindtap="confirmSelect">确定</view>
+        </view>
+</block>

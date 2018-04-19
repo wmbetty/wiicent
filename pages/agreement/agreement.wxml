@@ -1,0 +1,8 @@
+<view class="agreementBox">
+    <view class="title">
+        {{title}}
+    </view>
+    <view class="content" wx:for="{{content}}" wx:for-item="item">
+        {{item}}
+    </view>
+</view>

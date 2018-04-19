@@ -1,0 +1,50 @@
+.personPlanBox{
+	width: 100%;
+	margin-top: 30rpx;
+}
+.personItem{
+	width: 100%;
+	position: relative;
+	height: 88rpx;
+	border-top: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	overflow:hidden;
+  background-color: #fff;
+}
+.personItem .arrowLogo{
+	width: 32rpx;
+	height: 32rpx;
+	position: absolute;
+	top: 28rpx;
+	right: 30rpx;
+}
+.personItem .name{
+	width: 100%;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 28rpx;
+	color: #000000;
+	padding-left:30rpx;
+	box-sizing:border-box;
+	float:left;
+}
+.personPlanBox .bt{
+	border-bottom: 1px solid #e8e8e8;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #e94f4f;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}

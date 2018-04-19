@@ -1,0 +1,31 @@
+<view class="shareRoomWrap">
+    <view class="roomlistBox">
+    	<view class="roomBox" wx:for="{{roomListData}}" wx:for-item="item" wx:for-index="index">
+    		<view class="room room{{item.roomCapacity+(item.isSelect?' active':'')}}" bindtap="selectRoom" data-roomid="{{item.roomId}}" bindlongpress="deleteRoom">
+    			<view class="roomer" data-rid="{{item.rid1}}" data-roomid="{{item.roomId}}" bindtap="releasePerson"><image src="{{item.gender1}}"></image>{{item.name1}}</view>
+    			<view class="roomer" data-rid="{{item.rid2}}" data-roomid="{{item.roomId}}" bindtap="releasePerson"><image src="{{item.gender2}}"></image>{{item.name2}}</view>
+    			<view class="roomer" data-rid="{{item.rid3}}" data-roomid="{{item.roomId}}" bindtap="releasePerson"><image src="{{item.gender3}}"></image>{{item.name3}}</view>
+    		</view>
+    		<input type="text" value="{{item.roomCode}}" bindinput="inputListener" cursor-spacing="30" bindconfirm="editRoomName" data-roomid="{{item.roomId}}"/><image src="../../dist/images/ic_bianji2.png" class="editIcon" wx:if="{{item.isSelect}}" ></image>
+    	</view>
+    </view>
+    <view class="personlistBox">
+    	<view class="desBox">
+    		<view class="des_icon_box"><image class="des_icon" src="../../dist/images/fenfang_empty.png"></image>可选</view>
+    		<view class="des_icon_box"><image class="des_icon" src="../../dist/images/fenfang_nan.png"></image>男</view>
+    		<view class="des_icon_box"><image class="des_icon" src="../../dist/images/fenfang_nv.png"></image>女</view>
+    	</view>
+    	<view class="undolistBox">
+    		<view class="undodesBox"><view class="line1">未分配</view><view class="line2">{{personListData.length}}人</view></view>
+                <scroll-view scroll-x class="undolist">
+                    <view class="person" wx:for="{{personListData}}" wx:for-item="item" wx:for-index="index" bindtap="selectPerson" data-rid="{{item.rid}}">
+                    	<image class="person_gender" src="{{item.gender=='男'?'../../dist/images/ic_nan.png':'../../dist/images/ic_nv.png'}}"></image>
+                    	<view class="person_name">{{item.name}}</view>
+                    </view>
+                </scroll-view>
+    	</view>
+    </view>
+</view>
+
+<view class="addLogo" bindtap="addRoom"><image src="../../dist/images/add.png"></image></view>
+

@@ -1,0 +1,231 @@
+.tourDairyDetailBox{
+	width:100%;
+	padding-top: 30rpx;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+}
+.content{
+	width: 100%;
+	height: 300rpx;
+	border: 1px solid #dddddd;
+	color: #333333;
+	font-size: 28rpx;
+	line-height: 46rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.iconBox{
+	width: 100%;
+	position: relative;
+	height: 100rpx;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.iconBox .locationBox{
+	position: absolute;
+	top: 24rpx;
+	left: 24rpx;
+	height: 46rpx;
+}
+.iconBox .locationBox image{
+	width: 46rpx;
+	height: 46rpx;
+	margin-right: 12rpx;
+	float:left;
+}
+.iconBox .locationBox .text{
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 28rpx;
+	color: #333333;
+	float:left;
+}
+.iconBox .album{
+	position: absolute;
+	top: 24rpx;
+	right: 132rpx;
+	height: 46rpx;
+}
+.iconBox .album image{
+	width: 46rpx;
+	height: 46rpx;
+}
+.iconBox .photo{
+	position: absolute;
+	top: 24rpx;
+	right: 24rpx;
+	height: 46rpx;
+}
+.iconBox .photo image{
+	width: 46rpx;
+	height: 46rpx;
+}
+.picListBox{
+	width: 100%;
+	height: 208rpx;
+	margin-top: 24rpx;
+	border: 1px solid #dddddd;
+	background-color: #fff;
+	white-space: nowrap;
+	box-sizing: border-box;
+	padding-top:20rpx;
+}
+.picListBox image{
+	width: 168rpx;
+	height: 168rpx;
+	display: inline-block;
+	margin-left: 24rpx;
+}
+.itemBox{
+	width: 100%;
+	height: 98rpx;
+	background-color: #fff;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-top: 24rpx;
+}
+.itemBox .title{
+	width: 25%;
+	height: 98rpx;
+	border-right: 1px solid #dddddd;
+	line-height: 98rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #999999;
+}
+.itemBox picker{
+	width: 75%;
+}
+.itemBox .item{
+	width: 100%;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: right;
+	font-size: 28rpx;
+	color: #333333;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	margin-top: 78rpx;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #09ba79;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}
+.addKeyBox{
+	width: 100%;
+	background-color:#fff;
+}
+.addKeyBox .keyBox{
+	background-color:#f7f7f7;
+	padding: 30rpx;
+	box-sizing: border-box;
+}
+.addKeyBox .keyBox input{
+	width: 70%;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 10rpx;
+	background-color: #fff;
+	margin-right: 5%;
+	font-size: 32rpx;
+	color: #333333;
+  padding-left: 30rpx;
+	box-sizing: border-box;
+  float: left;
+  outline: none;
+  border: 1px solid #dddddd;
+}
+.addKeyBox .keyBox .addKeyword{
+	width: 25%;
+	height: 80rpx;
+	line-height: 80rpx;
+	border: 1px solid #09ba79;
+	border-radius: 10rpx;
+	background-color: #fff;
+	font-size: 32rpx;
+	color: #09ba79;
+	box-sizing: border-box;
+	text-align: center;
+  float: left;
+}
+.addKeyBox .keyBox::after{
+  	content: ' ';
+  	display: block;
+  	height: 0;
+  	clear: both;
+}
+.addKeyBox .keywordListBox{
+	width: 100%;
+	border-top: 1px solid #dddddd;
+}
+.addKeyBox .keywordListBox::after{
+  	content: ' ';
+  	display: block;
+  	height: 0;
+  	clear: both;
+}
+.addKeyBox .keywordListBox .keywordItem{
+	width: 20%;
+	height: 74rpx;
+	float: left;
+  margin-left: 4%;
+  margin-top: 32rpx;
+}
+.addKeyBox .keywordListBox .keywordItem .selectKeyword{
+	width: 100%;
+	height: 74rpx;
+	line-height: 74rpx;
+	border-radius: 12rpx;
+	font-size: 26rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #09ba79;
+	box-sizing: border-box;
+}
+.addKeyBox .keywordListBox .keywordItem .unselectKeyword{
+	width: 100%;
+	height: 74rpx;
+	line-height: 74rpx;
+	border-radius: 12rpx;
+	font-size: 26rpx;
+	text-align: center;
+	color: #333333;
+	background-color: #fff;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+}
+.addKeyBox .addKeywordBtnBox{
+	width:100%;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.addKeyBox .addKeywordBtnBox button{
+	width: 100%;
+	margin-top: 76rpx;
+	height: 94rpx;
+	line-height: 94rpx;
+	text-align:center;
+	color: #fff;
+	background-color: #09ba79;
+}

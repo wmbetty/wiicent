@@ -1,0 +1,142 @@
+page{
+	display: block;
+	min-height: 100%;
+	background-color:#fff;
+}
+.spotDetailBox{
+	width: 100%;
+}
+.spotDetailBox .spotBg{
+	width: 100%;
+	height: 420rpx;
+	position:relative;
+}
+.spotDetailBox .spotBg .voiceBtn{
+	width:90rpx;
+	height:90rpx;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-top:-45rpx;
+	margin-left:-45rpx;
+}
+.spotDetailBox .title{
+	width: 100%;
+	font-size: 36rpx;
+	color: #333333;
+	text-align: center;
+	margin-top: 60rpx;
+}
+.spotDetailBox .enTitle{
+	width: 100%;
+	font-size: 24rpx;
+	color: #999999;
+	text-align: center;
+	margin-top: 28rpx;
+}
+.spotDetailBox .infoBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.spotDetailBox .infoBox .info{
+	font-size: 24rpx;
+	color: #999999;
+	margin-left: 48rpx;
+	margin-top: 20rpx;
+}
+.spotDetailBox .content{
+	width: 100%;
+	font-size: 28rpx;
+	color: #333333;
+	line-height: 60rpx;
+	margin-top: 60rpx;
+	padding-left:30rpx;
+	box-sizing:border-box;
+	padding-bottom:30rpx;
+}
+.spotDetailBox .editContent{
+	margin-top:30rpx;
+	width: 100%;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #ff8c00;
+	font-size: 28rpx;
+}
+.authorBox{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top:66rpx;
+	margin-bottom:92rpx;
+}
+.authorBox image{
+	width:96rpx;
+	height:96rpx;
+	border-radius:48rpx;
+	over-flow:hidden;
+}
+.authorBox .name{
+	font-size:28rpx;
+	color:#09ba79;
+	margin-top:24rpx;
+}
+.shopBox .item{
+	font-size:28rpx;
+	color:#333333;
+	margin-top:28rpx;
+	padding-left:30rpx;
+	box-sizing:border-box;
+}
+.more{
+	width:100%;
+	height:90rpx;
+	line-height:90rpx;
+	font-size:28rpx;
+	color:#999999;
+	text-align:center;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	margin-top:24rpx;
+}
+.btBox{
+	width:100%;
+	height:100rpx;
+	background-color:#fff;
+	position:fixed;
+	bottom:0;
+	border-top:1px solid #dddddd;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.btBox .box1{
+	width:100rpx;
+	display:flex;
+	justify-content:center;
+}
+.btBox .box1 image{
+	width:24rpx;
+	height:44rpx;
+}
+.btBox .box{
+	display:flex;
+	flex-wrap:nowrap;
+	align-items:center;
+}
+.btBox .box image{
+	width:50rpx;
+	height:50rpx;
+	margin-right:12rpx;
+}
+.btBox .box view{
+	font-size:24rpx;
+	color:#333333;
+}

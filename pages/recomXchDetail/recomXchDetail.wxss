@@ -1,0 +1,186 @@
+.recomXchBox .infoWrap{
+	width: 100%;
+	height: 420rpx;
+	position:relative;
+}
+.recomXchBox .infoWrap .title{
+	width: 100%;
+	font-size: 32rpx;
+	color: #fff;
+	text-align:center;
+	line-height: 52rpx;
+	padding-left:60rpx;
+	padding-right:60rpx;
+	box-sizing:border-box;
+	position:absolute;
+	top:100rpx;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+.recomXchBox .infoWrap .day{
+	width: 100%;
+	font-size: 28rpx;
+	color: #fff;
+	text-align: center;
+	position:absolute;
+	top:300rpx;
+}
+.recomXchBox .infoWrap .fromToEnd{
+	width: 100%;
+	font-size: 28rpx;
+	color: #fff;
+	text-align: center;
+	position:absolute;
+	top:360rpx;
+}
+.recomXchBox .xchContent{
+	padding-top:54rpx;
+	padding-bottom:54rpx;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	color: #999999;
+	line-height: 52rpx;
+	background-color: #fff;
+}
+.recomXchBox .scheduleTilte{
+	width: 100%;
+	height: 126rpx;
+	position: relative;
+}
+.recomXchBox .scheduleTilte .text{
+	width: 100%;
+	height: 126rpx;
+	line-height:126rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #999999;
+}
+.recomXchBox .scheduleTilte .iconBox{
+	position: absolute;
+	top: 36rpx;
+	right: 30rpx;
+	width: 131rpx;
+	height: 52rpx;
+	overflow: hidden;
+}
+.recomXchBox .scheduleTilte .iconBox .icon{
+	width: 131rpx;
+	height: 52rpx;
+}
+.recomXchBox .btn{
+	width: 100%;
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	background-color: #09ba79;
+	color: #fff;
+	font-size: 34rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index:10;
+}
+.recomXchBox .scheduleBox{
+	padding-bottom:100rpx;
+}
+.recomXchBox .dayBox{
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 20rpx;
+}
+.recomXchBox .dayBox .dayTitle{
+	width: 100%;
+	height: 136rpx;
+	position: relative;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+}
+.recomXchBox .dayBox .dayTitle .text1{
+	width: 100%;
+	border-left: 4rpx solid #09ba79;
+	padding-left:12rpx;
+	box-sizing: border-box;
+	font-size: 24rpx;
+	color: #333333;
+	position:absolute;
+	top:28rpx;
+	left:30rpx;
+}
+.recomXchBox .dayBox .dayTitle .text2{
+	width: 100%;
+	font-size: 24rpx;
+	color: #333333;
+	position:absolute;
+	top:72rpx;
+	left:30rpx;
+}
+.recomXchBox .dayBox .dayTitle .arrow_icon{
+	position:absolute;
+	top:38rpx;
+	right:30rpx;
+	width: 56rpx;
+	height: 56rpx;
+}
+.recomXchBox .dayBox .dayContent{
+	width: 100%;
+}
+.recomXchBox .dayBox .dayContent .spotList{
+	border-top: 1px solid #dddddd;
+
+}
+.recomXchBox .dayBox .dayContent .spotItem{
+	width: 100%;
+	height: 188rpx;
+	position: relative;
+}
+.recomXchBox .dayBox .dayContent .spotItem .spotBg{
+	width: 222rpx;
+	height: 144rpx;
+	border-radius: 12rpx;
+	position: absolute;
+	top: 22rpx;
+	left: 30rpx;
+}
+.recomXchBox .dayBox .dayContent .spotItem .arrow{
+	width: 32rpx;
+	height: 32rpx;
+	position: absolute;
+	top: 78rpx;
+	right: 30rpx;
+}
+.recomXchBox .dayBox .dayContent .spotItem .title{
+	font-size: 28rpx;
+	color: #333333;
+	position: absolute;
+	top: 56rpx;
+	left: 282rpx;
+}
+.recomXchBox .dayBox .dayContent .spotItem .time{
+	font-size: 24rpx;
+	color: #999999;
+	position: absolute;
+	top: 116rpx;
+	left: 282rpx;
+}
+.recomXchBox .dayBox .dayContent .dayDetail{
+	width: 100%;
+	padding: 30rpx;
+	box-sizing: border-box;
+	border-top: 1px solid #dddddd;
+}
+.recomXchBox .dayBox .dayContent .dayDetail .content{
+	font-size: 28rpx;
+	color: #999999;
+	line-height: 44rpx;
+}
+.recomXchBox .dayBox .dayContent .dayDetail .item{
+	width: 100%;
+	display: flex;
+}
+.recomXchBox .dayBox .dayContent .dayDetail .item view{
+	font-size: 28rpx;
+	color: #999999;
+}

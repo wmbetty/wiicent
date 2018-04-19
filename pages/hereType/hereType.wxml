@@ -1,0 +1,39 @@
+<map id="map" show-location style="width: 100%; height: {{isCardShow?(height+122):(height-50)}}px;" markers="{{markers}}" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" include-points="{{includeArr}}" bindmarkertap="markerTap" bindregionchange="regionchange">
+    <cover-view class="searchBox">
+      <cover-view class="search" bindtap="searchPlot">
+        <cover-image class="searchIcon" src="../../dist/images/spot_search_icon.png"></cover-image>
+        搜索景点关键词
+      </cover-view>
+    </cover-view>
+    <cover-view class="infoBox" style="margin-top:{{isCardShow?'40':(height-200)}}px;" wx:if="{{cardInfo.id}}">
+      <cover-view class="cardBox" bindtap="tapCard">
+        <cover-image src="../../dist/images/vispos_normal.png" class="cardPic"></cover-image>
+        <cover-view class="cardTitle">{{cardInfo.title}}</cover-view>
+        <cover-view class="cardEntitle">{{cardInfo.middleTwo}}</cover-view>
+        <cover-view class="cardDes">{{cardInfo.middleOne}}</cover-view>
+        <cover-view class="cardDis">{{cardInfo.distance!=''?cardInfo.distance+'米':''}}</cover-view>
+      </cover-view>
+      <cover-view class="contentBox" wx:if="{{isCardShow}}">
+        <cover-image src="{{cardInfo.bcontentImage}}" wx:if="{{cardInfo.bcontentImage!=''}}" class="contentPic" style="height:190px;"></cover-image>
+        <cover-view class="contentText">{{cardInfo.content}}</cover-view>
+        <cover-view class="authorBox">
+          <cover-image src="{{cardInfo.footerLogo!=''?cardInfo.footerLogo:'../../dist/images/tourist_pic.png'}}" class="authorFace"></cover-image>
+          <cover-view class="authorName">{{cardInfo.footerName}}</cover-view>
+          <cover-view class="time">更新于{{cardInfo.seqTime}}</cover-view>
+        </cover-view>
+        <cover-view class="shopBox">
+          <cover-view class="shopItem">营业时间：全天</cover-view>
+          <cover-view class="shopItem">联系电话：133322332233</cover-view>
+          <cover-view class="shopItem">相关链接：www.wiicent.com</cover-view>
+        </cover-view>
+        <cover-view class="more" bindtap>查看更多</cover-view>
+      </cover-view>
+    </cover-view>
+</map>
+<scroll-view scroll-x style="height:50px;">
+  <view class="perBox">
+    <view class="actPerItem" wx:for="{{menuListData}}" wx:for-item="item" data-id="{{index}}" bindtap="tapMenu" style="background-color:{{item.isSelect?'#5baef3':'#fff'}};color:{{item.isSelect?'#fff':'#333333'}};">{{item.name}}</view>
+  </view>
+</scroll-view>
+
+<view class="addLogo" bindtap="addSpot"><image src="../../dist/images/add.png"></image></view>

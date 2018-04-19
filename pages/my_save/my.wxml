@@ -1,0 +1,46 @@
+<view class="userInfoBox" >
+	<image src="../../dist/images/ic_shezhi.png" class="setting" bindtap="viewSetting"></image>
+	<view class="user">
+		<image src="{{personInfoData.face}}" class="userPic"  bindtap="viewPersonInfo"></image>
+    	<div class="userName">{{personInfoData.name}}</div>
+    	<div class="uid">位讯号：{{personInfoData.uid}}</div>
+	</view>
+    <view class="tabList">
+    	<view class="tab" bindtap="viewFriend">
+    		<image src="../../dist/images/small_new_contacts.png"></image>
+    		<view class="text">好友</view>
+    	</view>
+    	<view class="tab" bindtap="viewFan">
+    		<image src="../../dist/images/small_fans.png"></image>
+    		<view class="text">粉丝</view>
+    	</view>
+    	<view class="tab" bindtap="viewFollow">
+    		<image src="../../dist/images/small_follows.png"></image>
+    		<view class="text">关注</view>
+    	</view>
+    </view>
+</view>
+<view class="wd">
+    <view class="item" bindtap="getCode">
+        <image src="../../dist/images/ic_wd_saoyisao.png" class="icon"></image>
+        <view class="title">扫一扫</view>
+    </view>
+    <view class="item" bindtap="viewProject">
+        <image src="../../dist/images/ic_xczs_xingchengguanli.png" class="icon"></image>
+        <view class="title">行程管理</view>
+    </view>
+    <view class="item" bindtap="viewHistory">
+        <image src="../../dist/images/ic_xczs_lishixingcheng.png" class="icon"></image>
+        <view class="title">历史行程</view>
+    </view>
+</view>
+
+<view class="xczs">
+    <view class="item" bindtap="viewCertify">
+        <image src="../../dist/images/ic_xczs_darenrenzheng.png" class="icon"></image>
+        <view class="title">达人认证</view>
+    </view>
+</view>
+
+
+

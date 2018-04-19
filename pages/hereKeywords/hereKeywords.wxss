@@ -1,0 +1,98 @@
+.addKeyBox{
+	width: 100%;
+	background-color:#fff;
+}
+.addKeyBox .keyBox{
+	background-color:#f7f7f7;
+	padding: 20rpx 30rpx;
+	box-sizing: border-box;
+}
+.addKeyBox .keyBox input{
+	width: 70%;
+	height: 76rpx;
+	line-height: 76rpx;
+	border-radius: 10rpx;
+	background-color: #fff;
+	margin-right: 5%;
+	font-size: 30rpx;
+	color: #333333;
+  padding-left: 30rpx;
+	box-sizing: border-box;
+  float: left;
+  outline: none;
+  border: 1px solid #dddddd;
+}
+.addKeyBox .keyBox .addKeyword{
+	width: 25%;
+	height: 76rpx;
+	line-height: 76rpx;
+	border: 1px solid #09ba79;
+	border-radius: 10rpx;
+	background-color: #fff;
+	font-size: 30rpx;
+	color: #09ba79;
+	box-sizing: border-box;
+	text-align: center;
+  float: left;
+}
+.addKeyBox .keyBox::after{
+  	content: ' ';
+  	display: block;
+  	height: 0;
+  	clear: both;
+}
+.addKeyBox .keywordListBox{
+	width: 100%;
+	border-top: 1px solid #dddddd;
+}
+.addKeyBox .keywordListBox::after{
+  	content: ' ';
+  	display: block;
+  	height: 0;
+  	clear: both;
+}
+.addKeyBox .keywordListBox .keywordItem{
+	width: 20%;
+	height: 74rpx;
+	float: left;
+  margin-left: 4%;
+  margin-top: 32rpx;
+}
+.addKeyBox .keywordListBox .keywordItem .selectKeyword{
+	width: 100%;
+	height: 74rpx;
+	line-height: 74rpx;
+	border-radius: 12rpx;
+	font-size: 26rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #09ba79;
+	box-sizing: border-box;
+}
+.addKeyBox .keywordListBox .keywordItem .unselectKeyword{
+	width: 100%;
+	height: 74rpx;
+	line-height: 74rpx;
+	border-radius: 12rpx;
+	font-size: 26rpx;
+	text-align: center;
+	color: #333333;
+	background-color: #fff;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+}
+.addKeyBox .addKeywordBtnBox{
+	width:100%;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+}
+.addKeyBox .addKeywordBtnBox button{
+	width: 100%;
+	margin-top: 76rpx;
+	height: 94rpx;
+	line-height: 94rpx;
+	text-align:center;
+	color: #fff;
+	background-color: #09ba79;
+}

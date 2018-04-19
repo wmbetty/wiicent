@@ -1,0 +1,24 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{personListData.length==0}}">
+	<template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="mapBox">
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" show-location style="width: 100%; height: {{height-50}}px;" bindmarkertap="tapMarker" include-points="{{allPoints}}">
+    <cover-view class="tourInfo_wrap" wx:if="{{visitorInfo.rid}}">
+      <cover-view class="tourInfo_box">
+        <cover-view class="title1">{{visitorInfo.name}}{{visitorInfo.gender==''?'':'('+visitorInfo.gender+')'}}</cover-view>
+        <cover-view class="title2">电话：{{visitorInfo.mobile}}</cover-view>
+        <cover-view class="title2">更新时间：{{visitorInfo.uptime}}</cover-view>
+        <cover-view class="icon"></cover-view>
+      </cover-view>
+    </cover-view>
+    </map>
+    <scroll-view scroll-x style="height: 50px;">
+        <view class="perBox">
+            <view class="{{item.isSelect?'actPerItem':'perItem'}}" wx:for="{{visitorListData}}" wx:for-item="item" data-rid="{{item.rid}}" bindtap="tapPerson">{{item.name}}</view>
+        </view>
+    </scroll-view>
+</view>
+</block>
+

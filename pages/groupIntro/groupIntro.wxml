@@ -1,0 +1,37 @@
+<view class="projectIntroBox">
+    <view class="personInfo">
+        <image src="{{submitData.authorFace}}"></image>
+        <view class="title1">{{submitData.authorName}}</view>
+        <view class="title2">{{submitData.xchSn}}</view>
+        <view class="title3">{{tripStatusList[submitData.tripStatus]}}</view>
+    </view>
+    <form bindsubmit="submit" class="formBox">
+        <view class="session mb">
+            <view class="label">线路名称：</view>
+            <textarea type="text" name="projectName" disabled placeholder="请输入项目名称" bindinput="inputListener" data-id="projectName" value="{{submitData.projectName}}" auto-height/>
+        </view>
+        <view class="session">
+            <view class="label">往返航班：</view>
+            <textarea type="text" name="projectFlight" maxlength="-1" placeholder="暂无信息" bindinput="inputListener" data-id="projectFlight" value="{{submitData.projectFlight}}" auto-height disabled="{{submitData.isManager!=1}}"/>
+        </view>
+        <view class="session">
+            <view class="label">集合安排：</view>
+            <textarea type="text" name="projectAssemble" maxlength="-1" placeholder="暂无信息" bindinput="inputListener" data-id="projectAssemble" value="{{submitData.projectAssemble}}" auto-height disabled="{{submitData.isManager!=1}}"/>
+        </view>
+        <view class="session">
+            <view class="label">导游领队：</view>
+            <textarea type="text" name="projectLeader" maxlength="-1" placeholder="暂无信息" bindinput="inputListener" data-id="projectLeader" value="{{submitData.projectLeader}}" auto-height disabled="{{submitData.isManager!=1}}"/>
+        </view>
+        <view class="session">
+            <view class="label">紧急电话：</view>
+            <textarea type="number" name="projectPhone" maxlength="-1" placeholder="暂无信息" bindinput="inputListener" data-id="projectPhone" value="{{submitData.projectPhone}}" auto-height disabled="{{submitData.isManager!=1}}"/>
+        </view>
+        <view class="session">
+            <view class="label">补充说明：</view>
+            <textarea type="text" name="projectRemark" maxlength="-1" placeholder="暂无信息" bindinput="inputListener" data-id="projectRemark" value="{{submitData.projectRemark}}" auto-height disabled="{{submitData.isManager!=1}}"/>
+        </view>
+        <view class="btnArea" wx:if="{{submitData.isManager==1}}">
+            <button form-type="submit">保存</button>
+        </view>
+    </form>
+</view>

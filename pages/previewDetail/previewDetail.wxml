@@ -1,0 +1,70 @@
+<!--pages/previewDetail/previewDetail.wxml-->
+<view class="spot-page">
+<!-- <scroll-view scroll-y='true' style='height:{{winHeight + 110}}px;overflow:auto;'> -->
+  <view style='padding-bottom:80rpx;margin-bottom:30rpx;'>
+      <view class="banner-cont">
+        <image class='spotImg' src="{{spotDetail.bcontentImage ||  '../../dist/images/line_bg.png'}}"></image>
+        <image class='voiceBtn' bindtap="startVoice" src="../../dist/images/btn_yuyingbofang.png" wx:if="{{!canPlay}}"></image>
+        <image class='voiceBtn' bindtap="stopVoice" src="../../dist/images/btn_yuyingbofang_act.png" wx:if="{{canPlay}}"></image>
+      </view>
+      <view class="spot-title-cont">
+        <view class='spot-name'>{{spotDetail.title || ''}}</view>
+        <view class='spot-enname'>{{spotDetail.enName ? spotDetail.enName : ''}}</view>
+        <view class='spot-simple-intro'>
+          <view>{{(spotDetail.destiCity + spotDetail.mtype) || ''}}</view>
+          <view>{{distance || 0}}km</view>
+          <view>{{spotDetail.coRead || 0}}人气</view> 
+        </view>
+      </view>
+      <view class="spot-intros">{{intros || ''}}</view>
+      <view class='addr-infos'>
+        <view>门票信息：{{spotDetail.addition || '无'}}</view>
+        <view>所在地区：{{spotDetail.site || '无'}}</view>
+        <view>详细地址：{{spotDetail.address || '无'}}</view>
+        <view>如何到达：{{spotDetail.transportInfo || '无'}}</view>
+        <view>实用贴士：{{spotDetail.notice || '无'}}</view>
+      </view>
+      <view class='author-info-container'>
+        <view class='author-info'>
+          <image class='author-avatar' src="{{spotDetail.authorFace}}"></image>
+          <view class='author-name'>{{spotDetail.authorName || '位讯发现'}}</view>
+        </view>
+        <view class='map-cont'>
+          <map longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="15" markers="{{markers}}" style="width: 100%;height:140px;" wx:if="{{markers[0].longitude!== 0 && markers[0].latitude!==0}}"></map>
+        </view>
+        <view class='spot-business-info'>
+          <view>营业时间：{{spotDetail.stayTime || '无'}}</view>
+          <view>联系电话：{{spotDetail.phone || '无'}}</view>
+          <view>相关链接：{{spotDetail.link || '无'}}</view>
+        </view>
+      </view>
+      <view class='recommend-container'>
+        <view class='recommend-head'>相关推荐</view>
+        <view class='tab-container'>
+          <view data-index='0' bindtap='tabChange' class='tab-item'><text class='tab-text {{tabIndex === 0 ? "tab-active" : ""}}'>景点</text></view>
+          <view data-index='1' bindtap='tabChange' class='tab-item'><text class='tab-text {{tabIndex === 1 ? "tab-active" : ""}}'>美食</text></view>
+          <view data-index='2' bindtap='tabChange' class='tab-item'><text class='tab-text {{tabIndex === 2 ? "tab-active" : ""}}'>购物</text></view>
+        </view>
+        <view class='remd-list-view' wx:if='{{remdList.length > 0}}'>
+          <view class='remd-list-item' wx:for='{{remdList}}' wx:key='{{index}}'>
+            <image class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
+            <view class='remd-spot-info'>
+              <view class='r-spot-name'>{{item.title || ''}}</view>
+              <view class='r-spot-foot'>{{item.footerOne || '景点'}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='r-nodata' wx:if='{{remdList.length === 0}}'>暂无数据</view>
+      </view>
+  </view>
+  <view class="spot-foot">
+    <view class='foot-item' catchtap='bkLove'>
+      <text class='foot-icon {{bklove && coLove * 1 > 0 ? "like-icon-active" : "like-icon"}}'></text>
+      <text>{{coLove * 1 > 0 ? coLove : '喜欢'}}</text>
+    </view>
+    <view class='foot-item' data-spot='{{spotDetail}}' catchtap='goComment'>
+      <text class='foot-icon'></text>
+      <text>{{spotDetail.coComment * 1 > 0 ? spotDetail.coComment : '评论' }}</text>
+    </view>
+  </view>
+</view>

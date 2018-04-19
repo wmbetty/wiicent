@@ -1,0 +1,43 @@
+<block wx:if="{{isShowCostCategory}}">
+<view class="costCategoryBox">
+    <view class="sessionBox" wx:for="{{costCategoryList}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" data-value="{{item.name}}" bindtap="changeCategory">
+        <image src="../../dist/images/costcategory_icon_{{index}}.png" class="lIcon"></image>
+        <view class="sessionVal">{{item.name}}</view>
+        <block wx:if="{{item.isSelect}}"><image src="../../dist/images/costlist_selecticon.png" class="selectLogo"></image></block>
+    </view>
+    <view class="btnArea">
+        <view bindtap="costCategorySubmit">确定</view>
+    </view>
+</view>
+</block>
+<block wx:if="{{isShowCostList}}">
+<view class="costListBox">
+    <view class="costBox">
+        <input type="digit" placeholder="请输入金额" auto-focus bindinput="bindinputVal" value="{{costData.value}}"/>
+        <view class="sessionBox line" bindtap="goChangeCategory">
+            <image src="../../dist/images/costcategory_icon_{{costData.category}}.png" class="lIcon"></image>
+            <view class="sessionVal">{{costCategoryList[costData.category].name}}</view>
+            <image src="../../dist/images/path.png" class="arrow"></image>
+        </view>
+        <view class="sessionBox">
+            <image src="../../dist/images/costcategory_icon_6.png" class="lIcon"></image>
+            <view class="sessionVal">
+                <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                    <view class="picker">{{date}}</view>
+                </picker>
+                <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+                    <view class="picker">{{time}}</view>
+                </picker>
+            </view>
+            <image src="../../dist/images/path.png" class="arrow"></image>
+        </view>
+    </view>
+    <view class="remarkBox">
+        <textarea name="remark" placeholder="请输入内容" maxlength="-1" value="{{costData.remark}}" bindinput="bindinputRemark"/>
+    </view>
+    <view class="btnArea">
+        <view bindtap="submit">保存</view>
+    </view>
+    <image src="../../dist/images/ic_zhangdan3.png" class="addLogo" bindtap="viewCostList"></image>
+</view>
+</block>

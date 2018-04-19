@@ -1,0 +1,55 @@
+page{
+	background-color:#fff;
+}
+.friendBox{
+	width:100%;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	padding-top:26rpx;
+	box-sizing:border-box;
+}
+.searchBox{
+	width: 100%;
+	height: 88rpx;
+	position: relative;
+}
+.searchBox image{
+	width: 54rpx;
+	height: 54rpx;
+	position: absolute;
+	top: 14rpx;
+	left: 20rpx;
+}
+.searchBox input{
+	width:100%;
+	height:88rpx;
+	padding-left:94rpx;
+	box-sizing:border-box;
+	border-bottom: 1px solid #dddddd;
+}
+.btn{
+	width: 100%;
+	height: 76rpx;
+	line-height: 76rpx;
+	background-color:#fc8145;
+	text-align:center;
+	font-size: 28rpx;
+	color:#fff;
+	border-radius:12rpx;
+	margin-top:94rpx;
+}
+.codeBox{
+	width:100%;
+	position:relative;
+	margin-top:48rpx;
+}
+.codeBox .code{
+	width:258rpx;
+	position:absolute;
+	left:50%;
+	margin-left:-129rpx;
+	font-size:24rpx;
+	color:#999999;
+	text-align:center;
+	border-bottom:1px solid #999999;
+}

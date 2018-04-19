@@ -1,0 +1,37 @@
+<view class="forgetCodeWrap">
+    <view class="formBox">
+        <form bindsubmit="submit">
+            <view class="section">
+                <input type="text" name="phone" value="{{phone}}" placeholder="手机号" bindinput="inputPhone"/>
+            </view>
+            <view class="clear">
+                <view class="lSection">
+                    <input type="text" name="checkCode" value="{{checkCode}}" placeholder="验证码" bindinput="inputCheck"/>
+                </view>
+                <view class="checkCodeBtnBox" bindtap="getCheckCode">
+                    <view class="checkCodeBtn">
+                        <block wx:if="{{isGetCheckCode}}">{{timeCount}}</block><block wx:else>获取验证码</block>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{isShowCheckcode}}">
+                <view class="section codeSection">
+                    <input type="text" value="{{code}}" placeholder="确认密码" bindinput="inputcode"/>
+                    <image src="../../dist/images/login_showcode_icon.png" class="showCodeBtn" bindtap="hideCode"></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="section codeSection">
+                    <input type="text" value="{{code}}" placeholder="确认密码" bindinput="inputcode" password="true"/>
+                    <image src="../../dist/images/login_hidecode_icon.png" class="noShowCodeBtn" bindtap="showCode"></image>
+                </view>
+            </block>
+            <view class="btn-area">
+                <button formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+    <view class="goLoginBox">
+        知道密码，<i bindtap="goLogin">现在登陆</i>
+    </view>
+</view>

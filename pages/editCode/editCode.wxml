@@ -1,0 +1,36 @@
+<view class="forgetCodeWrap">
+    <view class="formBox">
+        <form bindsubmit="submit">
+            <view class="section">
+                <input type="text" value="{{formData.oldCode}}" placeholder="旧密码" bindinput="bindinputListener" data-id="oldCode"/>
+            </view>
+            <block wx:if="{{isShowCheckcode}}">
+                <view class="section codeSection">
+                    <input type="text" value="{{formData.newCode}}" placeholder="新密码" bindinput="bindinputListener" data-id="newCode" password="true"/>
+                    <image src="../../dist/images/login_showcode_icon.png" class="showCodeBtn" bindtap="hideCode"></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="section codeSection">
+                    <input type="text" value="{{formData.newCode}}" placeholder="新密码" bindinput="bindinputListener" data-id="newCode"/>
+                    <image src="../../dist/images/login_hidecode_icon.png" class="noShowCodeBtn" bindtap="showCode"></image>
+                </view>
+            </block>
+            <block wx:if="{{isShowCheckcode1}}">
+                <view class="section codeSection">
+                    <input type="text" value="{{formData.newCode1}}" placeholder="确认密码" bindinput="bindinputListener" data-id="newCode1" password="true"/>
+                    <image src="../../dist/images/login_showcode_icon.png" class="showCodeBtn" bindtap="hideCode1"></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="section codeSection">
+                    <input type="text" value="{{formData.newCode1}}" placeholder="确认密码" bindinput="bindinputListener" data-id="newCode1"/>
+                    <image src="../../dist/images/login_hidecode_icon.png" class="noShowCodeBtn" bindtap="showCode1"></image>
+                </view>
+            </block>
+            <view class="btn-area">
+                <button formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

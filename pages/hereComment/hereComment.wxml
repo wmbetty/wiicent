@@ -1,0 +1,18 @@
+<scroll-view scroll-y style="height:{{height-51}}px;" bindscrolltolower="loadMore">
+<view class="commentBox">
+    <view class="comment" wx:for="{{commentListData}}" wx:for-index="index" wx:for-item="item">
+        <view class="faceBox">
+            <image src="{{item.subFace}}" class="face"></image>
+        </view>
+        <view class="infoBox">
+            <view class="name">{{item.subName}}</view>
+            <view class="date">{{item.uptime}}</view>
+            <view class="content">{{item.content}}</view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+
+<view class="_bt_text_box">
+    <input type="text" class="_btn_text" placeholder="请输入评论内容吧~~" value="{{commentVal}}" maxlength="-1" bindinput="inputListener" confirm-type="发表" bindconfirm="sendComment"/>
+</view>

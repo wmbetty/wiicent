@@ -1,0 +1,15 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{renyuanListData.length==0}}">
+	<template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="personPlanBox">
+    <view class="personItem" bindtap="viewPersonDetail" bindlongpress="deletePerson" wx:for="{{renyuanListData}}" wx:for-index="index" wx:for-item="item" data-rid="{{item.rid}}">
+        <view class="name">{{item.name}}（{{item.shenfen}}）</view>
+        <image class="gender" src="../../dist/images/{{item.gender=='男'?'ic_nan.png':'ic_nv.png'}}"></image>
+        <view class="phone">{{item.mobile}}</view>
+        <image src="../../dist/images/path.png" class="arrowLogo"></image>
+    </view>
+</view>
+</block>
+<view class="addLogo" bindtap="addPersonDetail"><image src="../../dist/images/add.png"></image></view>

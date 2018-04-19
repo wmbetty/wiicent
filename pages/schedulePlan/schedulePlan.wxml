@@ -1,0 +1,51 @@
+<view class="schedulePlanBox">
+    <view wx:for="{{scheduleListData}}" wx:for-index="index" wx:for-item="item">
+    <view wx:if="{{item.left}}">
+    <view class="rperdayBox">
+        <view class="dayTitle">第{{item.day}}天</view>
+        <view class="orangeBox">
+            <image src="../../dist/images/schedule_orange.png" class="orangeLogo"></image>
+            <view class="line"></view>
+            <view class="innerBox">
+                <view class="contentBox">{{item.title}}</view>
+                <view class="linkBox" bindtap="viewPlanDetail" data-day="{{item.day}}">查看详情</view>
+            </view>
+        </view>
+        <view class="greenBox" wx:for="{{item.plotList}}" wx:for-item="plotItem" wx:for-index="plotIndex">
+            <image src="../../dist/images/schedule_green.png" class="greenLogo"></image>
+            <view class="line"></view>
+            <view class="time">{{plotItem.date}}</view>
+            <view class="innerBox">
+                <view class="contentBox"><image src="{{plotItem.sourceImage==''?'../../dist/images/line_bg.png':plotItem.sourceImage}}"></image><view class="title">{{plotItem.name}}</view></view>
+                <view class="linkBox" bindtap="viewPlotDetail" data-plotId="{{plotItem.id}}" data-day="{{item.day}}">查看详情</view>
+            </view>
+        </view>
+    </view>
+    <view class="clear"></view>
+    </view>
+    <view wx:else>
+    <view class="lperdayBox">
+        <view class="dayTitle">第{{item.day}}天</view>
+        <view class="orangeBox">
+            <image src="../../dist/images/schedule_orange.png" class="orangeLogo"></image>
+            <view class="line"></view>
+            <view class="innerBox">
+                <view class="contentBox">{{item.title}}</view>
+                <view class="linkBox" bindtap="viewPlanDetail" data-day="{{item.day}}">查看详情</view>
+            </view>
+        </view>
+        <view class="greenBox" wx:for="{{item.plotList}}" wx:for-item="plotItem" wx:for-index="plotIndex">
+            <image src="../../dist/images/schedule_green.png" class="greenLogo"></image>
+            <view class="line"></view>
+            <view class="time">{{plotItem.date}}</view>
+            <view class="innerBox">
+                <view class="contentBox"><image src="{{plotItem.sourceImage==''?'../../dist/images/line_bg.png':plotItem.sourceImage}}"></image><view class="title">{{plotItem.name}}</view></view>
+                <view class="linkBox" bindtap="viewPlotDetail" data-plotId="{{plotItem.id}}" data-day="{{item.day}}">查看详情</view>
+            </view>
+        </view>
+    </view>
+    <view class="clear"></view>
+    </view>
+    </view>
+    <view class="addLogo" bindtap="addSpot" wx:if="{{isManager==1}}"><image src="../../dist/images/add.png"></image></view>
+</view>

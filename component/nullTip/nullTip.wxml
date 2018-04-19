@@ -1,0 +1,6 @@
+<template name="nullTip">
+  	<view class="noMessageWrap">
+		<image src="../../dist/images/bg_kongdezhuangtai.png" class="noMessageLogo"></image>
+		<view class="noMessageIntro">这里都是空空的</view>
+	</view>
+</template>

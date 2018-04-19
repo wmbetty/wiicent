@@ -1,0 +1,11 @@
+.xchMsgBox{
+	width:100%;
+	margin-top:12rpx;
+	background-color:#fff;
+	border-top:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+	padding: 20rpx 30rpx;
+	box-sizing:border-box;
+	font-size:28rpx;
+	color:#333333;
+}

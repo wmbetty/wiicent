@@ -1,0 +1,39 @@
+.remarkBox{
+	width:100%;
+}
+.remarkBox .session{
+	width:100%;
+	height:400rpx;
+	padding-left:30rpx;
+	padding-right:30rpx;
+	box-sizing:border-box;
+	margin-top:30rpx;
+	margin-bottom:30rpx;
+}
+.remarkBox .session textarea{
+	width:100%;
+	height:400rpx;
+	border-radius:20rpx;
+	background-color:#fff;
+	font-size:32rpx;
+	color:#333333;
+	padding:30rpx;
+	box-sizing:border-box;
+	line-height:32rpx;
+}
+.btnArea{
+	width: 100%;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	box-sizing: border-box;
+}
+.btnArea view{
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+	background-color: #ff8c00;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	border-radius: 20rpx;
+}

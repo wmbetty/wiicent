@@ -1,0 +1,39 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{dairyListData.length==0}}">
+    <template is="nullTip"/>
+</block>
+<block wx:else>
+<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+<view class="lineDairyBox">
+    <view class="lineDairyListBox">
+        <view class="dayBox" wx:for="{{dairyListData}}" wx:for-index="index" wx:for-item="item" bindtap="viewDairyDetail" data-id="{{item.id}}" data-sourcetype="{{item.blogType}}" data-targetid="{{item.authorId}}">
+            <view class="authorInfoBox">
+                <image src="{{item.authorFace}}" class="authorFace"></image>
+                <view class="authorName">{{item.authorName}}</view>
+                <view class="date">{{item.uptime}}</view>
+            </view>
+            <view class="content">{{item.content}}</view>
+            <view class="picBox">
+                <image wx:if="{{item.mcontentImage!=''}}" src="{{item.mcontentImage}}" class="pic"></image>
+                <view class="keywords">{{item.keywords}}</view>
+            </view>
+            <view class="likereplyBox">
+                <view class="iconBox">
+                    <image src="../../dist/images/ic_feed_comment3.png" class="icon">
+                    </image>{{item.coComment!=0?item.coComment:'评论'}}
+                </view>
+                <view class="iconBox" wx:if="{{item.isLoved==0}}" data-id="{{item.id}}" data-sourcetype="{{item.blogType}}">
+                    <image src="../../dist/images/ic_xqy_shoucang3_normal.png" class="icon">
+                    </image>{{item.coLove!=0?item.coLove:'喜欢'}}
+                </view>
+                <view class="iconBox" wx:if="{{item.isLoved==1}}" data-id="{{item.id}}" data-sourcetype="{{item.blogType}}">
+                    <image src="../../dist/images/ic_feed_love_act@3x.png" class="icon">
+                    </image>{{item.coLove!=0?item.coLove:'喜欢'}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+</block>
+<view class="addLogo" bindtap="addDairyDetail"><image src="../../dist/images/add.png"></image></view>

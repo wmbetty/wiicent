@@ -1,0 +1,18 @@
+<block wx:if="{{noMessage}}">
+<view class="noMessageWrap">
+	<image src="../../dist/images/bg_kongdezhuangtai.png" class="noMessageLogo"></image>
+	<view class="noMessageIntro">这里都是空空的</view>
+</view>
+</block>
+<block wx:else>
+	<view class="messageWrap">
+		<view class="messageItem" bindtap="goLineMesDetail">
+			<image src="../../dist/images/tourist_pic.png"></image>
+			<view class="mesTitleContent">
+				<view class="mesTitle">林更远</view>
+				<view class="mesContent">[未读]请各位团友于3点前往亮帆大酒店集合</view>
+			</view>
+			<view class="mesDate">1小时前</view>
+		</view>
+	</view>
+</block>

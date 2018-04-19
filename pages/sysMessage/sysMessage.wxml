@@ -1,0 +1,15 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<block wx:if="{{noMessage}}">
+	<template is="nullTip"/>
+</block>
+<block wx:else>
+<view class="sysMessageBox">
+	<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+	<view class="mesBox" wx:for="{{sysMesListData}}" wx:for-item="item" wx:for-index="index">
+		<view class="date">{{item.uptime}}</view>
+		<view class="content">{{item.content}}</view>
+	</view>
+	<view class="loading" wx:if="{{showLoading}}"><image src="../../dist/images/5-121204193932-50.gif" class="loadinggif"></image></view>
+	</scroll-view>
+</view>
+</block>

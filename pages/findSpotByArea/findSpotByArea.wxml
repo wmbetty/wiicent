@@ -1,0 +1,45 @@
+<!--pages/findSpotByArea/findSpotByArea.wxml-->
+<!-- <view>
+  <view></view>
+  <scroll-view class="tab-scroll" scroll-x style="width: 100%">
+    <view class='tab-container'>
+      <view class='tab-item'>景点</view>
+      <view class='tab-item'>玩法</view>
+      <view class='tab-item'>锦囊</view>
+      <view class='tab-item'>美食</view>
+      <view class='tab-item'>购物</view>
+      <view class='tab-item'>住宿</view>
+      <view class='tab-item'>休闲</view>
+      <view class='tab-item'>综合</view>
+    </view>
+  </scroll-view>
+</view> -->
+
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">景点</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">玩法</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">锦囊</view>
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">美食</view>
+        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">购物</view>
+        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">住宿</view>
+        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">休闲</view>
+        <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">综合</view>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height:{{winHeight + 130}}px;margin-top:110rpx;" bindscrolltolower="searchScrollLower">
+      <block wx:for="{{spotList}}" wx:key="{{index}}">
+        <view class="item-ans" data-item='{{item}}' bindtap='gotoDetail'>
+                        <view class="avatar">
+                            <image class="img" src="{{item.bcontentImage || '../../dist/images/71817.png'}}"></image>
+                        </view>
+                        <view class="expertInfo">
+                            <view class="name">{{item.title || ''}}</view>
+                            <view class="answerHistory">
+                              <view>{{item.footerOne || ''}}</view>
+                              <view>{{item.sDis || 0}}km</view>
+                            </view>
+                        </view>
+                    </view>              
+      </block>
+    </scroll-view>
+</view>

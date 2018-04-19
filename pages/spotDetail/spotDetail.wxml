@@ -1,0 +1,30 @@
+<view class="spotDetailBox">
+    <view class="session">
+        <textarea placeholder="请输入介绍内容" maxlength="-1" value="{{formData.content}}" bindinput="bindinput" data-id="content"/>
+    </view>
+    <view class="session">
+        <label>景点名称</label>
+        <view class="itemBox">
+            <input  bindinput="bindinput" placeholder="请输入景点名称" value="{{formData.title}}" data-id="title"/>
+            <view class="arrowLogo"></view>
+        </view>
+    </view>
+    <picker mode="time" data-id="date" value="{{date}}" bindchange="bindPickerChange">
+    <view class="session">
+        <label>时间</label>
+        <view class="itemBox">
+            <view class="dateBox">{{date}}</view>
+            <view class="arrowLogo"></view>
+        </view>
+    </view>
+    </picker>
+    <view class="session" bindtap="goSelectPosition">
+        <label>经纬度</label>
+        <view class="itemBox">{{formData.longitude?(formData.longitude+','):''}}{{formData.latitude}}<view class="arrowLogo"></view>
+        </view>
+    </view>
+    <view class="btnArea">
+        <view bindtap="submit">保存</view>
+        <view bindtap="delete" class="delBtn" wx:if="{{spotId!=''}}">删除</view>
+    </view>
+</view>

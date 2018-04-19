@@ -1,0 +1,11 @@
+<view class="friendBox">
+	<scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="loadMore">
+	<view class="itemList">
+		<view class="item" wx:for="{{friendListData}}" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" bindtap="viewFriendDetail">
+			<image src="{{item.face}}" class="icon"></image>
+			<image src="../../dist/images/path.png" class="arrow"></image>
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
+	</scroll-view>
+</view>

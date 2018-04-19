@@ -1,0 +1,62 @@
+@import '../../component/nullTip/nullTip.wxss';
+
+.personPlanBox{
+	width: 100%;
+	margin-top: 30rpx;
+  	border-bottom: 1px solid #dddddd;
+}
+.personPlanBox .personItem{
+	width: 100%;
+	position: relative;
+	height: 98rpx;
+	border-top: 1px solid #dddddd;
+	box-sizing: border-box;
+	overflow:hidden;
+  	background-color: #fff;
+}
+.personPlanBox .personItem .arrowLogo{
+	width: 38rpx;
+	height: 38rpx;
+	position: absolute;
+	top: 30rpx;
+	right: 30rpx;
+}
+.personPlanBox .personItem .name{
+	height: 98rpx;
+	line-height: 98rpx;
+	font-size: 28rpx;
+	color: #333333;
+	padding-left:30rpx;
+	box-sizing:border-box;
+	float:left;
+}
+.personPlanBox .personItem .gender{
+	margin-top:26rpx;
+	width:44rpx;
+	height: 44rpx;
+	float:left;
+}
+.personPlanBox .personItem .phone{
+	height: 98rpx;
+	line-height: 98rpx;
+	font-size: 28rpx;
+	color: #999999;
+	float:right;
+	padding-right:88rpx;
+}
+.addLogo{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 48rpx;
+	position: fixed;
+	right: 58rpx;
+	bottom: 106rpx;
+	background-color: #09ba79;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.addLogo image{
+	width:56rpx;
+	height:56rpx;
+}

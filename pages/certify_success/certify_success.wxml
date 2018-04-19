@@ -1,0 +1,10 @@
+<view class="titleBox">
+	<image src="../../dist/images/certify_success_icon.png" class="check"></image>
+	<view class="title">提交成功，等待审核</view>
+	<view class="content">提交成功后，位讯工作人员将尽快对您提交</view>
+	<view class="content">的信息进行审核</view>
+	<view class="btnBox">
+		<view class="btn" bindtap="goHome">回首页</view>
+		<view class="btn" bindtap="goBack">返回</view>
+	</view>
+</view>

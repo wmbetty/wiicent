@@ -1,0 +1,12 @@
+<view class="friendBox">
+	<view class="searchBox">
+		<image src="../../dist/images/myfriend_add.png"></image>
+		<input type="number" placeholder="手机号" value="{{searchVal}}" bindinput="searchInput"/>
+	</view>
+	<view class="btnBox">
+		<view class="btn" bindtap="searchFriend">搜索</view>
+	</view>
+	<view class="codeBox">
+		<view class="code" bindtap="getCode">扫一扫</view>
+	</view>
+</view>

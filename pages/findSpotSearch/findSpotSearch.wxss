@@ -1,0 +1,90 @@
+/* pages/findSpotSearch/findSpotSearch.wxss */
+page{background: #fff;}
+.search-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 12rpx 0;
+}
+.s-head-right{
+  width: 20%;
+  text-align: center;
+  font-size: 32rpx;
+  color: orange;
+}
+.s-main{
+  width:80%;
+  border:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-left:30rpx;
+  border-radius:4px;
+}
+.search-icon{
+ width:40rpx;
+height:40rpx;
+background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAdVBMVEUAAAC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLh84XCOAAAAJnRSTlMACfoGRu2wmG4lHeja1reJTCoU8c+qkoN7Zj7z4KF+WVQ0ysikeP4SQLIAAADOSURBVCjPnY/XDoJAEEW3sIUOIkUsYLv//4mKhi0QEuN5upOzmztDfmE3tKoddmsRnRkm2CNamKACyy46zxiqwjMFg4y+vyVY4NYI5GbIIZzCBpnzUEKZTCuUjrriSM0OuHnNd5g2jcZTDfQcn8g91aKb4wHKUwra9iaeStHPkcdwr+whuBk6pNQMfI+LfUdTZHTOEgklljBGUvDpS7CH+NxvXQrEUtUxwELiw3WCiZPASFaU46Eo30ee6NLYBTuyQY9jtOVqnLdUWIfkf15j9A49WtKxgAAAAABJRU5ErkJggg==') no-repeat;
+background-size:100% 100%;
+margin-top:4rpx;
+margin-left:20rpx;
+
+}
+.search-input{
+  border:none;
+  width:76%;
+  font-size:32rpx;
+  color:#333;
+  padding: 10rpx 0;
+}
+.clear-text-icon{
+  background:#666;
+  color:#fff;
+  width:34rpx;
+  height:34rpx;
+  line-height:32rpx;
+  border-radius:50%;
+  text-align:center;
+  font-size:24rpx;
+  margin-top:3rpx;
+  margin-right:20rpx;
+  visibility: hidden;
+}
+.clear-icon-show{visibility: visible;}
+.remd-list-item{
+  padding: 22rpx 0 22rpx 22rpx;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+.remd-list-item:last-child{
+  border: none;
+}
+.remd-spot-img{
+  width: 160rpx;
+  height: 160rpx;
+}
+.remd-spot-info{
+  flex: auto;
+  position: relative;
+  padding-left: 20rpx;
+}
+.r-spot-name{font-size: 32rpx;}
+.r-spot-foot{
+  position: absolute;
+  bottom: 18rpx;
+  left: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.s-middle{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.r-nodata{
+  padding: 30rpx;
+  font-size: 32rpx;
+  color: #999;
+  text-align: center;
+}
