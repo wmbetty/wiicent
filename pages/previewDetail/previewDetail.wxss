@@ -92,17 +92,18 @@
   color: #999;
 }
 .spot-simple-intro{
-  padding: 0 22%;
+  /* padding: 0 22%; */
   color: #999;
   display: flex;
   justify-content: space-between;
+  white-space: nowrap
 }
 .spot-intros{
   padding: 0 18rpx;background: #fff;
 }
 .spot-simple-intro view{
-  width: 30%;
-  word-wrap:break-word;
+  /* width: 30%;
+  word-wrap:break-word; */
 }
 .spot-simple-intro view:first-child, .spot-simple-intro view:last-child{
   width: 34%;

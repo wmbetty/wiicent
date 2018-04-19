@@ -20,7 +20,8 @@ Page({
     listUrl: '',
     postData: {},
     hasMore: true,
-    timeStamp: 0
+    timeStamp: 0,
+    destiCity: ''
   },
   onLoad: function (options) {
     var that = this;
@@ -56,9 +57,11 @@ Page({
         console.log("都不是");
         break;
     }
+    console.log(detail, 'detail')
     that.setData({
       type: type,
-      currentTab: index
+      currentTab: index,
+      destiCity: detail.name
     })
     
     wxJs.getSystemInfo((res) => {
