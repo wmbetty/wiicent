@@ -1,0 +1,10 @@
+<!--pages/areaList/areaList.wxml-->
+<view>
+  <view class='area-head'>
+    <view>选择地区</view>
+    <view>确定</view>
+  </view>
+  <scroll-view scroll-y>
+    <view class='area-list-item'></view>
+  </scroll-view>
+</view>

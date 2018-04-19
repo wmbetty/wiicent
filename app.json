@@ -81,12 +81,13 @@
     "pages/previewSpot/previewSpot",
     "pages/findSpot/findSpot",
     "pages/findSpotSearch/findSpotSearch",
-    "pages/findSpotByArea/findSpotByArea"
+    "pages/findSpotByArea/findSpotByArea",
+    "pages/areaList/areaList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#191919",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText":  "位讯行程助手",
+    "navigationBarTitleText": "位讯行程助手",
     "backgroundColor": "#efeff4",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
@@ -96,22 +97,26 @@
     "selectedColor": "#09ba79",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "iconPath": "dist/images/ic_dibudaohang_shouye_nor.png",
-      "selectedIconPath": "dist/images/ic_dibudaohang_shouye_act.png",
-      "text": "首页"
-    },{
-      "pagePath": "pages/message/message",
-      "iconPath": "dist/images/ic_dibudaohang_xiaoxi_nor.png",
-      "selectedIconPath": "dist/images/ic_dibudaohang_xiaoxi_act.png",
-      "text": "消息"
-    },{
-      "pagePath": "pages/my/my",
-      "iconPath": "dist/images/ic_dibudaohang_wode_nor.png",
-      "selectedIconPath": "dist/images/ic_dibudaohang_wode_act.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "dist/images/ic_dibudaohang_shouye_nor.png",
+        "selectedIconPath": "dist/images/ic_dibudaohang_shouye_act.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "dist/images/ic_dibudaohang_xiaoxi_nor.png",
+        "selectedIconPath": "dist/images/ic_dibudaohang_xiaoxi_act.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "dist/images/ic_dibudaohang_wode_nor.png",
+        "selectedIconPath": "dist/images/ic_dibudaohang_wode_act.png",
+        "text": "我的"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,
