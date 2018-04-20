@@ -30,7 +30,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/findSpotSearch/findSpotSearch",
+					"query": ""
+				}
+			]
 		}
 	}
 }

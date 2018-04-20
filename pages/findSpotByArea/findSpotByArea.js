@@ -1,5 +1,4 @@
 // pages/findSpotByArea/findSpotByArea.js
-
 import wxJs from '../../util/wxjs'
 import util from '../../util/util'
 var app = getApp();
@@ -25,9 +24,9 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    let index = options.index * 1
-    let detail = JSON.parse(options.detail)
-    let type = ''
+    let index = options.index * 1;
+    let detail = JSON.parse(options.detail);
+    let type = '';
     switch (index) {
       case 0:
         type = '景点'
@@ -57,29 +56,22 @@ Page({
         console.log("都不是");
         break;
     }
-    console.log(detail, 'detail')
+
+    let winHeight = wx.getStorageSync('winHeight');
     that.setData({
       type: type,
       currentTab: index,
-      destiCity: detail.name
-    })
-    
-    wxJs.getSystemInfo((res) => {
-      // 可使用窗口宽度、高度
-      let windowHeight = res.windowHeight
-      that.setData({
-        // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将300rpx转换为px）
-        winHeight: windowHeight - 90 / 750 * 300
-      })
-    })
+      destiCity: detail.name,
+      winHeight: winHeight - 90 / 750 * 300
+    });
 
-    let sid = wx.getStorageSync('sid')
+    let sid = wx.getStorageSync('sid');
     if (sid === '') {
       wx.reLaunch({
         url: "/pages/login/login"
       })
     } else {
-      let url = app.globalData.url + '/baike/baikeIndex?sid=' + sid
+      let url = app.globalData.url + '/baike/baikeIndex?sid=' + sid;
       let postData = {
         'pageId': that.data.pageId,
         'destiPath': detail.path,
@@ -88,62 +80,60 @@ Page({
         'app': appValue,
         'platform': platform,
         'ver': ver
-      }
+      };
       that.setData({
         listUrl: url,
         postData: postData
-      })
-      that.getSpotList(url, postData)
+      });
+      that.getSpotList(url, postData);
     }
 
   },
-
   getSpotList(url, postData) {
     wxJs.showLoading('加载中');
-    let that = this
-    let lat = ''
-    let lon = ''
+    let that = this;
+    let lat = '';
+    let lon = '';
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
-        lat = res.latitude
-        lon = res.longitude
+        lat = res.latitude;
+        lon = res.longitude;
         wxJs.postRequest(url, postData, (res) => {
-          let result = res.data.result
+          let result = res.data.result;
           if (res.data) {
             wx.hideLoading();
           }
-          let lists = result['ShowList.list'] || []
+          let lists = result['ShowList.list'] || [];
           // 计算距离
           if (lists.length > 0) {
             for (let item of lists) {
-              let dis = util.getDistance(item.latitude, item.longitude, lat, lon)
-              item.sDis = dis
+              let dis = util.getDistance(item.latitude, item.longitude, lat, lon);
+              item.sDis = dis;
             }
           }
           if (result && lists.length > 0 && that.data.pageId <= 1) {
             that.setData({
               spotList: lists
-            })
+            });
           }
           if (that.data.pageId > 1 && result && lists.length > 0) {
-            tempList = result['ShowList.list']
-            let list = that.data.spotList
+            tempList = result['ShowList.list'];
+            let list = that.data.spotList;
             that.setData({
               spotList: list.concat(tempList)
-            })
+            });
           }
           if (!res.data) {
             that.setData({
               hasMore: false
-            })
-            wxJs.showToast('暂无数据')
+            });
+            wxJs.showToast('暂无数据');
           }
         })
       }
     })
   },
-
   // 滚动切换标签样式
   switchTab: function (e) {
     this.setData({
@@ -153,7 +143,7 @@ Page({
   },
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
-    let that = this
+    let that = this;
     let type = ''
     let cur = e.target.dataset.current;
     if (cur * 1 === 0) {
@@ -184,14 +174,13 @@ Page({
     else {
       let postData = that.data.postData;
       postData.pageId = 1;
-      postData.mtype = type
+      postData.mtype = type;
       that.setData({
         currentTab: cur,
         postData: postData,
         spotList: []
-      })
-      
-      that.getSpotList(that.data.listUrl, postData)
+      });
+      that.getSpotList(that.data.listUrl, postData);
     }
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
@@ -199,11 +188,11 @@ Page({
     if (this.data.currentTab > 4) {
       this.setData({
         scrollLeft: 300
-      })
+      });
     } else {
       this.setData({
         scrollLeft: 0
-      })
+      });
     }
   },
   searchScrollLower(e) {
@@ -213,26 +202,30 @@ Page({
       timeStamp: e.timeStamp
     });
     if (that.data.hasMore) {
-      let pageId = that.data.pageId
-      pageId = pageId + 1
-      let postData = that.data.postData
-      postData.pageId = pageId
+      let pageId = that.data.pageId;
+      pageId = pageId + 1;
+      let postData = that.data.postData;
+      postData.pageId = pageId;
       that.setData({
         pageId: pageId,
         postData: postData
-      })
-      let url = that.data.listUrl
-      that.getSpotList(url, postData)
+      });
+      let url = that.data.listUrl;
+      that.getSpotList(url, postData);
     } else {
-      wxJs.showToast('数据已全部加载')
+      wxJs.showToast('数据已全部加载');
     }
   },
-
   // 詳情
   gotoDetail(e) {
     let item = e.currentTarget.dataset.item
     wx.navigateTo({
       url: '/pages/previewDetail/previewDetail?item=' + JSON.stringify(item)
+    })
+  },
+  goChooseArea () {
+    wx.navigateTo({
+      url: '/pages/areaList/areaList'
     })
   }
 

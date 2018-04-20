@@ -34,14 +34,8 @@ function showLoading (title) {
 function getSystemInfo(callback) {
   wx.getSystemInfo({
     success: (res) => {
-      console.log(res);
+      wx.setStorageSync('winHeight', res.windowHeight);
       callback(res)
-      // // 可使用窗口宽度、高度
-      // let windowHeight = res.windowHeight
-      // that.setData({
-      //   // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将300rpx转换为px）
-      //   listHeight: windowHeight - 316 / 750 * 300
-      // })
     }
   }) 
 }

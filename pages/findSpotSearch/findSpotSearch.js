@@ -15,7 +15,6 @@ Page({
     searchText: '', //搜索框文字
     size: 15,
     pageId: 1,
-    sid: '',
     searchUrl: '',
     searchData: {},
     searchList: [],
@@ -23,21 +22,23 @@ Page({
     listHeight: '',
     timeStamp: 0,
     hasMore: true,
-    noList: false
+    noList: false,
+    winHeight: 0 //窗口高度
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    let sid = wx.getStorageSync('sid')
+    let that = this;
+    let winHeight = wx.getStorageSync('winHeight');
+    let sid = wx.getStorageSync('sid');
     if (sid === '') {
       wx.reLaunch({
         url: "/pages/login/login"
       })
     } else {
-      let url = app.globalData.url + '/baike/bkJingdianSearch?sid=' + sid
+      let url = app.globalData.url + '/baike/bkJingdianSearch?sid=' + sid;
       let postData = {
         'pageId': that.data.pageId,
         'size': that.data.size,
@@ -45,85 +46,37 @@ Page({
         'app': appValue,
         'platform': platform,
         'ver': ver
-      }
+      };
       that.setData({
-        sid: sid,
         searchUrl: url,
-        searchData: postData
+        searchData: postData,
+        winHeight: winHeight,
+        listHeight: winHeight - 60 / 750 * 300
       });
-      wxJs.getSystemInfo((res) => {
-        // 可使用窗口宽度、高度
-        let windowHeight = res.windowHeight
-        that.setData({
-          // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将300rpx转换为px）
-          listHeight: windowHeight - 60 / 750 * 300
-        })
-      })
     }
   },
+  onReady: function () {},
+  onShow: function () {},
+  onHide: function () {},
+  onUnload: function () {},
+  onPullDownRefresh: function () {},
+  onReachBottom: function () {},
+  onShareAppMessage: function () {},
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   // 输入框输入文字
   searchTextChange (e) {
-    let val = e.detail.value
-    let that = this
-    let postData = that.data.searchData
-    let url = that.data.searchUrl
+    let val = e.detail.value;
+    let that = this;
+    let postData = that.data.searchData;
+    let url = that.data.searchUrl;
     if (val) {
-      postData.title = val
+      postData.title = val;
       that.setData({
         searchText: val,
         searchData: postData,
         pageId: 1
-      })
-      that.getSearchList(url, that.data.searchData)
+      });
+      that.getSearchList(url, that.data.searchData);
     }
   },
 
@@ -135,23 +88,23 @@ Page({
       if (res) {
         wx.hideLoading();
       }
-      let resData = res.data.result
+      let resData = res.data.result;
       if (that.data.pageId <= 1 && resData && resData['ShowList.list'].length > 0) {
         that.setData({
           lastList: resData['ShowList.list']
-        })
+        });
       }
       if (that.data.pageId > 1 && resData && resData['ShowList.list'].length > 0) {
-        tempList = resData['ShowList.list']
-        let list = that.data.lastList
+        tempList = resData['ShowList.list'];
+        let list = that.data.lastList;
         that.setData({
           lastList: list.concat(tempList)
-        })
+        });
       }
       if ((!resData || resData['ShowList.list'].length === 0) && that.data.pageId >= 1) {
         that.setData({
           hasMore: false
-        })
+        });
       }
     })
   },
@@ -160,7 +113,7 @@ Page({
   clearText () {
     this.setData({
       searchText: ''
-    })
+    });
   },
 
   // 点击取消返回上一页
@@ -177,16 +130,16 @@ Page({
       timeStamp: e.timeStamp
     });
     if (that.data.hasMore && that.data.searchText) {
-      let pageId = that.data.pageId
-      pageId = pageId + 1
-      let postData = that.data.searchData
-      postData.pageId = pageId
+      let pageId = that.data.pageId;
+      pageId = pageId + 1;
+      let postData = that.data.searchData;
+      postData.pageId = pageId;
       that.setData({
         pageId: pageId,
         searchData: postData
-      })
-      let url = that.data.searchUrl
-      that.getSearchList(url, postData)
+      });
+      let url = that.data.searchUrl;
+      that.getSearchList(url, postData);
     } else {
       wxJs.showToast('数据已全部加载')
     }
@@ -194,7 +147,7 @@ Page({
 
   // 詳情
   gotoDetail(e) {
-    let item = e.currentTarget.dataset.item
+    let item = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: '/pages/previewDetail/previewDetail?item=' + JSON.stringify(item)
     })

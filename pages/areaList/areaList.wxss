@@ -1,1 +1,25 @@
 /* pages/areaList/areaList.wxss */
+page{background: #fff;}
+.area-list-item{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  border-bottom: 1px solid #eee;
+  font-size: 32rpx;
+}
+.area-head{
+  text-align: center;
+  color: #000;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 18rpx 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.confirm-text{
+  position: absolute;
+  right: 30rpx;top:20rpx;
+  font-size: 30rox;
+  color: #888;
+}

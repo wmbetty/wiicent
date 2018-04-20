@@ -1,11 +1,11 @@
 <!--pages/findSpotByArea/findSpotByArea.wxml-->
 <view >
-    <view class='page-head'>
-      <view class='tile-container'>
+    <!-- <view class='page-head'>
+      <view class='tile-container' bindtap="goChooseArea">
         <view class='locate-icon'></view>
         <view>{{destiCity || ''}}</view>
       </view>
-    </view>
+    </view> -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">景点</view>
         <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">玩法</view>

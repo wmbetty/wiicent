@@ -20,7 +20,7 @@
         <view class="panelBox">
             <scroll-view scroll-y="true" style="height: {{listHeight}}px;" bindscrolltolower="searchScrollLower">
                 <view class="item" wx:for="{{lastAreaList}}" wx:key="{{index}}">
-                    <image data-item="{{item}}" bindtap="goDetails" src="{{item.mcontentImage ? item.mcontentImage : '../../dist/images/line_bg.png' }}" class="itemPic"></image>
+                    <image lazy-load="true" data-item="{{item}}" bindtap="goDetails" src="{{item.mcontentImage ? item.mcontentImage : '../../dist/images/line_bg.png' }}" class="itemPic"></image>
                     <view class="itemName">{{item.name}}</view>
                 </view>
             </scroll-view>

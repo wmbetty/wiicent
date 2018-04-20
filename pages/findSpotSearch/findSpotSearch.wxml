@@ -11,7 +11,7 @@
   <view wx:if='{{searchText && lastList.length > 0}}'>
     <scroll-view scroll-y style="height: {{listHeight}}px;" bindscrolltolower="searchScrollLower">
       <view class='remd-list-item' wx:for='{{lastList}}' data-item='{{item}}' wx:key='{{index}}' bindtap='gotoDetail'>
-        <image class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
+        <image lazy-load="true" class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
         <view class='remd-spot-info'>
          <view class='r-spot-name'>{{item.title || ''}}</view>
          <view class='s-middle'>{{item.middleTwo || ''}}</view>

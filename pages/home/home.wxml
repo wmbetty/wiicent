@@ -9,7 +9,7 @@
     </view>
     <view class="recomXchList" wx:if="{{recomXchData.length!=0}}">
       <view class="emTitle">推荐行程</view>
-      <view class="recomXchItem" wx:for="{{recomXchData}}" wx:for-index="index" wx:for-item="item" data-id="{{item.xid}}" bindtap="viewRecomXch">
+      <view class="recomXchItem" wx:for="{{recomXchData}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-id="{{item.xid}}" bindtap="viewRecomXch">
         <image src="{{item.bcontentImage==''?'../../dist/images/line_bg.png':item.bcontentImage}}"></image>
         <view class="xchIntro">{{item.title}}</view>
         <view class="xchInfo">
@@ -47,7 +47,7 @@
   <view class="itemListBox">
     <view class="itemList">
       <block wx:if="{{menuOpen}}">
-        <view class="item" wx:for="{{projectData.isManager==1?itemListData:itemListData1}}" wx:for-index="index" wx:for-item="item" data-id="{{item.name}}" bindtap="viewItem">
+        <view class="item" wx:for="{{projectData.isManager==1?itemListData:itemListData1}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-id="{{item.name}}" bindtap="viewItem">
           <view class="itembg" style="background-color:{{item.bgcolor}};">
             <image class="itemicon" src="{{item.imgsrc}}"></image>
           </view>
@@ -61,7 +61,7 @@
         </view>
       </block>
       <block wx:else>
-        <view class="item" wx:for="{{projectData.isManager==1?itemListData:itemListData1}}" wx:if="{{index<9}}" data-id="{{item.name}}" bindtap="viewItem">
+        <view class="item" wx:for="{{projectData.isManager==1?itemListData:itemListData1}}" wx:key="index" wx:if="{{index<9}}" data-id="{{item.name}}" bindtap="viewItem">
           <view class="itembg" style="background-color:{{item.bgcolor}};">
             <image class="itemicon" src="{{item.imgsrc}}"></image>
           </view>
@@ -130,7 +130,7 @@
 
   <view class="lineDairyBox">
     <view class="lineDairyListBox">
-        <view class="dayBox" wx:for="{{dairyListData}}" wx:for-index="index" wx:for-item="item" bindtap="viewDairyDetail" data-id="{{item.id}}" data-sourcetype="{{item.blogType}}" data-targetid="{{item.authorId}}">
+        <view class="dayBox" wx:for="{{dairyListData}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="viewDairyDetail" data-id="{{item.id}}" data-sourcetype="{{item.blogType}}" data-targetid="{{item.authorId}}">
             <view class="authorInfoBox">
                 <image src="{{item.authorFace}}" class="authorFace"></image>
                 <view class="authorName">{{item.authorName}}</view>

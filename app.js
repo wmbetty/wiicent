@@ -9,7 +9,6 @@ App({
   onLaunch:function(){
     var that = this;
     var count = 0;
-    console.log('app onlaunch');
     if (wx.getStorageSync('timer')) {return;}
     var a = setInterval(function(){
       count++;
@@ -22,7 +21,6 @@ App({
                 that.updateGeo(res.latitude,res.longitude);
                 wx.setStorageSync('current_lat',res.latitude);
                 wx.setStorageSync('current_lng',res.longitude);
-                console.log(count+'_'+Date.parse(new Date()));
               }
             })
           }
@@ -32,7 +30,6 @@ App({
     wx.setStorageSync('timer',a);
   },
   onHide:function(){
-    console.log('app onhide');
     wx.removeStorageSync('timer');
   },
   updateGeo:function(lat,lng){

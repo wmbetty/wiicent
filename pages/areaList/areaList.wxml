@@ -2,9 +2,26 @@
 <view>
   <view class='area-head'>
     <view>选择地区</view>
-    <view>确定</view>
+    <view class='confirm-text'>确定</view>
   </view>
   <scroll-view scroll-y>
-    <view class='area-list-item'></view>
+    <view class='area-first-level'>
+      <view class='area-list-item'>
+        <view>hh</view>
+        <view>kk</view>
+      </view>
+    </view>
+    <view class='area-sed-level'>
+      <view class='area-list-item'>
+        <view>hh</view>
+        <view>kk</view>
+      </view>
+    </view>
+    <view class='area-third-level'>
+      <view class='area-list-item'>
+        <view>hh</view>
+        <view>kk</view>
+      </view>
+    </view>
   </scroll-view>
 </view>
