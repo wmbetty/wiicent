@@ -344,6 +344,13 @@ Page({
         })
       }
     })
+  },
+  // 詳情
+  gotoDetail(e) {
+    let item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: '/pages/previewDetail/previewDetail?item=' + JSON.stringify(item)
+    })
   }
 
 })

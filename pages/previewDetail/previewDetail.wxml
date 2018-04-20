@@ -46,7 +46,7 @@
           <view data-index='2' bindtap='tabChange' class='tab-item'><text class='tab-text {{tabIndex === 2 ? "tab-active" : ""}}'>购物</text></view>
         </view>
         <view class='remd-list-view' wx:if='{{remdList.length > 0}}'>
-          <view class='remd-list-item' wx:for='{{remdList}}' wx:key='{{index}}'>
+          <view class='remd-list-item' wx:for='{{remdList}}' wx:key='{{index}}' bindtap='gotoDetail' data-item='{{item}}'>
             <image class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
             <view class='remd-spot-info'>
               <view class='r-spot-name'>{{item.title || ''}}</view>
@@ -58,11 +58,11 @@
       </view>
   </view>
   <view class="spot-foot">
-    <view class='foot-item' catchtap='bkLove'>
+    <view class='foot-item' bindtap='bkLove'>
       <text class='foot-icon {{bklove && coLove * 1 > 0 ? "like-icon-active" : "like-icon"}}'></text>
       <text>{{coLove * 1 > 0 ? coLove : '喜欢'}}</text>
     </view>
-    <view class='foot-item' data-spot='{{spotDetail}}' catchtap='goComment'>
+    <view class='foot-item' data-spot='{{spotDetail}}' bindtap='goComment'>
       <text class='foot-icon'></text>
       <text>{{spotDetail.coComment * 1 > 0 ? spotDetail.coComment : '评论' }}</text>
     </view>

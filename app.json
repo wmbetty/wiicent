@@ -82,7 +82,8 @@
     "pages/findSpot/findSpot",
     "pages/findSpotSearch/findSpotSearch",
     "pages/findSpotByArea/findSpotByArea",
-    "pages/areaList/areaList"
+    "pages/areaList/areaList",
+    "pages/spotComment/spotComment"
   ],
   "window": {
     "navigationBarBackgroundColor": "#191919",

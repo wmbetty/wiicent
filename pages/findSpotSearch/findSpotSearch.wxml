@@ -3,7 +3,7 @@
   <view class='search-head'>
     <view class='s-main'>
       <view class='search-icon'></view>
-      <input class='search-input' placeholder-style="color:#999;" bindinput='searchTextChange' placeholder='搜索目的地，景点等' value='{{searchText}}'/>
+      <input class='search-input' placeholder-style="color:#999;" auto-focus="true" bindinput='searchTextChange' placeholder='搜索目的地，景点等' value='{{searchText}}'/>
       <view class='clear-text-icon {{searchText ? "clear-icon-show" : ""}}' bindtap='clearText'>x</view>
     </view>
     <view class='s-head-right' bindtap='goBack'>取消</view>

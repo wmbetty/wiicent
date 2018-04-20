@@ -68,6 +68,12 @@ margin-left:20rpx;
   flex: auto;
   position: relative;
   padding-left: 20rpx;
+  width: 70%;
+}
+.r-spot-name, .s-middle{
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .r-spot-name{font-size: 32rpx;}
 .r-spot-foot{
