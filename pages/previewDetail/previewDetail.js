@@ -10,10 +10,6 @@ var loveTap = 0;
 var innerAudioContext = wx.createInnerAudioContext();
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     spotId: '', //地点id
     spotDetail: {},
@@ -39,21 +35,13 @@ Page({
     tabIndex: 0,
     remdList: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    let that = this
-    innerAudioContext.src = ''
-    wxJs.getSystemInfo((res) => {
-      // 可使用窗口宽度、高度
-      let windowHeight = res.windowHeight
-      that.setData({
-        // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将300rpx转换为px）
-        winHeight: windowHeight
-      })
-    })
+    let that = this;
+    innerAudioContext.src = '';
+    let winHeight = wx.getStorageSync('winHeight');
+    that.setData({
+      winHeight: winHeight
+    });
 
     // 获取点赞状态
     wx.getStorage({
@@ -69,94 +57,55 @@ Page({
           })
         }
       }
-    })
-    let item = JSON.parse(options.item)
-    let id = (item.id).substring(5)
-    let sid = wx.getStorageSync('sid')
+    });
+    let item = JSON.parse(options.item);
+    let id = (item.id).substring(5);
+    let sid = wx.getStorageSync('sid');
     if (sid === '') {
       wx.reLaunch({
         url: "/pages/login/login"
       })
     } else {
-      let url = app.globalData.url+'/baike/baikeView?sid=' + sid
+      let url = app.globalData.url+'/baike/baikeView?sid=' + sid;
       let postData = {
         'id':id,
         'app':appValue,
         'platform':platform,
         'ver':ver
-      }
+      };
       that.setData({
         sid: sid,
         detailUrl: url,
         detailData: postData
-      })
+      });
       that.getDetails(url, postData);
     }
   },
 
   // 点击评论
   goComment (e) {
-    let spot = e.currentTarget.dataset.spot
+    let spot = e.currentTarget.dataset.spot;
     wx.navigateTo({
-      url: '/pages/spotComment/spotComment?spot=' + JSON.stringify(spot),
+      url: '/pages/spotComment/spotComment?spot=' + JSON.stringify(spot)
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+  onReady: function () {},
+  onShow: function () {},
+  onHide: function () {},
   onUnload: function () {
     innerAudioContext.pause();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
+  onPullDownRefresh: function () {},
+  onReachBottom: function () {},
+  onShareAppMessage: function () {},
 
   getDetails (url, postData) {
     let that = this;
     let markers = that.data.markers;
     wxJs.postRequest(url, postData, (res) => {
-      let details = res.data.result.Baike
-      let intros = details.content.replace(/(^\s*)|(\s*$)/g, "")
-      let coLove = details.coLove
+      let details = res.data.result.Baike;
+      let intros = details.content.replace(/(^\s*)|(\s*$)/g, "");
+      let coLove = details.coLove;
       markers[0].latitude = details.latitude;
       markers[0].longitude = details.longitude;
       that.setData({
@@ -164,19 +113,19 @@ Page({
         intros: intros,
         coLove: coLove,
         markers: markers
-      })
+      });
 
       // 获取当前经纬度
       wx.getLocation({
         type: 'wgs84',
         success: function (res) {
-          let dis = util.getDistance(res.latitude, res.longitude, details.latitude, details.longitude)
+          let dis = util.getDistance(res.latitude, res.longitude, details.latitude, details.longitude);
           if (isNaN(dis)) {
             dis = 0
           }
           that.setData({
             distance: dis
-          })
+          });
         }
       })
 
@@ -188,32 +137,30 @@ Page({
         voiceData.push(a);
       }
 
-      wx.request({
-        url: 'https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=d6cmh8XMfoNbdXIjz3jezuNNBFqoZYaV&client_secret=TuzFujQG7ZqHKlXYGsob5CFlCyhaz1B5',
-        method:'GET',
-        success: function(res) {
-          let token = res.data.access_token;
-          try{
-            playAudios(voiceData,token,{
-              success:reses=>{
-                let index = 0;
-                innerAudioContext.src = reses[index];
-                innerAudioContext.onPlay(()=>{
-                  // console.log(reses[index]);
-                });
-                innerAudioContext.autoplay = false;
-                innerAudioContext.onEnded(() => {
-                  if (index >= (reses.length-1)) {
-                    that.setData({
-                      canPlay: false
-                    })
-                  }
-                });
-              }
-            })
-          }catch(e){console.log(e);}
-        }
-      })
+      let getUrl = 'https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=d6cmh8XMfoNbdXIjz3jezuNNBFqoZYaV&client_secret=TuzFujQG7ZqHKlXYGsob5CFlCyhaz1B5';
+     
+      wxJs.getRequest(getUrl, data={}, (res) => {
+        let token = res.data.access_token;
+        try{
+          playAudios(voiceData,token,{
+            success:reses=>{
+              let index = 0;
+              innerAudioContext.src = reses[index];
+              innerAudioContext.onPlay(()=>{
+                // console.log(reses[index]);
+              });
+              innerAudioContext.autoplay = false;
+              innerAudioContext.onEnded(() => {
+                if (index >= (reses.length-1)) {
+                  that.setData({
+                    canPlay: false
+                  })
+                }
+              });
+            }
+          })
+        }catch(e){console.log(e);}
+      });
 
       // 推荐
       let remdUrl = app.globalData.url + '/baike/baikeRecommend?sid=' + that.data.sid
