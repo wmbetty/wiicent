@@ -78,7 +78,82 @@ Page({
         detailUrl: url,
         detailData: postData
       });
-      that.getDetails(url, postData);
+      that.getDetails(url, postData).then((data) => {
+        let details = data.result.Baike || {};
+        let intros = details.content.replace(/(^\s*)|(\s*$)/g, "") || '';
+        let coLove = details.coLove || 0;
+        let markers = that.data.markers;
+        markers[0].latitude = details.latitude || 0;
+        markers[0].longitude = details.longitude || 0;
+        that.setData({
+          spotDetail: details,
+          intros: intros,
+          coLove: coLove,
+          markers: markers
+        });
+        // 获取当前经纬度
+        wx.getLocation({
+          type: 'wgs84',
+          success: function (res) {
+            let dis = util.getDistance(res.latitude, res.longitude, details.latitude, details.longitude);
+            if (isNaN(dis)) {
+              dis = 0
+            }
+            that.setData({
+              distance: dis
+            });
+          }
+        });
+        let voiceData = [];
+        let voicePathData = [];
+        let voiceContent = details.content;
+        for (let i = 0; i < Math.ceil(voiceContent.length / 400); i++) {
+          let a = voiceContent.substring(400 * i, 400 * (i + 1));
+          voiceData.push(a);
+        }
+        let getUrl = 'https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=d6cmh8XMfoNbdXIjz3jezuNNBFqoZYaV&client_secret=TuzFujQG7ZqHKlXYGsob5CFlCyhaz1B5';
+        wxJs.getRequest(getUrl, data = {}, (res) => {
+          let token = res.data.access_token;
+          try {
+            playAudios(voiceData, token, {
+              success: reses => {
+                let index = 0;
+                innerAudioContext.src = reses[index];
+                innerAudioContext.onPlay(() => {
+                  // console.log(reses[index]);
+                });
+                innerAudioContext.autoplay = false;
+                innerAudioContext.onEnded(() => {
+                  if (index >= (reses.length - 1)) {
+                    that.setData({
+                      canPlay: false
+                    })
+                  }
+                });
+              }
+            })
+          } catch (e) { console.log(e); }
+        });
+
+        // 推荐
+        let remdUrl = app.globalData.url + '/baike/baikeRecommend?sid=' + that.data.sid
+        let remdData = {
+          'pageId': 1,
+          'destiPath': details.destiPath,
+          'size': 3,
+          'showType': 'ShowList',
+          'mtype': that.data.mType,
+          'app': appValue,
+          'platform': platform,
+          'ver': ver
+        }
+        that.setData({
+          remdData: remdData,
+          remdUrl: remdUrl
+        })
+        that.getRemmdList(remdUrl, remdData);
+
+      });
     }
   },
 
@@ -101,87 +176,14 @@ Page({
 
   getDetails (url, postData) {
     let that = this;
-    let markers = that.data.markers;
-    wxJs.postRequest(url, postData, (res) => {
-      let details = res.data.result.Baike;
-      let intros = details.content.replace(/(^\s*)|(\s*$)/g, "");
-      let coLove = details.coLove;
-      markers[0].latitude = details.latitude;
-      markers[0].longitude = details.longitude;
-      that.setData({
-        spotDetail: details,
-        intros: intros,
-        coLove: coLove,
-        markers: markers
-      });
-
-      // 获取当前经纬度
-      wx.getLocation({
-        type: 'wgs84',
-        success: function (res) {
-          let dis = util.getDistance(res.latitude, res.longitude, details.latitude, details.longitude);
-          if (isNaN(dis)) {
-            dis = 0
-          }
-          that.setData({
-            distance: dis
-          });
+    return new Promise((resolve, reject) => {
+      wxJs.postRequest(url, postData, (res) => {
+        if (res.data) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
         }
-      })
-
-      let voiceData = [];
-      let voicePathData = [];
-      let voiceContent = details.content;
-      for (let i = 0; i < Math.ceil(voiceContent.length/400); i++) {
-        let a = voiceContent.substring(400*i,400*(i+1));
-        voiceData.push(a);
-      }
-
-      let getUrl = 'https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=d6cmh8XMfoNbdXIjz3jezuNNBFqoZYaV&client_secret=TuzFujQG7ZqHKlXYGsob5CFlCyhaz1B5';
-     
-      wxJs.getRequest(getUrl, data={}, (res) => {
-        let token = res.data.access_token;
-        try{
-          playAudios(voiceData,token,{
-            success:reses=>{
-              let index = 0;
-              innerAudioContext.src = reses[index];
-              innerAudioContext.onPlay(()=>{
-                // console.log(reses[index]);
-              });
-              innerAudioContext.autoplay = false;
-              innerAudioContext.onEnded(() => {
-                if (index >= (reses.length-1)) {
-                  that.setData({
-                    canPlay: false
-                  })
-                }
-              });
-            }
-          })
-        }catch(e){console.log(e);}
       });
-
-      // 推荐
-      let remdUrl = app.globalData.url + '/baike/baikeRecommend?sid=' + that.data.sid
-      setTimeout(() => {
-        let remdData = {
-          'pageId': 1,
-          'destiPath': details.destiPath,
-          'size': 3,
-          'showType': 'ShowList',
-          'mtype': that.data.mType,
-          'app': appValue,
-          'platform': platform,
-          'ver': ver
-        }
-        that.setData({
-          remdData: remdData,
-          remdUrl: remdUrl
-        })
-        that.getRemmdList(remdUrl, remdData);
-      }, 500)
-
     })
   },
 
@@ -240,7 +242,6 @@ Page({
       innerAudioContext.play();
     }
   },
-
   // 停止语音播放
   stopVoice:function(e){
     innerAudioContext.pause();
