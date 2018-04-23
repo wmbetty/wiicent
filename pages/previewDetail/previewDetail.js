@@ -187,19 +187,6 @@ Page({
     })
   },
 
-  // 点赞请求
-  loveRequest(url, postData) {
-    wxJs.postRequest(url, postData, (res) => {
-      return new Promise((resolve, reject) => {
-        if (res.data.result) {
-          resolve(res.data.result)
-        } else {
-          reject(res.data.result)
-        }
-      })
-    })
-  },
-
   // 点赞
   bkLove() {
     loveTap++
@@ -217,12 +204,12 @@ Page({
       'platform': platform,
       'ver': ver
     }
-    that.loveRequest(url, postData).then((data) => {
-      let resdata = data.Delete;
-      if (resdata) {
-        let bklove = that.data.bklove;
-        let coLove = that.data.coLove * 1;
-        if (loveTap % 2 === 0 && coLove > 0 && resdata) {
+    wxJs.postRequest(url, postData, (res) => {
+      let data = res.data.result.Delete
+      let bklove = that.data.bklove
+      let coLove = that.data.coLove * 1
+      setTimeout(() => {
+        if (loveTap % 2 === 0 && coLove > 0 && data) {
           that.setData({
             coLove: coLove - 1,
             bklove: false
@@ -232,7 +219,7 @@ Page({
             data: false
           })
         }
-        if (loveTap % 2 !== 0 && resdata) {
+        if (loveTap % 2 !== 0 && data) {
           that.setData({
             coLove: coLove + 1,
             bklove: true
@@ -242,10 +229,8 @@ Page({
             data: true
           })
         }
-      } else {
-        wxJs.showToast('网络出错了！');
-      }
-    });
+      }, 500)
+    })
   },
 
   // 播放语音
