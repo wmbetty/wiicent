@@ -40,7 +40,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
+    setTimeout(() => {
+      let that = this
     let item = JSON.parse(options.item)
     that.setData({
       details: item
@@ -90,7 +91,7 @@ Page({
         listHeight: windowHeight - 508 / 750 * 300      
       })
     })
-
+    }, 300)
   },
 
   /**
