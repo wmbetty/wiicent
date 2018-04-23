@@ -19,13 +19,15 @@ pages{
 .spot-name{
   font-size: 48rpx;
   font-weight: bold;
-  margin-bottom: 30rpx;
+  margin-bottom: 14rpx;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 .spot-infors{
   display: flex;
   justify-content: space-between;
   font-size: 30rpx;
   font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 .spotImg{
     display: block;
