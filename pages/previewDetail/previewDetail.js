@@ -33,7 +33,9 @@ Page({
       height: 20
     }],
     tabIndex: 0,
-    remdList: []
+    remdList: [],
+    bcontentImage: '',
+    slideUp: false
   },
   onLoad: function (options) {
     let that = this;
@@ -59,6 +61,7 @@ Page({
       }
     });
     let item = JSON.parse(options.item);
+    let bcontentImage = item.bcontentImage.trim().split(/\s+/)[0];
     let id = (item.id).substring(5);
     let sid = wx.getStorageSync('sid');
     if (sid === '') {
@@ -73,23 +76,25 @@ Page({
         'platform':platform,
         'ver':ver
       };
-      that.setData({
-        sid: sid,
-        detailUrl: url,
-        detailData: postData
-      });
       that.getDetails(url, postData).then((data) => {
         let details = data.result.Baike || {};
         let intros = details.content.replace(/(^\s*)|(\s*$)/g, "") || '';
-        let coLove = details.coLove || 0;
+        let coLove = details.coLove;
+        if (coLove * 1 <= 0) {
+          coLove = 0;
+        }
         let markers = that.data.markers;
         markers[0].latitude = details.latitude || 0;
         markers[0].longitude = details.longitude || 0;
         that.setData({
+          sid: sid,
+          detailUrl: url,
+          detailData: postData,
           spotDetail: details,
           intros: intros,
           coLove: coLove,
-          markers: markers
+          markers: markers,
+          bcontentImage: bcontentImage
         });
         // 获取当前经纬度
         wx.getLocation({
@@ -208,6 +213,7 @@ Page({
       let data = res.data.result.Delete
       let bklove = that.data.bklove
       let coLove = that.data.coLove * 1
+      console.log(coLove, loveTap, 'love')
       setTimeout(() => {
         if (loveTap % 2 === 0 && coLove > 0 && data) {
           that.setData({
@@ -287,6 +293,10 @@ Page({
         })
       } else {
         let rList = res.data.result['ShowList.list']
+        for (let item of rList) {
+          let imgs = item.bcontentImage.trim().split(/\s+/);
+          item.sImg = imgs[0];
+        }
         that.setData({
           remdList: rList
         })
@@ -299,6 +309,14 @@ Page({
     wx.navigateTo({
       url: '/pages/previewDetail/previewDetail?item=' + JSON.stringify(item)
     })
+  },
+  // 查看更多点击
+  toggleSlide () {
+    let that = this;
+    let slideup = that.data.slideUp;
+    that.setData({
+      slideUp: !slideup 
+    });
   }
 
 })

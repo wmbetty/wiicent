@@ -20,15 +20,16 @@
     <view class='list-cont'>
       <view class='cont-head'>热门</view>
       <!-- 列表数据 -->
-      <scroll-view scroll-y='true' style="height: {{listHeight}}px;" bindscrolltolower="searchScrollLower">
+      <scroll-view scroll-y='true' style="height: {{winHeight}}px;" bindscrolltolower="searchScrollLower">
         <view class='list-item-container' wx:for="{{finalList}}" wx:key="{{index}}">
           <view class='list-item' data-item='{{item}}' bindtap='gotoDetail'>
-            <image class='list-img' src="{{item.bcontentImage ? item.bcontentImage : '../../dist/images/line_bg.png'}}"></image>
+            <image class='list-img' src="{{item.sImg || '../../dist/images/line_bg.png'}}"></image>
           <view class='list-info'>
             <view class='list-title'>{{item.title}}</view>
             <view class='list-intros'>
               <view>{{item.footerOne}}</view>
-              <view>{{item.sDis}}km</view>
+              <view>{{}}</view>
+              <view>{{item.sDis}}千米</view>
             </view>
           </view>
           </view>

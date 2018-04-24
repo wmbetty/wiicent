@@ -68,6 +68,7 @@ Page({
     let that = this;
     wxJs.showLoading('加载中');
     wxJs.postRequest(url, postData, (res) => {
+      console.log(res, 'resssssssssssss')
       if (res) {
         wx.hideLoading();
       }

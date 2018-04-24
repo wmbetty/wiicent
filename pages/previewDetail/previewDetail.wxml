@@ -3,7 +3,7 @@
 <!-- <scroll-view scroll-y='true' style='height:{{winHeight + 110}}px;overflow:auto;'> -->
   <view style='padding-bottom:80rpx;margin-bottom:30rpx;'>
       <view class="banner-cont">
-        <image class='spotImg' src="{{spotDetail.bcontentImage ||  '../../dist/images/line_bg.png'}}"></image>
+        <image class='spotImg' src="{{bcontentImage ||  '../../dist/images/line_bg.png'}}"></image>
         <image class='voiceBtn' bindtap="startVoice" src="../../dist/images/btn_yuyingbofang.png" wx:if="{{!canPlay}}"></image>
         <image class='voiceBtn' bindtap="stopVoice" src="../../dist/images/btn_yuyingbofang_act.png" wx:if="{{canPlay}}"></image>
       </view>
@@ -11,19 +11,12 @@
         <view class='spot-name'>{{spotDetail.title || ''}}</view>
         <view class='spot-enname'>{{spotDetail.enName ? spotDetail.enName : ''}}</view>
         <view class='spot-simple-intro'>
-          <view>{{(spotDetail.destiCity + spotDetail.mtype) || ''}}</view>
+          <view>{{(spotDetail.destiCity + spotDetail.mtype)|| ''}}</view>
           <view>{{distance || 0}}km</view>
           <view>{{spotDetail.coRead || 0}}人气</view> 
         </view>
       </view>
       <view class="spot-intros">{{intros || ''}}</view>
-      <view class='addr-infos'>
-        <view>门票信息：{{spotDetail.addition || '无'}}</view>
-        <view>所在地区：{{spotDetail.site || '无'}}</view>
-        <view>详细地址：{{spotDetail.address || '无'}}</view>
-        <view>如何到达：{{spotDetail.transportInfo || '无'}}</view>
-        <view>实用贴士：{{spotDetail.notice || '无'}}</view>
-      </view>
       <view class='author-info-container'>
         <view class='author-info'>
           <image class='author-avatar' src="{{spotDetail.authorFace}}"></image>
@@ -37,6 +30,14 @@
           <view>联系电话：{{spotDetail.phone || '无'}}</view>
           <view>相关链接：{{spotDetail.link || '无'}}</view>
         </view>
+        <view class='addr-infos {{slideUp ? "slideup" : ""}}'>
+        <view>门票信息：{{spotDetail.addition || '无'}}</view>
+        <view>所在地区：{{spotDetail.site || '无'}}</view>
+        <view>详细地址：{{spotDetail.address || '无'}}</view>
+        <view>如何到达：{{spotDetail.transportInfo || '无'}}</view>
+        <view>实用贴士：{{spotDetail.notice || '无'}}</view>
+      </view>
+        <view class='spot-look-more' bindtap='toggleSlide'>查看更多</view>
       </view>
       <view class='recommend-container'>
         <view class='recommend-head'>相关推荐</view>
@@ -47,7 +48,7 @@
         </view>
         <view class='remd-list-view' wx:if='{{remdList.length > 0}}'>
           <view class='remd-list-item' wx:for='{{remdList}}' wx:key='{{index}}' bindtap='gotoDetail' data-item='{{item}}'>
-            <image class='remd-spot-img' src='{{item.bcontentImage || "../../dist/images/71817.png"}}'></image>
+            <image class='remd-spot-img' src='{{item.sImg || "../../dist/images/71817.png"}}'></image>
             <view class='remd-spot-info'>
               <view class='r-spot-name'>{{item.title || ''}}</view>
               <view class='r-spot-foot'>{{item.footerOne || '景点'}}</view>

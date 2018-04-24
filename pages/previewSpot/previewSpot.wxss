@@ -65,18 +65,20 @@ pages{
   font-size: 32rpx;
   color: #000;
   padding-left: 12rpx;
-  border-left: 3px solid #fd8238;
+  margin-bottom: 12rpx;
+  border-left: 3px solid #09ba79;
+  height:36rpx;
+  line-height:34rpx;
 }
 .list-item-container{
   padding: 20rpx 0;
-  
 }
 .list-item{
 display: flex;
 }
 .list-img{
-  width: 160rpx;
-  height: 160rpx;
+  width: 150rpx;
+  height: 148rpx;
 }
 .list-info{
   flex: auto;
